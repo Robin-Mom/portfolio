@@ -16,53 +16,53 @@ const sourceLinks = {
 const projects = {
   supply: {
     kicker: '01 / NLP · MACHINE LEARNING · MLOPS', title: 'Supply-Chain-MLOps',
-    intro: 'Regrouper des avis clients par leur sens et construire une chaîne de travail qui permet de comparer, reproduire et exploiter les modèles.',
+    intro: 'Group customer reviews by meaning and build a workflow for comparing, reproducing and using models.',
     tags: ['SentenceTransformers', 'KMeans', 'DVC', 'MLflow', 'FastAPI', 'Docker'],
     panels: [
-      `<h3>Faire émerger les thèmes des avis</h3><p>Le projet porte sur des avis francophones concernant Oscaro, collectés sur Trustpilot. L’objectif est de regrouper automatiquement des commentaires proches sur le plan sémantique, sans catégories d’apprentissage préétablies.</p><div class="process"><div>01 · Représenter<small>Encoder les commentaires en vecteurs sémantiques.</small></div><div>02 · Regrouper<small>Comparer des méthodes de clustering.</small></div><div>03 · Exploiter<small>Attribuer un groupe aux nouveaux avis.</small></div></div><p>Le second enjeu est l’ingénierie : passer du notebook à des scripts d’entraînement, d’évaluation et de prédiction, avec un suivi des expériences.</p>`,
-      `<h3>Comparer avant de choisir</h3><ul><li>Embeddings SentenceTransformers normalisés ; exploration de KMeans, Spherical KMeans, HDBSCAN et UMAP + HDBSCAN.</li><li>Évaluation par silhouette, Davies–Bouldin, couverture et stabilité des partitions via l’Adjusted Rand Index.</li><li>Extraction de mots caractéristiques avec c-TF-IDF pour aider à interpréter les groupes.</li><li>Pipeline DVC et suivi des paramètres, métriques et artefacts avec MLflow ; travail d’intégration à DagsHub.</li></ul><p>Le projet comprend également des travaux autour d’une API FastAPI, de Docker, d’Airflow et du monitoring avec Prometheus et Grafana.</p>`,
-      `<h3>Ce qui est documenté</h3><p>Des scripts distincts permettent d’entraîner, d’évaluer et d’attribuer de nouveaux avis aux groupes KMeans. Plusieurs approches de clustering ont été explorées ; la chaîne MLOps poursuit son évolution.</p><div class="info-box"><p><strong>État : en développement.</strong> Aucun score de performance ni gain métier n’est publié dans cette fiche : les résultats chiffrés restent à intégrer à partir de runs vérifiés.</p></div><h3>Les limites à examiner</h3><p>Un score géométrique ne garantit pas la pertinence d’un thème. L’interprétation des groupes, leur stabilité et le comportement sur de nouveaux avis doivent être évalués conjointement. La visualisation de la carte est synthétique.</p>`
+      `<h3>Uncover themes in customer reviews</h3><p>The project focuses on French-language reviews of Oscaro collected from Trustpilot. The goal is to automatically group semantically similar comments without predefined training categories.</p><div class="process"><div>01 · Represent<small>Encode comments as semantic vectors.</small></div><div>02 · Group<small>Compare clustering methods.</small></div><div>03 · Apply<small>Assign new reviews to a cluster.</small></div></div><p>The second challenge is engineering: moving from a notebook to separate training, evaluation and prediction scripts, with experiment tracking.</p>`,
+      `<h3>Compare before choosing</h3><ul><li>Normalized SentenceTransformers embeddings; exploration of KMeans, Spherical KMeans, HDBSCAN and UMAP + HDBSCAN.</li><li>Evaluation using silhouette, Davies–Bouldin, coverage and partition stability through the Adjusted Rand Index.</li><li>Extraction of characteristic words with c-TF-IDF to help interpret clusters.</li><li>A DVC pipeline and MLflow tracking of parameters, metrics and artifacts, with work on DagsHub integration.</li></ul><p>The project also includes work on a FastAPI API, Docker, Airflow and monitoring with Prometheus and Grafana.</p>`,
+      `<h3>What is documented</h3><p>Separate scripts support training, evaluation and assignment of new reviews to KMeans clusters. Several clustering approaches have been explored, and the MLOps pipeline continues to evolve.</p><div class="info-box"><p><strong>Status: in development.</strong> No performance score or business impact is reported in this overview. Numerical results will be added from verified runs.</p></div><h3>Limitations to examine</h3><p>A geometric score does not guarantee that a theme is useful. Cluster interpretation, stability and behavior on new reviews need to be evaluated together. The card visualization uses synthetic data.</p>`
     ],
-    sources: `${external(sourceLinks.repo, 'Dépôt du projet')}<p>Présentation fondée sur les informations et la documentation des scripts fournies par Robin Mom. Les résultats chiffrés restent à compléter.</p>`
+    sources: `${external(sourceLinks.repo, 'Project repository')}<p>Based on the project information and script documentation provided by Robin Mom. Numerical results are still to be added.</p>`
   },
   aquaporins: {
-    kicker: '02 / RECHERCHE · BIOPHYSIQUE', title: 'Aquaporines & régulation',
-    intro: 'Une recherche sur les mécanismes moléculaires qui influencent la perméabilité à l’eau des aquaporines humaines.',
-    tags: ['Dynamique moléculaire', 'Analyse structurale', 'Bioinformatique'],
+    kicker: '02 / RESEARCH · BIOPHYSICS', title: 'Aquaporins & regulation',
+    intro: 'Research into the molecular mechanisms that influence water permeability in human aquaporins.',
+    tags: ['Molecular dynamics', 'Structural analysis', 'Bioinformatics'],
     panels: [
-      `<h3>Une question de régulation</h3><p>Comment les ions zinc modulent-ils les canaux à eau ? Mom et collaborateurs (2024) examinent quatre aquaporines humaines.</p>`,
-      `<h3>Explorer à l’échelle atomique</h3><p>Simulations de dynamique moléculaire et analyse des interactions ions–protéines.</p><p>Contributions déclarées de Robin Mom : conceptualisation, méthodologie, analyse formelle et rédaction initiale.</p>`,
-      `<h3>Deux types de modulation</h3><p>Dans les conditions simulées, le zinc augmente la perméabilité d’AQP0 et d’AQP5 et la diminue pour AQP2 et AQP4. L’étude propose des mécanismes impliquant la stabilité structurale et les interactions électrostatiques.</p><div class="info-box"><p>Résultats <em>in silico</em>, sans validation clinique. Illustration abstraite.</p></div><p>Publié en 2024 dans l’International Journal of Molecular Sciences, 25(4), 2267.</p>`
+      `<h3>A question of regulation</h3><p>How do zinc ions modulate water channels? Mom and colleagues (2024) examine four human aquaporins.</p>`,
+      `<h3>Explore at the atomic scale</h3><p>Molecular dynamics simulations and analysis of ion–protein interactions.</p><p>Declared contributions by Robin Mom: conceptualization, methodology, formal analysis and preparation of the original draft.</p>`,
+      `<h3>Two types of modulation</h3><p>Under the simulated conditions, zinc increases the permeability of AQP0 and AQP5 and decreases it for AQP2 and AQP4. The study proposes mechanisms involving structural stability and electrostatic interactions.</p><div class="info-box"><p><em>In silico</em> results, without clinical validation. Abstract illustration.</p></div><p>Published in 2024 in the International Journal of Molecular Sciences, 25(4), 2267.</p>`
     ],
-    sources: `${external(sourceLinks.paper, 'Mom et al., 2024 · texte intégral')} · ${external('https://www.mdpi.com/1422-0067/25/4/2267','Éditeur')}<p>DOI : 10.3390/ijms25042267. Les informations scientifiques et les contributions présentées proviennent de cet article.</p>`
+    sources: `${external(sourceLinks.paper, 'Mom et al., 2024 · full text')} · ${external('https://www.mdpi.com/1422-0067/25/4/2267', 'Publisher')}<p>DOI: 10.3390/ijms25042267. Scientific information and author contributions are drawn from this article.</p>`
   },
   deepdream: {
     kicker: '03 / EXPLORATION · DEEP LEARNING', title: 'DeepDream',
-    intro: 'Explorer le fonctionnement d’un réseau de neurones à travers les motifs qu’il fait émerger dans une image.',
-    tags: ['Caffe', 'GoogLeNet', 'Docker', 'Visualisation'],
+    intro: 'Explore how a neural network works through the patterns it brings out in an image.',
+    tags: ['Caffe', 'GoogLeNet', 'Docker', 'Visualization'],
     panels: [
-      `<h3>Observer ce qu’un réseau amplifie</h3><p>DeepDream transforme une image en renforçant certaines activations d’un réseau préentraîné. L’approche rend visibles des motifs associés aux représentations internes du réseau.</p><p>Cette exploration s’appuie sur le projet historique de Google et sert de support à la compréhension des réseaux convolutifs.</p>`,
-      `<h3>Faire évoluer l’image</h3><p>Le gradient d’un objectif d’activation est utilisé pour modifier les pixels. Les poids du réseau restent fixes. Le processus est répété, éventuellement à plusieurs échelles.</p><p>L’environnement de travail communiqué pour ce projet associe Caffe, GoogLeNet et Docker.</p>`,
-      `<h3>Un projet d’exploration</h3><p>Ce travail est présenté comme une démarche d’apprentissage et de visualisation. Aucune comparaison quantitative ni galerie de sorties authentifiées n’est encore intégrée à cette première version.</p><div class="info-box"><p>Le visuel de la carte est une composition procédurale créée pour ce portfolio ; il ne provient pas d’une exécution de DeepDream.</p></div>`
+      `<h3>Observe what a network amplifies</h3><p>DeepDream transforms an image by reinforcing selected activations in a pretrained network. The approach makes patterns associated with internal network representations visible.</p><p>This exploration builds on the original Google project as a way to understand convolutional neural networks.</p>`,
+      `<h3>Transform the image</h3><p>The gradient of an activation objective is used to modify the pixels. Network weights remain fixed. The process is repeated, potentially at multiple scales.</p><p>The project environment described by the author combines Caffe, GoogLeNet and Docker.</p>`,
+      `<h3>An exploratory project</h3><p>This work is presented as a learning and visualization exercise. No quantitative comparison or gallery of verified model outputs has yet been included in this first version.</p><div class="info-box"><p>The card visual is a procedural composition created for this portfolio; it is not the output of a DeepDream run.</p></div>`
     ],
-    sources: `${external(sourceLinks.dream, 'Google Research · Inceptionism, 2015')}<p>Principe méthodologique : publication de Google Research. Environnement du projet : éléments communiqués par Robin Mom.</p>`
+    sources: `${external(sourceLinks.dream, 'Google Research · Inceptionism, 2015')}<p>Methodological principle: Google Research publication. Project environment: information provided by Robin Mom.</p>`
   }
 };
 
 const notes = {
   clusters: {
-    kicker: 'CARNET / MÉTHODES · NLP', title: 'Un bon cluster ne tient pas en un score.',
-    body: `<p class="lead">Comment examiner un regroupement sémantique quand aucune « bonne réponse » n’est fournie à l’avance ?</p><h3>La géométrie est un point de départ</h3><p>La silhouette renseigne sur la cohésion et la séparation des groupes. Elle décrit une partition dans un espace et avec une distance donnés. Un score n’est donc interprétable qu’en connaissant la représentation des textes et le protocole de calcul.</p><h3>La stabilité pose une autre question</h3><p>Retrouve-t-on des groupes comparables après une variation des données ou de l’initialisation ? L’Adjusted Rand Index permet de comparer des partitions portant sur les mêmes observations. Cela invite à distinguer la stabilité d’une solution de sa pertinence.</p><h3>Revenir au contenu</h3><p>La lecture d’exemples et de mots caractéristiques peut ensuite aider à juger si un groupe représente un thème exploitable. Cette lecture complète les indicateurs numériques.</p><div class="info-box"><p><strong>Piste à développer :</strong> documenter une grille de lecture associant géométrie, stabilité et interprétation sur Supply-Chain-MLOps.</p></div>`,
-    sources: `${external(sourceLinks.clusters, 'scikit-learn · Évaluation du clustering')} · ${external(sourceLinks.sbert, 'SentenceTransformers · Similarité sémantique')}`
+    kicker: 'REFLECTIONS / METHODS · NLP', title: 'A good cluster is more than a score.',
+    body: `<p class="lead">How can we assess semantic clusters when no correct answer is provided in advance?</p><h3>Geometry is a starting point</h3><p>The silhouette describes cluster cohesion and separation. It characterizes a partition within a particular space and distance metric. Interpreting a score therefore requires knowing how the texts were represented and how the score was calculated.</p><h3>Stability asks another question</h3><p>Do we find comparable groups after changing the data or initialization? The Adjusted Rand Index compares partitions of the same observations. This helps distinguish the stability of a solution from its relevance.</p><h3>Return to the content</h3><p>Reading examples and characteristic words can help assess whether a group represents a useful theme. This complements the numerical indicators.</p><div class="info-box"><p><strong>A direction to develop:</strong> document an assessment framework combining geometry, stability and interpretation for Supply-Chain-MLOps.</p></div>`,
+    sources: `${external(sourceLinks.clusters, 'scikit-learn · Clustering evaluation')} · ${external(sourceLinks.sbert, 'SentenceTransformers · Semantic similarity')}`
   },
   models: {
-    kicker: 'CARNET / SCIENCE · MODÉLISATION', title: 'De la molécule au modèle : relier les échelles.',
-    body: `<p class="lead">Que peut apporter un changement d’échelle à une question biologique ?</p><h3>Partir d’une question</h3><p>L’étude sur les aquaporines et les ions zinc offre un exemple concret : une question sur la perméabilité à l’eau est examinée par des simulations moléculaires. Le modèle permet d’explorer des interactions difficiles à isoler à une autre échelle.</p><h3>Expliciter ce que l’on représente</h3><p>Une simulation décrit un système dans un cadre donné. Pour interpréter un résultat, la méthode, les conditions étudiées et les limites de l’analyse doivent rester visibles.</p><h3>Une question pour ce carnet</h3><p>Comment conserver cette attention aux hypothèses lorsqu’on passe de la modélisation moléculaire à l’apprentissage automatique ? Cette comparaison est une piste éditoriale, à enrichir avec des exemples de projets.</p>`,
-    sources: external(sourceLinks.paper, 'Mom et al., 2024 · Aquaporines et zinc')
+    kicker: 'REFLECTIONS / SCIENCE · MODELING', title: 'From molecule to model: connecting scales.',
+    body: `<p class="lead">What can a change of scale bring to a biological question?</p><h3>Start with a question</h3><p>The study of aquaporins and zinc ions offers a concrete example: a question about water permeability is examined through molecular simulations. The model provides a way to explore interactions that are difficult to isolate at another scale.</p><h3>Make the representation explicit</h3><p>A simulation describes a system within a particular framework. To interpret a result, the method, conditions studied and limitations of the analysis need to remain visible.</p><h3>A question for this notebook</h3><p>How can we retain this attention to assumptions when moving from molecular modeling to machine learning? This comparison is an editorial direction to develop with examples from projects.</p>`,
+    sources: external(sourceLinks.paper, 'Mom et al., 2024 · Aquaporins and zinc')
   },
   repro: {
-    kicker: 'CARNET / INGÉNIERIE · MLOPS', title: 'La reproductibilité fait partie du résultat.',
-    body: `<p class="lead">Une métrique devient plus utile lorsqu’on peut retrouver les conditions qui l’ont produite.</p><h3>Conserver le contexte d’une expérience</h3><p>Les données, les paramètres, le code et les artefacts donnent un contexte au résultat. MLflow permet de consigner des paramètres, des métriques et des fichiers de sortie au sein de runs.</p><h3>Décrire le chemin jusqu’au résultat</h3><p>DVC permet de décrire les étapes d’un pipeline et leurs dépendances. Une commande de reproduction s’appuie sur cette description pour déterminer les étapes à exécuter.</p><h3>Rendre le travail relisible</h3><p>Dans Supply-Chain-MLOps, la séparation entre entraînement, évaluation et prédiction sert de point de départ à cette démarche. Une piste pour ce carnet consiste à raconter ce passage du notebook aux scripts à travers un exemple reproductible.</p>`,
+    kicker: 'REFLECTIONS / ENGINEERING · MLOPS', title: 'Reproducibility is part of the result.',
+    body: `<p class="lead">A metric becomes more useful when we can trace the conditions that produced it.</p><h3>Preserve the context of an experiment</h3><p>Data, parameters, code and artifacts give a result its context. MLflow records parameters, metrics and output files within runs.</p><h3>Describe the path to the result</h3><p>DVC describes pipeline stages and their dependencies. A reproduction command uses that description to determine which stages need to run.</p><h3>Make the work easier to revisit</h3><p>In Supply-Chain-MLOps, separating training, evaluation and prediction is a starting point for this approach. One direction for this notebook is to explain the transition from notebooks to scripts through a reproducible example.</p>`,
     sources: `${external(sourceLinks.dvc, 'DVC · Pipelines')} · ${external(sourceLinks.mlflow, 'MLflow · Experiment tracking')}`
   }
 };
@@ -72,17 +72,17 @@ const menu = $('.menu-toggle');
 menu.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? 'Fermer la navigation' : 'Ouvrir la navigation');
+  menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   $('#navigation').classList.toggle('open', open);
 });
-const closeMenu = () => { menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Ouvrir la navigation'); $('#navigation').classList.remove('open'); };
+const closeMenu = () => { menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Open navigation'); $('#navigation').classList.remove('open'); };
 $$('#navigation a').forEach(a => a.addEventListener('click', closeMenu));
 document.addEventListener('keydown', e => {if(e.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true'){closeMenu();menu.focus();}});
 $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
   $$('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
   let count = 0;
   $$('.project-card').forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter; if (!card.hidden) count++; });
-  $('#project-count').textContent = `${count} projet${count > 1 ? 's' : ''} à explorer`;
+  $('#project-count').textContent = `${count} project${count === 1 ? '' : 's'} to explore`;
 }));
 
 const dialog = $('#detail-dialog');
@@ -105,7 +105,7 @@ function activateTab(index) {
 }
 $$('[data-project]').forEach(button => button.addEventListener('click', () => {
   const p = projects[button.dataset.project];
-  openDialog(p.kicker, `<h2 id="dialog-title">${p.title}</h2><p class="lead">${p.intro}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="dialog-tabs" role="tablist" aria-label="Explorer le projet">${['Objectif','Méthodes','Résultats'].map((label,i)=>`<button role="tab" id="tab-${i}" aria-controls="panel-${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${label}</button>`).join('')}</div>${p.panels.map((html,i)=>`<section class="tab-panel" id="panel-${i}" role="tabpanel" tabindex="0" aria-labelledby="tab-${i}" ${i?'hidden':''}>${html}</section>`).join('')}<div class="detail-source"><p>SOURCES & DOCUMENTATION</p>${p.sources}</div>`);
+  openDialog(p.kicker, `<h2 id="dialog-title">${p.title}</h2><p class="lead">${p.intro}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="dialog-tabs" role="tablist" aria-label="Explore the project">${['Objective','Methods','Results'].map((label,i)=>`<button role="tab" id="tab-${i}" aria-controls="panel-${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${label}</button>`).join('')}</div>${p.panels.map((html,i)=>`<section class="tab-panel" id="panel-${i}" role="tabpanel" tabindex="0" aria-labelledby="tab-${i}" ${i?'hidden':''}>${html}</section>`).join('')}<div class="detail-source"><p>SOURCES & DOCUMENTATION</p>${p.sources}</div>`);
   const tabs = $$('.dialog-tabs button', dialog);
   tabs.forEach((tab,i) => {
     tab.addEventListener('click', () => activateTab(i));
@@ -114,9 +114,9 @@ $$('[data-project]').forEach(button => button.addEventListener('click', () => {
 }));
 $$('[data-note]').forEach(button => button.addEventListener('click', () => {
   const n = notes[button.dataset.note];
-  openDialog(n.kicker, `<span class="draft-label">Ébauche éditoriale · à valider par Robin Mom</span><h2 id="dialog-title">${n.title}</h2><div class="article-text">${n.body}</div><div class="detail-source"><p>Ce texte de travail a été préparé pour ce portfolio. Il ne constitue pas un article publié ni une prise de position validée.</p>${n.sources}</div>`);
+  openDialog(n.kicker, `<span class="draft-label">Editorial draft · for review by Robin Mom</span><h2 id="dialog-title">${n.title}</h2><div class="article-text">${n.body}</div><div class="detail-source"><p>This working draft was prepared for the portfolio. It is not a published article or an approved personal statement.</p>${n.sources}</div>`);
 }));
-$('#sources-open').addEventListener('click', () => openDialog('À PROPOS DE CE PORTFOLIO', `<h2 id="dialog-title">Sources & informations</h2><h3>Parcours et projets</h3><p>Les diplômes, domaines de compétence et descriptions de projets reposent sur les informations fournies par Robin Mom. Les résultats scientifiques sont reliés à leurs publications ; les scores des modèles seront ajoutés à partir d’expériences documentées.</p><ul><li>${external(sourceLinks.paper,'Publication scientifique sur les aquaporines')}</li><li>${external(sourceLinks.repo,'Dépôt Supply-Chain-MLOps')}</li></ul><h3>Références méthodologiques</h3><ul><li>${external(sourceLinks.sbert,'SentenceTransformers · Similarité')}</li><li>${external(sourceLinks.clusters,'scikit-learn · Clustering')}</li><li>${external(sourceLinks.mlflow,'MLflow · Suivi des expériences')}</li><li>${external(sourceLinks.dvc,'DVC · Pipelines')}</li><li>${external(sourceLinks.dream,'Google Research · DeepDream')}</li></ul><h3>Visuels et réflexions</h3><p>Les visuels sont des illustrations créées pour ce site et ne représentent pas des résultats expérimentaux. Les trois réflexions sont des ébauches éditoriales, signalées comme telles.</p><h3>Inspiration</h3><p>Direction visuelle inspirée de ${external('https://meganefarelle.me/','meganefarelle.me')}, avec une composition et des contenus propres à ce portfolio.</p><h3>Fonctionnement</h3><p>Ce portfolio est un site statique. Son code n’ajoute aucun outil de mesure d’audience ni formulaire de collecte. Les liens externes ouvrent les sites concernés dans un nouvel onglet.</p>`));
+$('#sources-open').addEventListener('click', () => openDialog('ABOUT THIS PORTFOLIO', `<h2 id="dialog-title">Sources & information</h2><h3>Background and projects</h3><p>Degrees, areas of expertise and project descriptions are based on information provided by Robin Mom. Scientific findings are linked to their publications; model scores will be added from documented experiments.</p><ul><li>${external(sourceLinks.paper, 'Scientific publication on aquaporins')}</li><li>${external(sourceLinks.repo, 'Supply-Chain-MLOps repository')}</li></ul><h3>Methodological references</h3><ul><li>${external(sourceLinks.sbert, 'SentenceTransformers · Similarity')}</li><li>${external(sourceLinks.clusters, 'scikit-learn · Clustering')}</li><li>${external(sourceLinks.mlflow, 'MLflow · Experiment tracking')}</li><li>${external(sourceLinks.dvc, 'DVC · Pipelines')}</li><li>${external(sourceLinks.dream, 'Google Research · DeepDream')}</li></ul><h3>Visuals and reflections</h3><p>The visuals are illustrations created for this website and do not represent experimental results. The three reflections are editorial drafts and are identified as such.</p><h3>Inspiration</h3><p>The visual direction is inspired by ${external('https://meganefarelle.me/', 'meganefarelle.me')}, with a composition and content created for this portfolio.</p><h3>How the site works</h3><p>This portfolio is a static website. Its code does not add an analytics tool or a data collection form. External links open the relevant websites in a new tab.</p>`));
 
 // Reproducible, explicitly synthetic illustrations. No project metrics are invented.
 const svgNS = 'http://www.w3.org/2000/svg';
@@ -149,7 +149,7 @@ const canvas=$('#connection-canvas'),ctx=canvas.getContext('2d');
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 let paused=reducedMotion.matches,angle=0,mode='bio',frame=null,visible=true;
 const pauseButton=$('#motion-toggle');
-function syncPause(){pauseButton.innerHTML=paused?'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m8 5 11 7-11 7Z" fill="currentColor"/></svg>':'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2"/></svg>';pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Lancer l’animation':'Mettre l’animation en pause');}
+function syncPause(){pauseButton.innerHTML=paused?'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m8 5 11 7-11 7Z" fill="currentColor"/></svg>':'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2"/></svg>';pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Play animation':'Pause animation');}
 syncPause();
 const canvasPoints=Array.from({length:130},(_,i)=>{const t=i/129;return {t,a:t*Math.PI*5.4,r:77+Math.sin(t*Math.PI)*40};});
 function draw(){
@@ -183,9 +183,10 @@ function draw(){
 function loop(){frame=null;if(paused||!visible||document.hidden)return;angle+=.003;draw();frame=requestAnimationFrame(loop);}
 function resume(){if(frame===null&&!paused&&visible&&!document.hidden)frame=requestAnimationFrame(loop);}
 pauseButton.addEventListener('click',()=>{paused=!paused;syncPause();if(paused&&frame!==null){cancelAnimationFrame(frame);frame=null;}else resume();draw();});
-$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'De la structure à la fonction.',data:'Du vivant à sa représentation.',ai:'Des données aux modèles.'}[mode];draw();}));
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
 new ResizeObserver(draw).observe(canvas);
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;resume();}).observe(canvas);
 document.addEventListener('visibilitychange',resume);
 reducedMotion.addEventListener('change',e=>{paused=e.matches;syncPause();draw();resume();});
 draw();resume();
+

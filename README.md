@@ -1,54 +1,56 @@
-# Robin Mom — Portfolio professionnel
+# Robin Mom — Professional portfolio
 
-Portfolio statique à publier sur GitHub Pages dans un dépôt dédié nommé `portfolio`.
-Les fichiers du site se trouvent à la racine. Aucun serveur applicatif, paquet à installer,
-clé API ou abonnement ChatGPT n’est requis par le code.
+An English-language portfolio hosted on GitHub Pages in the `portfolio` repository.
+The website files live at the repository root. The code requires no application
+server, package installation, API key or ChatGPT subscription.
 
-## Contenu
+## Content
 
-- `index.html` : sections et cartes projets.
-- `style.css` : design responsive et accessibilité visuelle.
-- `app.js` : fiches projets, filtres, carnet de réflexions et illustrations.
-- `assets/` : ressources locales.
-- `.nojekyll` : publication directe des fichiers statiques.
+- `index.html`: sections, project cards and the main introduction.
+- `style.css`: responsive layout and visual accessibility.
+- `app.js`: project details, filters, reflections and illustrations.
+- `assets/`: local resources.
+- `.nojekyll`: direct publication of the static files.
 
-Les trois réflexions restent identifiées comme des ébauches éditoriales. Les informations
-scientifiques et techniques sont accompagnées de liens dans les fiches et dans
-« Sources & informations ». Les illustrations sont synthétiques et signalées comme telles.
+The headline is **Understanding Biology. Building with AI.** The three-paragraph
+main introduction uses the text supplied by Robin Mom. The interface, project
+details, reflections, source panel and accessibility labels are in English.
 
-## Publier avec GitHub Pages
+The three reflections remain explicitly labeled as editorial drafts for review.
+Scientific and technical information is linked to sources in the project details
+and the Sources & information panel. Synthetic illustrations are labeled as such.
 
-1. Placer ces fichiers **à la racine** de la branche `main` du dépôt `portfolio`.
-2. Dans le dépôt : **Settings → Pages → Build and deployment**.
-3. Choisir **Deploy from a branch**, puis **main** et **/(root)**, et enregistrer.
-4. Attendre la réussite du déploiement dans **Actions**, puis ouvrir l’adresse indiquée
-   dans **Settings → Pages → Visit site**.
+## GitHub Pages publishing
 
-Le site est public avec cette configuration. Avec GitHub Free, le dépôt doit également
-être public. L’adresse habituelle est `https://<compte>.github.io/portfolio/` ; utiliser
-l’adresse réellement retournée par GitHub après publication.
+1. Keep these files at the root of the `main` branch.
+2. In **Settings → Pages → Build and deployment**, choose **Deploy from a branch**.
+3. Select **main** and **/(root)**, then save.
+4. Wait for a successful deployment in **Actions**, then open the address shown by
+   **Settings → Pages → Visit site**.
 
-## Mettre à jour après le retrait du plugin
+This configuration publishes a public website. GitHub Free also requires a public
+repository. Use the actual URL returned by GitHub after deployment.
 
-Modifier les fichiers depuis GitHub ou depuis une copie locale du dépôt. Un push vers
-la branche de publication met automatiquement le site à jour. Le mécanisme utilise
-GitHub Pages directement et ne dépend d’aucune autorisation du plugin ChatGPT.
+## Updates
 
-La désinstallation du plugin et la révocation de ses autorisations n’effacent pas les
-fichiers versionnés du dépôt. Conserver le compte GitHub, le dépôt et la configuration
-Pages pour maintenir cet hébergement.
+Edit files on GitHub or in a local copy of the repository and push to `main`.
+GitHub Pages republishes changes from the configured source branch. This process
+does not depend on the ChatGPT GitHub plugin.
 
-## Vérifications
+The website uses relative resource paths and supports the `/portfolio/` subpath.
+Do not commit `.openai` configuration, tokens, `.env` files or private documents.
 
-La version d’origine a été vérifiée sur ordinateur et dans des viewports mobiles.
-Cette adaptation a aussi été vérifiée dans le navigateur sous le sous-chemin
-`/portfolio/`, sur ordinateur et dans un viewport mobile de 390 px : menu, filtre,
-fiches, onglets et panneau des sources. Aucun débordement horizontal observé. Ne pas inclure de configuration `.openai`, de jeton,
-de fichier `.env` ou de document privé dans ce dépôt public.
+## Verification
 
-## Sources
+The original version was checked on desktop and mobile browser viewports.
+The English update was checked under `/portfolio/`: the exact introduction, all
+project tabs, reflections, source panel, mobile menu and English filter labels.
+Desktop and 320, 390, 768 and 1024 px browser viewports showed no horizontal overflow.
 
-- [GitHub Pages : fonctionnement](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
-- [Configurer une publication depuis une branche](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-- [Créer le site et publier des fichiers statiques](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-- [Retirer les autorisations d’une GitHub App](https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps)
+## References
+
+- [How GitHub Pages works](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
+- [Publishing from a branch](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [Creating a site and publishing static files](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- [Managing GitHub App permissions](https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps)
+

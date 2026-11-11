@@ -11,3 +11,14 @@
 @media(max-width:370px){.site-header .portfolio-badge{display:none}.site-header .menu-toggle{margin-left:auto}.hero-actions{gap:15px}.art-bottom{justify-content:center}}
 
 .portfolio-badge>.status-dot{width:5px;height:5px;margin:0;background:var(--mint)}
+
+
+/* Keep the longer English introduction readable at every viewport width. */
+.hero h1{font-size:clamp(44px,5.1vw,76px)}
+.hero-intro{max-width:515px}
+.hero-intro p{margin:0 0 14px}
+.hero-intro p:last-child{margin-bottom:0}
+.hero-art{align-self:start;height:570px;min-height:0;margin-top:30px}
+@media(max-width:1100px){.hero-art{height:520px}.art-bottom{justify-content:flex-start}.art-bottom p{width:100%;text-align:center}}
+@media(max-width:800px) and (min-width:601px){.hero h1{font-size:clamp(35px,5.1vw,44px)}.hero-art{height:470px}}
+@media(max-width:600px){.hero h1{font-size:clamp(36px,11.5vw,61px);letter-spacing:-1.8px}.hero-intro{max-width:100%}.hero-intro p{margin-bottom:16px}.hero-art{height:380px;width:100%;margin-top:35px}.art-bottom{justify-content:center}.art-bottom p{width:auto}.hero .eyebrow{letter-spacing:.9px}}
