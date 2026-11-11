@@ -8,15 +8,27 @@ server, package installation, API key or ChatGPT subscription.
 
 - `index.html`: sections, project cards and the main introduction.
 - `style.css`: responsive layout and visual accessibility.
-- `app.js`: project details, filters, reflections and illustrations.
+- `app.js`: project details, filters, source panel and illustrations.
+- `deep-dives/`: five standalone article pages, including a connected three-part
+  series on aquaporins and steroids. These pages also work without JavaScript.
 - `assets/`: local resources.
 - `.nojekyll`: direct publication of the static files.
 
 The headline is **Understanding Biology. Building with AI.** The three-paragraph
 main introduction uses the text supplied by Robin Mom. The interface, project
-details, reflections, source panel and accessibility labels are in English.
+details, Deep Dives, source panel and accessibility labels are in English.
 
-The three reflections remain explicitly labeled as editorial drafts for review.
+Deep Dives replaces the former Reflections section. The five articles use the
+English texts supplied by Robin Mom in `deep_dives.md`, preserving their wording,
+emphasis and scientific publication links. The collection contains:
+
+- **Artificial Intelligence and Frogs**
+- **Art or Science? An Age-Old Question Revisited by AI**
+- **Aquaporins and Steroids: A Matter of Perspective**, parts 1–3
+
+Each article has a direct URL, a link back to the collection and an estimated
+reading time (word count divided by 220 words per minute, rounded up). The three
+aquaporin articles also link to every part of the series.
 Scientific and technical information is linked to sources in the project details
 and the Sources & information panel. Synthetic illustrations are labeled as such.
 
@@ -44,8 +56,14 @@ Do not commit `.openai` configuration, tokens, `.env` files or private documents
 
 The original version was checked on desktop and mobile browser viewports.
 The English update was checked under `/portfolio/`: the exact introduction, all
-project tabs, reflections, source panel, mobile menu and English filter labels.
+project tabs, source panel, mobile menu and English filter labels.
 Desktop and 320, 390, 768 and 1024 px browser viewports showed no horizontal overflow.
+
+The Deep Dives update was checked against the supplied Markdown: all five article
+bodies and all four scientific links are preserved. All 63 internal links and
+asset references resolve. Browser checks covered desktop reading, mobile menu,
+article pages at 320 and 390 px, the 768 px reading layout, navigation between all
+three series parts, return links, the source panel and the existing MLOps modal.
 
 ## References
 
