@@ -25,8 +25,18 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Known missing files on the remote branch: the original PNG and MP4. Both are retained in the step-1 checkpoint archive.
 - Browser layout and video playback were not tested; static HTML checks only.
 
+## Step 3 — Second collection connected to the homepage
+- Added The Human - Machine Interface to Deep Dives with six article links, original titles and reading times matching the article pages.
+- Added navigation to both collections and updated the shared Deep Dives introduction.
+- Reused existing responsive collection styles. The scientific collection markup is preserved verbatim, including its original title.
+- Checks passed: all homepage local paths and anchors resolve, six new article links, unique IDs, balanced HTML, git diff --check. All pre-existing article files are byte-identical to main.
+- Verification limit: no browser layout or playback check in this step. The missing PNG/MP4 remain the only known media blocker from step 2.
+
 ## Next task
-Connect the six article pages as the second collection on index.html, preserving the existing scientific collection verbatim. Verify the collection links. Upload the two original media files from the checkpoint using an authenticated Git environment before previewing or publishing. Do not merge or publish without approval.
+Upload these two original binary files from the saved checkpoint to the same branch using authenticated Git:
+- deep-dives/human-machine-interface/assets/deepdream_attention_post3.png
+- deep-dives/human-machine-interface/assets/deepdream_4a-4b-stacked.mp4
+Then check desktop/mobile navigation, image rendering and native video playback in a browser; update this progress note and commit/push. Keep main unchanged and do not publish without approval.
 
 ## Blocker and recovery
 - Local source-import commit: `21bdecc` (not pushed).
@@ -34,9 +44,9 @@ Connect the six article pages as the second collection on index.html, preserving
 - GitHub connector supports text commits, but no direct binary file upload; do not work around this with Base64.
 - A remote branch has been created from the base commit. A separate checkpoint commit will record this blocker there.
 - Source import is saved in `portfolio_step1_checkpoint.zip`; it contains this progress note and `deep-dives/human-machine-interface/` with all original files.
-- To resume: check out the remote branch, extract the checkpoint ZIP into the repository, compare the source files with the supplied archive, commit the imported files and push from an authenticated Git environment. Preserve the remote PROGRESS.md and update its state. Then generate article pages and connect the second collection in separate verified commits.
+- To resume: check out the remote branch, extract the checkpoint ZIP into the repository, compare the source files with the supplied archive, commit the imported files and push from an authenticated Git environment. Preserve the current remote PROGRESS.md rather than replacing it with the older checkpoint copy. Article pages and homepage integration are already complete; upload only the missing media, verify and update progress.
 - No site content has been changed on main; nothing was published.
 
 Checkpoint archive: https://chatgpt.com/library?file_id=libfile_469bf0f959d4819192f2bb09d7ae572c&account_id=personal
 
-Remote branch now contains the Markdown source, six HTML pages, collection CSS, generation script and this progress note. The PNG and MP4 still need uploading. The home page does not yet link to the new collection.
+Remote branch now contains the Markdown source, six HTML pages, collection CSS, generation script and this progress note. The PNG and MP4 still need uploading. The home page now links to both collections (12 scientific articles and 6 human-machine reflections).
