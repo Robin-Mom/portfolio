@@ -9,8 +9,8 @@ server, package installation, API key or ChatGPT subscription.
 - `index.html`: sections, project cards and the main introduction.
 - `style.css`: responsive layout and visual accessibility.
 - `app.js`: project details, filters, source panel and illustrations.
-- `deep-dives/`: five standalone article pages, including a connected three-part
-  series on aquaporins and steroids. These pages also work without JavaScript.
+- `deep-dives/`: twelve scientific article pages, their Markdown source, and two
+  previously published essays retained at their existing URLs. These pages also work without JavaScript.
 - `assets/`: local resources.
 - `.nojekyll`: direct publication of the static files.
 
@@ -18,17 +18,20 @@ The headline is **Understanding Biology. Building with AI.** The three-paragraph
 main introduction uses the text supplied by Robin Mom. The interface, project
 details, Deep Dives, source panel and accessibility labels are in English.
 
-Deep Dives replaces the former Reflections section. The five articles use the
-English texts supplied by Robin Mom in `deep_dives.md`, preserving their wording,
-emphasis and scientific publication links. The collection contains:
+Deep Dives contains one series, **Scientific Articles - Research Reflections**,
+with twelve articles supplied by Robin Mom in `deep-dives/scientific-articles.md`.
+Original wording, emphasis and publication links are preserved.
 
-- **Artificial Intelligence and Frogs**
-- **Art or Science? An Age-Old Question Revisited by AI**
-- **Aquaporins and Steroids: A Matter of Perspective**, parts 1–3
+- Aquaporins and Steroids: A Matter of Perspective — 3 articles
+- Aquaporins and Ions: A Matter of Thresholds — 3 articles
+- Plants and Uncertainty: A Matter of Timescales — 4 articles
+- Fungal Aquaporins: Variations on an Archetype — 2 articles
 
-Each article has a direct URL, a link back to the collection and an estimated
-reading time (word count divided by 220 words per minute, rounded up). The three
-aquaporin articles also link to every part of the series.
+Each article has a direct URL, theme navigation, previous/next article links,
+a link back to Deep Dives, and an estimated reading time (220 words per minute).
+The collection and reading pages work without JavaScript. Earlier essays are
+retained at their existing URLs but are no longer listed in this collection.
+
 Scientific and technical information is linked to sources in the project details
 and the Sources & information panel. Synthetic illustrations are labeled as such.
 
@@ -65,10 +68,17 @@ asset references resolve. Browser checks covered desktop reading, mobile menu,
 article pages at 320 and 390 px, the 768 px reading layout, navigation between all
 three series parts, return links, the source panel and the existing MLOps modal.
 
+The scientific collection update preserves all 12 article bodies, emphasis and
+12 publication links from the supplied Markdown. All 172 internal links and
+asset references resolve. JavaScript syntax passes `node --check`. Desktop
+browser checks covered the collection, opening an article and next-article
+navigation. Mobile layouts were not re-tested for this update.
+
 ## References
 
 - [How GitHub Pages works](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [Publishing from a branch](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [Creating a site and publishing static files](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 - [Managing GitHub App permissions](https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps)
+
 

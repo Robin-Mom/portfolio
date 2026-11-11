@@ -76,3 +76,20 @@
 .reading-footer .arrow-icon{width:13px;height:13px}
 @media(max-width:800px){.dive-series .note-row{grid-template-columns:100px 1fr 65px;gap:15px}.dive-series .note-title{font-size:16px}}
 @media(max-width:600px){.collection-note{margin-top:26px;font-size:10px}.note-excerpt{font-size:11px}.dive-series{margin-top:32px;padding:24px 20px 3px}.series-heading h3{font-size:24px}.series-heading .eyebrow{font-size:8px;letter-spacing:1px}.dive-series .note-row{grid-template-columns:1fr 55px;gap:8px 12px}.dive-series .note-category{grid-column:1/-1}.dive-series .note-title{font-size:17px}.reading-wrap{width:calc(100% - 40px)}.reading-header{gap:16px}.reading-header .brand small{letter-spacing:.7px;font-size:6px}.reading-back{font-size:11px;gap:7px}.article-heading{padding:40px 0 27px;margin-bottom:28px}.article-heading .eyebrow{font-size:8px;letter-spacing:.7px}.article-heading .eyebrow span{padding-inline:4px}.article-heading h1{font-size:36px;letter-spacing:-1px}.article-heading .article-subtitle{font-size:23px;margin-top:18px}.article-byline{font-size:11px;margin-top:23px}.article-body{font-size:18px;line-height:1.85}.article-body p:first-child{font-size:19px}.article-series{padding:23px 20px 8px;margin-top:38px}.article-series h2{font-size:23px}.article-series li>a,.article-series li>span{font-size:13px}.article-end{margin-top:35px;gap:15px}.article-end .text-link{font-size:11px;gap:7px}.reading-footer p{max-width:none;font-size:9px}.reading-footer a{font-size:9px}}
+
+
+/* Scientific collection: one series, four thematic chapters. */
+.collection-header{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.collection-header .eyebrow{color:var(--mint);font-size:9px}
+.collection-header h3{font-size:clamp(26px,3vw,38px);font-weight:400;line-height:1.3;margin:0 0 16px}
+.collection-header>p:last-child{color:var(--muted);font-size:13px;line-height:1.8}
+.theme-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.theme-links a{padding:10px 14px;border:1px solid var(--line);border-radius:24px;font-size:11px;line-height:1.5}
+.theme-links a:hover{border-color:var(--mint);color:var(--mint)}
+.theme-links span{margin-left:8px;color:var(--mint)}
+.series-heading h4{font-size:clamp(23px,2.5vw,28px);line-height:1.4;font-weight:400;margin:0}
+.article-pagination{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.article-pagination a{padding:18px;border:1px solid var(--line);border-radius:9px;font-size:13px;line-height:1.7}
+.article-pagination a:hover{color:var(--mint)}
+.article-pagination small{display:block;font-size:9px;color:var(--mint);margin-bottom:8px}
+@media(max-width:600px){.article-pagination{grid-template-columns:1fr}.theme-links{gap:8px}.theme-links a{font-size:10px}.collection-header{margin-top:28px}}
