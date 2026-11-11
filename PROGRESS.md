@@ -16,8 +16,17 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Existing site files unchanged; no repository workflows found.
 - Problems: none. Browser validation not yet applicable.
 
+## Step 2 — Static article pages complete
+- Generated six standalone English HTML pages from the imported README, with shared collection navigation, previous/next links and estimated reading times.
+- Added collection-scoped CSS for responsive image/video display, blockquotes and scrollable tables. Existing scientific pages, global CSS and homepage remain unchanged.
+- Preserved the original reference URLs. Video uses a native controls-enabled player with preload=metadata and an ordinary MP4 link; image uses its original PNG path and alt text.
+- Rebuild: `python3 scripts/build_human_machine.py` (requires Pandoc). The deployed site itself needs no build runtime.
+- Checks passed: six pages, one h1 per page, unique IDs, navigation targets and anchors, CSS paths, source reference destinations, one video, one image and two context-window tables; no Base64.
+- Known missing files on the remote branch: the original PNG and MP4. Both are retained in the step-1 checkpoint archive.
+- Browser layout and video playback were not tested; static HTML checks only.
+
 ## Next task
-Generate six static article pages from the imported Markdown, preserving wording and references, with local image/video links and navigation. Then connect the new collection from the home page and verify local links and scientific-content preservation.
+Connect the six article pages as the second collection on index.html, preserving the existing scientific collection verbatim. Verify the collection links. Upload the two original media files from the checkpoint using an authenticated Git environment before previewing or publishing. Do not merge or publish without approval.
 
 ## Blocker and recovery
 - Local source-import commit: `21bdecc` (not pushed).
@@ -30,4 +39,4 @@ Generate six static article pages from the imported Markdown, preserving wording
 
 Checkpoint archive: https://chatgpt.com/library?file_id=libfile_469bf0f959d4819192f2bb09d7ae572c&account_id=personal
 
-Remote checkpoint includes the Markdown source and this progress note only. The PNG and MP4 still need uploading. No HTML pages generated yet.
+Remote branch now contains the Markdown source, six HTML pages, collection CSS, generation script and this progress note. The PNG and MP4 still need uploading. The home page does not yet link to the new collection.

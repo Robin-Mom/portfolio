@@ -1,0 +1,15 @@
+/* Scoped to this collection; existing scientific pages keep their styles. */
+.human-machine-page .article-body img,
+.human-machine-page .article-body video {display:block;max-width:100%;height:auto;margin:24px auto;border-radius:10px}
+.human-machine-page .article-body video {width:100%;background:#000}
+.human-machine-page figure {margin:30px 0}
+.human-machine-page figcaption {font:13px/1.6 system-ui,sans-serif;color:var(--muted);margin-top:12px}
+.human-machine-page .article-body h3 {font-size:1.35em;line-height:1.4;margin:2em 0 1em;color:var(--text)}
+.human-machine-page blockquote {margin:24px 0;padding:8px 0 8px 20px;border-left:3px solid var(--mint)}
+.human-machine-page blockquote p:last-child {margin-bottom:0}
+.human-machine-page .table-scroll {overflow-x:auto;margin:28px 0;max-width:100%}
+.human-machine-page table {width:100%;border-collapse:collapse;font:15px/1.65 system-ui,sans-serif}
+.human-machine-page th,.human-machine-page td {padding:12px;border:1px solid var(--line);text-align:left;min-width:90px}
+.human-machine-page th {color:var(--mint);background:var(--surface)}
+.human-machine-page .article-series>p {color:var(--muted);line-height:1.7}
+.human-machine-page code {font-size:.85em;overflow-wrap:anywhere}
