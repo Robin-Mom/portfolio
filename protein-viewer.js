@@ -76,3 +76,8 @@ async function init() {
   }
 }
 init();
+
+// Keep all wrapped controls and source links visible in the parent project panel.
+new ResizeObserver(() => {
+  if (parent !== window) parent.postMessage({type:'protein-viewer-height',height:document.body.getBoundingClientRect().height}, location.origin);
+}).observe(document.body);

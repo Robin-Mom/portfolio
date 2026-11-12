@@ -50,3 +50,15 @@ Base: `98d5d2cae72c6bbfc6f6c98b8bc0086adc04a03b` (published Human–Machine Inte
 - Finish browser regression checks, including a WebGL-capable environment for ribbon rendering.
 - Await the user's residue names/numbers, explanations and article destinations before implementing clickable annotations. Use PDB chain A numbering 24–274; explicitly check any sequence numbering offset.
 - Homepage animation and placement of scientific Deep Dives links remain undecided.
+
+## Step 3 — Viewer lifecycle and narrow-layout correction
+- Desktop browser checks passed: Methods opens; returning to Published regulations makes the viewer visible again; closing the dialog removes its iframe after the close event; reopening creates a visible viewer. Pause sets aria-pressed=true.
+- At a 320 px content viewport, the initial fixed-height iframe clipped its wrapped controls/source footer: content height 631 px versus a 558 px viewport.
+- Fixed by reporting the viewer body height through a same-origin postMessage. Parent accepts messages only from the current protein iframe and clamps finite heights to 400–1200 px.
+- Recheck at 320 px passed: inner content/viewport heights both 631 px, scroll width equals client width (252 px); no internal vertical scrolling or horizontal overflow. Project dialog also had equal client/scroll widths before correction.
+- app.js and protein-viewer.js syntax checks passed. Preview files only were used for the temporary responsive harness.
+- Browser automation timed out during the additional 390 px check; that width and reduced-motion browser checks remain unverified. WebGL ribbon rendering still needs a compatible browser; the Canvas fallback was exercised here.
+- No merge or publication. No changes to protein coordinates, residue numbering or annotations.
+
+## Current next task
+Await user-provided residue names/numbers, explanations and article links for clickable annotations. Complete WebGL, 390 px and reduced-motion browser checks when an appropriate environment is available. No approval to merge/publish this redesign has been given.

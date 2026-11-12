@@ -68,6 +68,13 @@ $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
 }));
 
 const dialog = $('#detail-dialog');
+// Accept height updates only from this project's same-origin viewer.
+window.addEventListener('message', event => {
+  const frame = $('#protein-frame', dialog);
+  if (!frame || event.origin !== location.origin || event.source !== frame.contentWindow || event.data?.type !== 'protein-viewer-height') return;
+  const height = event.data.height;
+  if (Number.isFinite(height)) frame.style.height = `${Math.max(400, Math.min(1200, Math.ceil(height) + 2))}px`;
+});
 let previousFocus;
 function openDialog(kicker, html) {
   previousFocus = document.activeElement;
