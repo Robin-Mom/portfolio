@@ -224,3 +224,11 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: five commits ahead of main, no divergence; changes limited to app.js, the selected JPG, its upload documentation and this progress file.
 - Final app.js syntax check passed; image, caption and both tabs were checked in the browser in step 4.
 - Next: merge the release PR and verify GitHub Pages deployment plus live image and content. Record final outcome on the retained work branch.
+
+## DeepDream publication completed — 2026-11-12
+- PR #5 merged into main as 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb: https://github.com/Robin-Mom/portfolio/pull/5.
+- GitHub Pages run 43279821384 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43279821384.
+- Live HTTP checks passed: updated app.js serves Building dreams; selected JPG responds 200 with the exact original SHA-256; all three linked DeepDream reflection pages respond 200.
+- Published site: https://robin-mom.github.io/portfolio/.
+- No outstanding publication blocker. Prior browser checks are recorded in step 4. This final checkpoint is retained on the work branch without triggering another main deployment.
+- Next task: await the owner’s next portfolio change. Start subsequent implementation from published main 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb and consult this checkpoint.
