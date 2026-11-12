@@ -218,3 +218,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Reflections tab checked in the browser: the revised text and all three DeepDream article links appear.
 - No blocking issue observed in these checks. No merge or publication performed.
 - Next task: final review of the DeepDream changes, then merge/publication when explicitly approved. Resume from portfolio/deepdream-project and this file.
+
+## DeepDream release approved — 2026-11-12
+- User explicitly requested publication of the DeepDream changes.
+- Final comparison: five commits ahead of main, no divergence; changes limited to app.js, the selected JPG, its upload documentation and this progress file.
+- Final app.js syntax check passed; image, caption and both tabs were checked in the browser in step 4.
+- Next: merge the release PR and verify GitHub Pages deployment plus live image and content. Record final outcome on the retained work branch.
