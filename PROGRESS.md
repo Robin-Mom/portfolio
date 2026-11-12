@@ -54,11 +54,24 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Preview-only dist/ and .openai/ configuration are not part of this commit.
 - No merge into main or publication performed.
 
+## Step 6 — Responsive layout checks complete (2026-11-12)
+- Tested source at `c30969e00a1e5b4b66d3a0633d3d34f19a22c7fa`. All 29 preview site/content/media files were verified byte-identical to the remote branch using Git blob hashes.
+- Used a temporary local Chrome iframe harness with measured content viewport widths of 320, 390 and 768 CSS pixels. This checks responsive CSS; it is not a physical mobile device or touch/browser emulation.
+- Checked homepage and all six Human–Machine Interface articles at all three widths (21 page/width combinations). Document scroll width equals viewport width in every case: no page-level horizontal overflow.
+- Image and video remain within their content containers: approximately 280, 350 and 704 px wide respectively.
+- At 320 px, the wider context-window table has a 316 px scrollable area inside a 280 px container. Keyboard focus and ArrowRight successfully moved scrollLeft to 36 px; horizontal scrolling is confined to the table. Both tables fit without horizontal scrolling at 390 and 768 px.
+- Narrow-layout homepage menu opens, the Deep Dives link navigates to its anchor, and the menu closes (aria-expanded returns to false). Homepage-to-context-window article navigation also passed.
+- Native video controls are visible at 320 px. Keyboard playback starts and currentTime advances past 3.69 seconds with no media error.
+- Inspected narrow-layout screenshots of collection links, the table and the video player.
+- No defect found in this focused check; no application or media changes were needed. This commit updates only PROGRESS.md.
+- Limitations: no real-device touch test, Safari/iOS test or exhaustive cross-browser review. Temporary preview harness/configuration/build output are excluded from the commit.
+- No merge or publication performed.
+
 ## Current state
-The two collections, six Human–Machine Interface articles and both media are connected on the working branch. The former missing-media blocker is resolved. The upload instructions from step 4 are superseded; no further upload is needed.
+The two collections, six Human–Machine Interface articles and both media are connected on the working branch. Desktop media/navigation checks and focused responsive checks are complete. The scientific articles and original media remain unchanged.
 
 ## Next task
-Perform a focused mobile layout and navigation review, including the image, video controls and context-window tables. Fix any observed issue in a small coherent change; update this file with actual results and commit/push to `portfolio/human-machine-interface`. Do not merge or publish without explicit user approval.
+Ready for user review of the completed integration. Any requested refinements should be handled in another small checked commit on `portfolio/human-machine-interface`. Merge into main and publication remain blocked pending explicit user authorization; do not trigger either automatically.
 
 ## Resume
-Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. The original upload paths at root assets/ have been replaced by the collection-scoped paths above.
+Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. Media live in `deep-dives/human-machine-interface/assets/`. No further upload is needed.
