@@ -122,3 +122,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - app.js syntax check passed. No protein coordinates, annotation text, sources, PDF, homepage animation or scientific article files changed in this step.
 - Limits: cloud Chrome exercises the Canvas fallback, not WebGL. Real-device touch, reduced-motion browser emulation and WebGL ribbon/picking remain unverified.
 - No merge or publication. Ready for a draft review PR, with these validation limits stated explicitly; user authorization is required before merging/publishing this redesign.
+
+## Step 9 — Draft review prepared
+- Opened [draft PR #2](https://github.com/Robin-Mom/portfolio/pull/2), from portfolio/aquaporins-project into main.
+- Compared branch with main: 12 changed paths, limited to project rendering, viewer assets, the presentation and progress documentation. Existing Deep Dives files and homepage HTML are unchanged.
+- PR summarizes the resulting experience, checks completed and remaining WebGL/touch/reduced-motion verification limits.
+- Verified creation response: PR is open, draft=true and merged=false. No merge or publication performed.
+- Next: owner review and completion of outstanding renderer/device checks. Explicit authorization is required before merging and publishing this redesign.
