@@ -111,3 +111,14 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - app.js Talks href resolves to the uploaded repository file. Upload blocker is resolved; no more manual PDF upload is needed.
 - No merge or publication. This step updates the progress checkpoint only.
 - Next task: final embedded/mobile regression of the updated overview, five annotation cards and Talks/Awards sections, including WebGL verification if available; then draft PR and user review.
+
+## Step 8 — Final integrated layout check and annotation-height fix
+- Tested the full preview synchronized from remote commit 2fd8570, including the uploaded PDF.
+- Desktop: updated intro, Talks and Prizes and awards visible; steroid annotation card opens; Methods opens and keeps Talks visible.
+- Opened the exact Talks PDF destination in Chrome: native PDF viewer renders the title slide and reports 59 pages.
+- Narrow viewport tests found the annotation viewer height cap of 1200 px caused an internal vertical scrollbar when longer cards were open.
+- Raised the guarded finite-height cap to 2400 px. The existing same-origin/source checks are retained.
+- Rechecked at 320 px with zinc card: viewer content and viewport heights both 1333 px; client/scroll widths both 252 px. At 390 px with steroid card and all three article links: heights both 1215 px, widths both 322 px. Outer project dialog has no horizontal overflow (296 px at 320, 366 px at 390).
+- app.js syntax check passed. No protein coordinates, annotation text, sources, PDF, homepage animation or scientific article files changed in this step.
+- Limits: cloud Chrome exercises the Canvas fallback, not WebGL. Real-device touch, reduced-motion browser emulation and WebGL ribbon/picking remain unverified.
+- No merge or publication. Ready for a draft review PR, with these validation limits stated explicitly; user authorization is required before merging/publishing this redesign.
