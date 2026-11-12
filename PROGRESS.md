@@ -210,3 +210,11 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 2. Choose Add file > Upload files and select the original deepdreams_googlenet_5b_output.jpg already attached in the conversation.
 3. Commit directly to this work branch, preserving the filename. Report completion.
 4. Verify remote checksum/path and browser image rendering/new tabs, then review before publication.
+
+## DeepDream project — step 4: uploaded image verified
+- User uploaded the original JPG on portfolio/deepdream-project (upload commit bcceb815048c10e331bd62ea3383706e92a456fb).
+- Remote asset exists at assets/deepdream/deepdreams_googlenet_5b_output.jpg; its SHA-256 matches the original exactly (efbbb2ab28b2d98099242bbe36ae255f2b3f42e333bed4189cdcedb42724a300). JPEG decoding confirms 1536 × 1152 pixels.
+- Local preview synchronized to the uploaded branch commit. Browser check passed: Building dreams opens, the image loads at its original intrinsic dimensions and scales to the panel, and the approved caption appears.
+- Reflections tab checked in the browser: the revised text and all three DeepDream article links appear.
+- No blocking issue observed in these checks. No merge or publication performed.
+- Next task: final review of the DeepDream changes, then merge/publication when explicitly approved. Resume from portfolio/deepdream-project and this file.
