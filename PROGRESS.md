@@ -137,3 +137,12 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Runtime controller checks using a simulated DOM/viewer passed with reduced-motion both false and true: correct initial rotation state, explicit play when reduced motion is enabled, stop for inactive panel, resume when active, stop when document is hidden.
 - These controller tests do not constitute a rendered WebGL or physical touch test. WebGL ribbon rendering/picking and real-device touch remain unverified in this environment. Canvas/browser/layout and PDF checks are recorded above.
 - Next: merge PR #2 and confirm GitHub Pages deployment plus live resources. Final publication outcome will be recorded on the retained work branch.
+
+## Copy refinement — 2026-11-12
+- Working branch: portfolio/aquaporins-copy, based on published main commit 57989b3bcacd7d5d59c652aebec76e4518e8d8df.
+- Removed the full "A question of regulation" and "Two types of modulation" sections from Published regulations, including their accompanying old zinc-study note.
+- Removed the small Structural reference figcaption below the iframe.
+- Updated the viewer legend to begin "Spinach SoPIP2;1 (PDB 1Z98, ...)".
+- Replaced this project's Sources & Documentation footer with Research profile and the user-supplied ORCID link: https://orcid.org/0000-0002-0141-2651.
+- Static/runtime configuration checks passed: JS syntax, removed text absent, iframe retained, Talks/Awards unchanged, other project configurations unchanged, correct ORCID and legend wording. No browser rendering checks needed for this text-only refinement.
+- No merge/publication authorized for this new refinement. Next task: review and merge/publish upon explicit approval.
