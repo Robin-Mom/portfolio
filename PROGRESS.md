@@ -67,11 +67,19 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Limitations: no real-device touch test, Safari/iOS test or exhaustive cross-browser review. Temporary preview harness/configuration/build output are excluded from the commit.
 - No merge or publication performed.
 
+## Step 7 — Draft review prepared (2026-11-12)
+- Opened [draft pull request #1](https://github.com/Robin-Mom/portfolio/pull/1) from `portfolio/human-machine-interface` into `main`.
+- Compared the branch with main: 13 changed paths limited to the new collection, its media, homepage integration, generation script and this progress note. Existing scientific article files remain unchanged.
+- Checked main's complete tree: no GitHub Actions workflow files. No workflow or publication was manually triggered.
+- PR description summarizes final behavior, completed validation and real-device/cross-browser limitations.
+- Verified PR is open, in draft status, and not merged. Main remains at `cf0908f49c0134a6fae9f06d3092a5830b5bde77`.
+- This step modifies only PROGRESS.md in the repository; prior application checks remain applicable.
+
 ## Current state
 The two collections, six Human–Machine Interface articles and both media are connected on the working branch. Desktop media/navigation checks and focused responsive checks are complete. The scientific articles and original media remain unchanged.
 
 ## Next task
-Ready for user review of the completed integration. Any requested refinements should be handled in another small checked commit on `portfolio/human-machine-interface`. Merge into main and publication remain blocked pending explicit user authorization; do not trigger either automatically.
+Review [draft pull request #1](https://github.com/Robin-Mom/portfolio/pull/1). The implementation and verification steps are complete. Any requested refinements should be handled in another small checked commit on `portfolio/human-machine-interface`. Merge into main and publication remain blocked pending explicit user authorization; do not trigger either automatically.
 
 ## Resume
 Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. Media live in `deep-dives/human-machine-interface/assets/`. No further upload is needed.
