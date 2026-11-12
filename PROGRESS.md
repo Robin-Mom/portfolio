@@ -41,65 +41,24 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Earlier step-1 media verification concerned the local checkpoint, not the remote branch. Prior browser checks remain outstanding.
 - User will upload the media manually. Do not attempt binary transfer through the connector or use Base64.
 
-## Next task — User uploads the two original files
-Follow these steps on your own computer. Use a fresh clone so existing local work is not affected.
+## Step 5 — Uploaded media connected (2026-11-12)
+- User uploaded both media files in commit `8b13194d6b10a065c0a0b105c7be97c68446d0e5`, under root `assets/`.
+- Fixed the resulting broken article paths by moving both files into `deep-dives/human-machine-interface/assets/`. HTML, source Markdown and the generator already reference that location and were not changed.
+- Binary contents preserved exactly, verified by Git blob IDs:
+  - MP4: `6e773d80fc04335acd40f7e80581b06694ee86cc` (9,960,314 bytes).
+  - PNG: `0657c003bf0894f010361fa76a53408277c229e2` (4,141,505 bytes).
+- No Base64 or binary content was printed. Remote move reuses the existing Git blobs.
+- Static checks passed: homepage and six collection pages have resolvable local links/anchors and unique IDs. Pre-existing scientific pages are unchanged from main.
+- Local Chrome checks passed: homepage article navigation; next-article navigation; PNG loaded at natural dimensions 1843 × 2048 and rendered at approximately 760 px wide; native MP4 loaded at 1536 × 576 with duration 10 seconds, started via its control, and advanced to 7.84 seconds without a media error.
+- Desktop image rendering inspected. Mobile viewport and full-site visual checks remain outstanding.
+- Preview-only dist/ and .openai/ configuration are not part of this commit.
+- No merge into main or publication performed.
 
-1. Download and extract `portfolio_step1_checkpoint.zip` from your private ChatGPT files (download link supplied only in the conversation). Keep the extracted folder separate from the repository.
-2. Open a terminal in a directory where `portfolio-media-upload` does not already exist, then run:
+## Current state
+The two collections, six Human–Machine Interface articles and both media are connected on the working branch. The former missing-media blocker is resolved. The upload instructions from step 4 are superseded; no further upload is needed.
 
-   ```bash
-   git clone --branch portfolio/human-machine-interface --single-branch https://github.com/Robin-Mom/portfolio.git portfolio-media-upload
-   cd portfolio-media-upload
-   mkdir -p deep-dives/human-machine-interface/assets
-   ```
+## Next task
+Perform a focused mobile layout and navigation review, including the image, video controls and context-window tables. Fix any observed issue in a small coherent change; update this file with actual results and commit/push to `portfolio/human-machine-interface`. Do not merge or publish without explicit user approval.
 
-3. Using your file manager, copy only these two files from the extracted checkpoint into the clone's `deep-dives/human-machine-interface/assets/` folder, preserving their exact names:
-   - `deepdream_attention_post3.png`
-   - `deepdream_4a-4b-stacked.mp4`
-
-   Do not copy the checkpoint's old PROGRESS.md, HTML pages or Git metadata over this clone.
-
-4. Open the PNG and MP4 locally to check that both are readable. In the terminal, verify the target branch and file presence:
-
-   ```bash
-   git branch --show-current
-   ls -lh deep-dives/human-machine-interface/assets/
-   git status --short
-   ```
-
-   The branch must be `portfolio/human-machine-interface`. Stop if it differs, either file is missing, or unexpected changes appear.
-
-5. After those checks pass, record the upload preparation and commit only the two media files plus this progress note:
-
-   ```bash
-   cat >> PROGRESS.md <<'EOF'
-
-## Manual media upload checkpoint
-- Copied the original PNG and MP4 into the paths expected by the article pages.
-- Checked the branch, file presence and local image/video readability.
-- Website desktop/mobile rendering and embedded playback still need verification.
-- Next task: confirm both files on the remote branch, then run browser checks; no merge or publication authorized.
-EOF
-   git add -- deep-dives/human-machine-interface/assets/deepdream_attention_post3.png deep-dives/human-machine-interface/assets/deepdream_4a-4b-stacked.mp4 PROGRESS.md
-   git diff --cached --stat
-   git diff --cached --check
-   git commit -m "feat(portfolio): add original DeepDream image and video"
-   git push origin HEAD:refs/heads/portfolio/human-machine-interface
-   ```
-
-   Run the commit only after the checks pass. If authentication or push fails, retain the local clone and report the error without sharing credentials. Do not force-push.
-
-6. After a successful push, run `git log -1 --oneline` and send that commit reference in the conversation.
-
-## Resume after upload
-- Read the current remote PROGRESS.md and inspect the current branch head.
-- Confirm that both media files are present at the exact paths above.
-- Verify desktop/mobile navigation, PNG rendering and native video playback with a local preview.
-- Record actual results and any limitations, then commit and push on the same branch.
-- Preserve the twelve scientific articles. Do not merge into main or publish without explicit approval.
-
-## Recovery
-- Historical unpushed source-import commit: `21bdecc`; its Git push lacked authentication.
-- The checkpoint archive preserves the original media. Do not restore its older progress note over this one.
-- Remote source, six article pages, collection CSS, generation script and homepage integration are already present.
-- Main was observed at `cf0908f49c0134a6fae9f06d3092a5830b5bde77` before this documentation-only step.
+## Resume
+Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. The original upload paths at root assets/ have been replaced by the collection-scoped paths above.
