@@ -85,3 +85,20 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - JS syntax checks passed for annotation, viewer and fallback scripts.
 - Limitations: WebGL ribbon picking/rendering remains unverified in the cloud browser. Recheck embedded mobile height with annotation cards, reduced-motion behavior and overlapping-residue picking before publication.
 - No merge or publication. Next task: focused embedded/mobile regression, then user review.
+
+## Step 6 — Project overview, talk and award
+- Updated the project intro exactly as requested, removing "human".
+- Added the user's two-sentence aquaporin overview above the protein figure in Published regulations.
+- Added project-specific Talks and Prizes and awards sections, visible under either project tab. Corrected "2nd price" to "2nd prize"; used "A 40-minute talk".
+- Talk link expects assets/talks/RM_LBMC_web.pdf. User must upload this file manually; the link will be unresolved until then. Do not publish this step before upload verification.
+- Original supplied PDF: 280,846,323 bytes, 59 pages. Produced a separate web-optimized copy of approximately 6 MB, preserving all 59 pages and extractable text on every page. Rendered/contact-sheet inspection completed across all pages. Original untouched.
+- PDF checksum for the user upload: `76a44bea9d0ecae350ac769a9c9fd802591ec7f3615aae2f6ac34203f02e0bf1`.
+- Syntax and project-configuration checks passed for the new intro, overview, talk/PDF reference, award link and isolation from other project extras.
+- Prize description is user-provided. The supplied GDR Vertige destination could not be retrieved by the web lookup; independent award verification remains incomplete.
+- No merge or publication.
+
+## Manual PDF upload — next task
+1. Download RM_LBMC_web.pdf from the conversation.
+2. On GitHub, select branch portfolio/aquaporins-project and open assets/talks/.
+3. Choose Add file > Upload files, select RM_LBMC_web.pdf, and commit directly to this work branch. Keep the exact filename.
+4. Report completion; verify the uploaded checksum, Talks link and rendering before merging or publishing.
