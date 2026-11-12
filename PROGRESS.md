@@ -162,3 +162,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Pre-release comparison: branch ahead of main by two commits, no divergence. Changes limited to app.js, protein-annotations.js and PROGRESS.md.
 - Prior syntax and configuration checks passed for both edits.
 - Next: merge the copy refinement PR and verify successful GitHub Pages deployment and live text.
+
+## Copy refinements published — 2026-11-12
+- PR #3 merged with user authorization. Merge commit: f09ccaefdb42219c9fefa5e071a011657ae268ea.
+- GitHub Pages deployment completed successfully: https://github.com/Robin-Mom/portfolio/actions/runs/43272703488.
+- Live site: https://robin-mom.github.io/portfolio/
+- Verified live app.js and protein-annotations.js: old overview sections/caption absent; ORCID profile footer present; rewritten Methods and all three requested resource URLs present; legend begins Spinach SoPIP2;1.
+- This post-release documentation checkpoint is saved on the retained work branch. Main contains the released copy changes. No further task outstanding for this refinement.
