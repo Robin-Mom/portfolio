@@ -62,3 +62,16 @@ Base: `98d5d2cae72c6bbfc6f6c98b8bc0086adc04a03b` (published Human–Machine Inte
 
 ## Current next task
 Await user-provided residue names/numbers, explanations and article links for clickable annotations. Complete WebGL, 390 px and reduced-motion browser checks when an appropriate environment is available. No approval to merge/publish this redesign has been given.
+
+## Step 4 — User annotation specification saved
+- Captured all five user-supplied annotation groups, inclusive residue ranges and nine article URLs in assets/structures/1z98-annotations.json. Text preserved as supplied; not yet wired to the viewer.
+- Checked every specified endpoint and individual residue against chain A: names and numbers match (K64, V72, F81, N101, S115, G143, N160, V174, A182, A198, H210, T219, R225, V263, S274).
+- Shared selections overlap: ar/R residues belong to fungal/steroid groups, R225 also voltage; A182 belongs to loop-D and zinc selections. Next implementation must allow multiple topics per residue, e.g. topic selector plus highlighted region.
+- Bibliographic identity/topic checked via publisher pages and PubMed indexed abstracts. Several MDPI full-text fetches were rate limited and Wiley full text unavailable; no claim of exhaustive mechanistic/full-text validation.
+- SoPIP2;1 serves as structural reference. Human and fungal article results must be labeled as comparisons, not direct experimental claims for 1Z98.
+- Suggest separating fungal selectivity/diversity from regulation and identifying the cation review as a broader review; these are presentation suggestions, not changes to user text.
+- Next: implement topic selection/highlights and user-provided text/article cards, with multiple-topic handling. WebGL-specific picking and reduced-motion checks remain pending.
+
+### Legend decision confirmed by user
+Use SoPIP2;1 for illustration and broad localization of regulatory regions. Proposed viewer legend: "SoPIP2;1 (PDB 1Z98, chain A) is used as an illustrative structural reference to indicate the general location of regulatory regions across aquaporins. Linked studies may concern other aquaporin isoforms or organisms."
+This legend decision is approved; residue-level cross-isoform equivalence is not implied.

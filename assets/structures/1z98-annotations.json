@@ -1,0 +1,102 @@
+{
+  "structure": "1Z98",
+  "chain": "A",
+  "numbering": "Original PDB residue numbers; ranges inclusive",
+  "status": "User specification, not yet interactive",
+  "annotations": [
+    {
+      "id": "loop-d",
+      "label": "Loop D · phosphorylation",
+      "ranges": [
+        [
+          182,
+          198
+        ]
+      ],
+      "residues": [],
+      "text": "Intra-cellular gating by conformational tuning of loop D by phosphorylation.",
+      "links": [
+        "https://www.mdpi.com/1422-0067/24/18/13798"
+      ]
+    },
+    {
+      "id": "voltage",
+      "label": "Loop A + Arg225 · voltage gating",
+      "ranges": [
+        [
+          64,
+          72
+        ]
+      ],
+      "residues": [
+        225
+      ],
+      "text": "Voltage-gating through electrostatic control of ar/R constriction’s arginine side chain conformation.",
+      "links": [
+        "https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.13944"
+      ]
+    },
+    {
+      "id": "fungal",
+      "label": "ar/R constriction · fungal diversity",
+      "ranges": [],
+      "residues": [
+        225,
+        219,
+        81,
+        210
+      ],
+      "text": "Functional diversity of aquaporins in soil fungi.",
+      "links": [
+        "https://www.mdpi.com/2218-273X/11/2/338",
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193760"
+      ]
+    },
+    {
+      "id": "steroids",
+      "label": "ar/R constriction + loop C · steroids",
+      "ranges": [
+        [
+          143,
+          160
+        ]
+      ],
+      "residues": [
+        225,
+        219,
+        81,
+        210
+      ],
+      "text": "Aquaporins – steroids interactions",
+      "links": [
+        "https://www.mdpi.com/1422-0067/24/2/1499",
+        "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2023.1270092/full",
+        "https://www.mdpi.com/2218-273X/12/4/511"
+      ]
+    },
+    {
+      "id": "zinc",
+      "label": "Loop B + H4 cytoplasmic end + C-terminus · zinc",
+      "ranges": [
+        [
+          101,
+          115
+        ],
+        [
+          174,
+          182
+        ],
+        [
+          263,
+          274
+        ]
+      ],
+      "residues": [],
+      "text": "Aquaporins modulation by Zinc cations",
+      "links": [
+        "https://www.mdpi.com/1422-0067/25/4/2267",
+        "https://www.mdpi.com/1467-3045/46/8/470"
+      ]
+    }
+  ]
+}
