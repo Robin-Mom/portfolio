@@ -29,7 +29,7 @@ const projects = {
     kicker: '02 / RESEARCH · BIOPHYSICS', title: 'Aquaporins & regulation',
     intro: 'Research into the molecular mechanisms that influence water permeability in aquaporins.',
     tags: ['Molecular dynamics', 'Structural analysis', 'Bioinformatics'],
-    tabLabels: ['Published regulations', 'Methods'],
+    tabLabels: ['Published regulations', 'Methods', 'Reflections'],
     panels: [
       `<p>Aquaporins (AQP) are membrane channels dedicated to the facilitation of water fluxes in living cells. They integrate many different layers of regulation that I studied during the past ten years through molecular modeling approaches.</p><figure class="protein-figure" style="margin:0 0 24px"><iframe id="protein-frame" title="Interactive 3D structure of SoPIP2;1, chain A" src="protein-viewer.html" style="display:block;width:100%;height:560px;border:1px solid var(--line);border-radius:12px" allow="fullscreen"></iframe></figure>`,
       `<p>My research into the relationship between aquaporin structure and function relied primarily on molecular dynamics (MD) simulations. At the intersection of biochemistry, physics, mathematics and computer science, these simulations provide a powerful way to investigate molecular mechanisms at the atomic scale.</p>
@@ -38,7 +38,8 @@ const projects = {
 <p>The broader impact of computational molecular modeling was recognized by the 2013 Nobel Prize in Chemistry, awarded to Martin Karplus, Michael Levitt and Arieh Warshel for developing multiscale models of complex chemical systems. ${external('https://www.nobelprize.org/prizes/chemistry/2013/summary/', 'Read about the award')}.</p>
 <p>For this research, I used GROMACS, a widely used, open-source package for biomolecular simulations. Its extensive documentation makes it a useful starting point for learning and experimenting with MD. For trajectory analysis, the Python library MDAnalysis offers flexible tools for selecting atoms, processing trajectories and calculating structural descriptors and collective variables.</p>
 <h3>Resources for understanding and exploring molecular dynamics</h3>
-<ul><li>${external('https://manual.gromacs.org/current/user-guide/index.html', 'GROMACS user guide')}</li><li>${external('https://livecomsjournal.org/index.php/livecoms/about', 'LiveCoMS')}</li><li>${external('https://www.mdanalysis.org/', 'MDAnalysis')}</li></ul>`
+<ul><li>${external('https://manual.gromacs.org/current/user-guide/index.html', 'GROMACS user guide')}</li><li>${external('https://livecomsjournal.org/index.php/livecoms/about', 'LiveCoMS')}</li><li>${external('https://www.mdanalysis.org/', 'MDAnalysis')}</li></ul>`,
+      `<p>Studying aquaporin regulation across different organisms and scientific contexts—from plant responses to drought and soil fungal ecology to human inner ear physiology—has shaped how I think about biological systems and scientific research.</p><p>Beyond the molecular mechanisms themselves, these investigations prompted broader questions about how we build explanations, connect different scales of observation, and recognize shared principles across disciplines.</p><p>I explore some of these questions in <a href="#collection-title" data-close-project>Scientific Articles — Research Reflections</a>, a series of twelve short articles.</p>`
     ],
     extras: `<section aria-labelledby="aquaporins-talks"><h3 id="aquaporins-talks">Talks</h3><p>A 40-minute talk on <a href="assets/talks/RM_LBMC_web.pdf" target="_blank" rel="noopener noreferrer">Aquaporin structural archetype and its modulations (PDF)</a>, delivered at the Laboratoire de Biologie et de Modélisation de la Cellule (UMR 5239 – INSERM 1293), CNRS – ENS Lyon.</p></section><section aria-labelledby="aquaporins-awards"><h3 id="aquaporins-awards">Prizes and awards</h3><p>${external('https://gdrvertige.com/prix-annuel-annees-precedentes/', '2nd prize of GDR Vertige')} for research on aquaporin–steroid interactions in the context of inner ear physiopathology.</p></section>`,
     sourceLabel: 'RESEARCH PROFILE',
@@ -94,6 +95,7 @@ function openDialog(kicker, html) {
   $('.close-dialog').focus({preventScroll:true});
 }
 $('.close-dialog').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => { if (event.target.closest('a[data-close-project]')) dialog.close(); });
 dialog.addEventListener('click', e => {if(e.target === dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 dialog.addEventListener('close', () => {$('#protein-frame', dialog)?.remove();document.body.style.overflow = '';previousFocus?.focus({preventScroll:true});});
 function activateTab(index) {

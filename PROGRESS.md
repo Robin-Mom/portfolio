@@ -162,3 +162,12 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Pre-release comparison: branch ahead of main by two commits, no divergence. Changes limited to app.js, protein-annotations.js and PROGRESS.md.
 - Prior syntax and configuration checks passed for both edits.
 - Next: merge the copy refinement PR and verify successful GitHub Pages deployment and live text.
+
+## Reflections tab — 2026-11-12
+- Branch portfolio/aquaporins-reflections starts from published main f09ccaefdb42219c9fefa5e071a011657ae268ea.
+- Added a third Aquaporins project tab, Reflections, with the user's validated three-paragraph text.
+- The link targets the existing homepage collection-title anchor for Scientific Articles — Research Reflections (12 articles).
+- Added a scoped link handler to close the project modal before following that anchor, so the destination is accessible. Other project links keep their existing behavior.
+- Checks passed: JS syntax; runtime project configuration confirms three labels/panels, exact preservation of the original two panels, Talks/Awards and other project data. Link target exists in the homepage markup inspected when proposing this change.
+- No renderer, media or article content changes. No merge/publication authorized for this new tab.
+- Next task: browser check of tab navigation and modal-to-collection link, then review and publish upon explicit approval.
