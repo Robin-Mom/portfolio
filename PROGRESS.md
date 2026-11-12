@@ -189,3 +189,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - User additionally requested a generated image. Await the selected image attachment, then guide manual upload as a separate file and add it with a caption. No placeholder/broken image path added.
 - Checks passed: app.js syntax, two labels/panels, intro and repository URL, unchanged Aquaporins and Supply-Chain data.
 - No merge or publication. Next task: receive selected DeepDream image and arrange manual upload; then verify image rendering and the new tabs.
+
+## DeepDream project — step 2
+- Expanded Reflections with the user's personal motivation, rephrased fluently in English: aesthetics and questions at the intersection of deep learning, computer vision, neuroscience and information theory.
+- Added the invitation to explore the author's perspective; retained all three existing DeepDream article links.
+- Checks passed: app.js syntax, two DeepDream panels, new introduction and three article destinations.
+- No merge/publication. Image selection/upload remains pending as recorded in step 1.
