@@ -9,7 +9,7 @@ Base: `98d5d2cae72c6bbfc6f6c98b8bc0086adc04a03b` (published Human–Machine Inte
 - Next feature: rotating 3D protein with clickable annotations, short explanations and article links in the first tab.
 - Homepage animation remains undecided. Placement of scientific Deep Dives links and a possible Reflections tab remains undecided; do not add either yet.
 - Small independent checked commits; update this file and push each step.
-- No merge or publication authorized for this new redesign. Earlier approval concerned PR #1 only.
+- User explicitly authorized final checks, merge of PR #2 and publication of this redesign on 2026-11-12.
 - No Base64; user handles any necessary image/video upload manually.
 
 ## Step 1 — Tab structure
@@ -129,3 +129,11 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - PR summarizes the resulting experience, checks completed and remaining WebGL/touch/reduced-motion verification limits.
 - Verified creation response: PR is open, draft=true and merged=false. No merge or publication performed.
 - Next: owner review and completion of outstanding renderer/device checks. Explicit authorization is required before merging and publishing this redesign.
+
+## Step 10 — Final checks and publication approval
+- User explicitly authorized the final checks, merge and publication of PR #2.
+- Before release PR #2 was open, mergeable and based on reviewed head 693f9c0bb0f72e5dabf3588b2d59e5fc434a98c2.
+- Final JS syntax checks passed for app.js and all three viewer/annotation scripts.
+- Runtime controller checks using a simulated DOM/viewer passed with reduced-motion both false and true: correct initial rotation state, explicit play when reduced motion is enabled, stop for inactive panel, resume when active, stop when document is hidden.
+- These controller tests do not constitute a rendered WebGL or physical touch test. WebGL ribbon rendering/picking and real-device touch remain unverified in this environment. Canvas/browser/layout and PDF checks are recorded above.
+- Next: merge PR #2 and confirm GitHub Pages deployment plus live resources. Final publication outcome will be recorded on the retained work branch.
