@@ -1,91 +1,139 @@
-# Portfolio progress
+# Aquaporins project — progress
 
-Branch: `portfolio/human-machine-interface`
-Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
+Branch: `portfolio/aquaporins-project`
+Base: `98d5d2cae72c6bbfc6f6c98b8bc0086adc04a03b` (published Human–Machine Interface integration).
 
-## Constraints
-- Keep the existing scientific collection and its twelve articles unchanged.
-- Work in small checked commits and push each step to this branch.
-- Keep PNG/MP4 as separate files; no Base64.
-- Merge/publication explicitly authorized by the user on 2026-11-12 for PR #1.
+## Scope and constraints
+- Redesign only the Aquaporins & regulation project details.
+- Two tabs: Published regulations (default), Methods.
+- Next feature: rotating 3D protein with clickable annotations, short explanations and article links in the first tab.
+- Homepage animation remains undecided. Placement of scientific Deep Dives links and a possible Reflections tab remains undecided; do not add either yet.
+- Small independent checked commits; update this file and push each step.
+- User explicitly authorized final checks, merge of PR #2 and publication of this redesign on 2026-11-12.
+- No Base64; user handles any necessary image/video upload manually.
 
-## Step 1 — Source import complete
-- Imported the supplied README (six articles), PNG and MP4 into `deep-dives/human-machine-interface/`.
-- Source: user attachment `human_machine_interface_portfolio(6).zip`.
-- Verified SHA-256 equality for all three extracted files against the archive extraction.
-- Existing site files unchanged; no repository workflows found.
-- Problems: none. Browser validation not yet applicable.
+## Step 1 — Tab structure
+- Added project-specific tab labels, preserving Objective / Methods / Results defaults for other projects.
+- Aquaporins opens with Published regulations and retains Methods as its second tab.
+- Combined existing objective and results text in the default tab; preserved existing methods and publication links. No new scientific claims or 3D model added.
+- Checks passed: node --check app.js; git diff --check; runtime evaluation of the project configuration confirms two aquaporin panels in order and three-panel defaults for other projects.
+- Browser verification could not complete: preview connection failed, then browser navigation timed out after preview restart. Interactive tab/keyboard validation remains pending.
 
-## Step 2 — Static article pages complete
-- Generated six standalone English HTML pages from the imported README, with shared collection navigation, previous/next links and estimated reading times.
-- Added collection-scoped CSS for responsive image/video display, blockquotes and scrollable tables. Existing scientific pages, global CSS and homepage remain unchanged.
-- Preserved the original reference URLs. Video uses a native controls-enabled player with preload=metadata and an ordinary MP4 link; image uses its original PNG path and alt text.
-- Rebuild: `python3 scripts/build_human_machine.py` (requires Pandoc). The deployed site itself needs no build runtime.
-- Checks passed: six pages, one h1 per page, unique IDs, navigation targets and anchors, CSS paths, source reference destinations, one video, one image and two context-window tables; no Base64.
-- Known missing files on the remote branch: the original PNG and MP4. Both are retained in the step-1 checkpoint archive.
-- Browser layout and video playback were not tested; static HTML checks only.
+## New structure received
+- User supplied `1z98.pdb`, superseding 1J4N as the current candidate.
+- File header: spinach aquaporin SoPIP2;1, closed conformation, X-ray structure at 2.10 angstrom resolution.
+- ATOM records contain chains A and M, each with 251 represented residues.
+- Source: supplied PDB header and ATOM records; no binary content displayed.
+- Chain A is now stored as assets/structures/1z98-chain-a.pdb; the original full upload remains in the conversation.
+- Scientific mapping caution: the existing project text discusses zinc modulation of human AQP0/2/4/5. Do not map those results onto specific SoPIP2;1 residues without supporting evidence.
 
-## Step 3 — Second collection connected to the homepage
-- Added The Human - Machine Interface to Deep Dives with six article links, original titles and reading times matching the article pages.
-- Added navigation to both collections and updated the shared Deep Dives introduction.
-- Reused existing responsive collection styles. The scientific collection markup is preserved verbatim, including its original title.
-- Checks passed: all homepage local paths and anchors resolve, six new article links, unique IDs, balanced HTML, git diff --check. All pre-existing article files are byte-identical to main.
-- Verification limit: no browser layout or playback check in this step. The missing PNG/MP4 remain the only known media blocker from step 2.
+## Previous next step
+- Complete browser validation of the two tabs.
+- Integrate a single-chain 1Z98 viewer into Published regulations with slow rigid rotation, pause/resume and source attribution. This is structural visualization, not a molecular dynamics trajectory.
+- Establish the regulatory annotations and article links from verified sources or user-provided mappings before assigning clickable residue sites.
+- Decide the Deep Dives link placement later with the user.
 
-## Step 4 — Manual media handoff prepared (2026-11-12)
-- Remote branch inspected at `c6a0ea4883bc83baa38cdbf45c7da77ff32d8885`.
-- Verified: six collection HTML pages are present; neither required media file is present in the complete remote tree.
-- Verified exact references: DeepDream part 2 uses `assets/deepdream_4a-4b-stacked.mp4`; part 3 uses `assets/deepdream_attention_post3.png`.
-- No repository Actions workflows were present in the inspected tree.
-- This step changes only PROGRESS.md. No media upload, merge or publication was performed.
-- Earlier step-1 media verification concerned the local checkpoint, not the remote branch. Prior browser checks remain outstanding.
-- User will upload the media manually. Do not attempt binary transfer through the connector or use Base64.
+## Step 2 — Single-chain protein viewer integrated
+- Added an embedded viewer to Published regulations. Only protein chain A from the supplied 1Z98 structure is included: 1,878 atoms, 251 modeled residues, original numbers 24–274 and names retained.
+- The ATOM records are identical to the selected original records. Waters, ligands and chain M are omitted; chain A HELIX records retained.
+- Included a downloadable chain-A PDB and residue TSV for future user-specified annotations.
+- Preferred rendering: ribbon via 3Dmol.js 2.5.5, pinned CDN URL, loaded only when opening this project. API reference: https://3dmol.org/doc/GLViewer.html.
+- Added a C-alpha-coordinate Canvas fallback when the library or WebGL is unavailable. It is explicitly labeled as a backbone view.
+- Controls: slow rotation, pause/play, reset, left/right and zoom; drag rotates and pauses autoplay. Reduced-motion preference starts paused. Rotation stops when hidden, switching to Methods, or closing the project.
+- Kept the plant structure attribution separate from the existing human-aquaporin zinc research text. No residue links or functional annotations have been invented.
+- Validation passed: JS syntax for all three scripts; chain/atom/residue counts; exact source ATOM-record equality; residue TSV count; Canvas fallback runtime checks for drawing, rotation, reset, zoom and animation start/stop.
+- Browser observation: Published regulations opens by default; fallback structure is visible, pause toggles its aria-pressed state, and Methods opens. Return-tab interaction timed out in the browser tooling.
+- Verification limitation: cloud Chrome cannot create a WebGL context, so ribbon rendering is implemented but not visually verified. Full tab-return, close/reopen and mobile/reduced-motion browser regression checks remain pending.
+- No merge or publication. Source files and progress checkpoint are saved on the work branch.
 
-## Step 5 — Uploaded media connected (2026-11-12)
-- User uploaded both media files in commit `8b13194d6b10a065c0a0b105c7be97c68446d0e5`, under root `assets/`.
-- Fixed the resulting broken article paths by moving both files into `deep-dives/human-machine-interface/assets/`. HTML, source Markdown and the generator already reference that location and were not changed.
-- Binary contents preserved exactly, verified by Git blob IDs:
-  - MP4: `6e773d80fc04335acd40f7e80581b06694ee86cc` (9,960,314 bytes).
-  - PNG: `0657c003bf0894f010361fa76a53408277c229e2` (4,141,505 bytes).
-- No Base64 or binary content was printed. Remote move reuses the existing Git blobs.
-- Static checks passed: homepage and six collection pages have resolvable local links/anchors and unique IDs. Pre-existing scientific pages are unchanged from main.
-- Local Chrome checks passed: homepage article navigation; next-article navigation; PNG loaded at natural dimensions 1843 × 2048 and rendered at approximately 760 px wide; native MP4 loaded at 1536 × 576 with duration 10 seconds, started via its control, and advanced to 7.84 seconds without a media error.
-- Desktop image rendering inspected. Mobile viewport and full-site visual checks remain outstanding.
-- Preview-only dist/ and .openai/ configuration are not part of this commit.
-- No merge into main or publication performed.
+## Next task
+- Finish browser regression checks, including a WebGL-capable environment for ribbon rendering.
+- Await the user's residue names/numbers, explanations and article destinations before implementing clickable annotations. Use PDB chain A numbering 24–274; explicitly check any sequence numbering offset.
+- Homepage animation and placement of scientific Deep Dives links remain undecided.
 
-## Step 6 — Responsive layout checks complete (2026-11-12)
-- Tested source at `c30969e00a1e5b4b66d3a0633d3d34f19a22c7fa`. All 29 preview site/content/media files were verified byte-identical to the remote branch using Git blob hashes.
-- Used a temporary local Chrome iframe harness with measured content viewport widths of 320, 390 and 768 CSS pixels. This checks responsive CSS; it is not a physical mobile device or touch/browser emulation.
-- Checked homepage and all six Human–Machine Interface articles at all three widths (21 page/width combinations). Document scroll width equals viewport width in every case: no page-level horizontal overflow.
-- Image and video remain within their content containers: approximately 280, 350 and 704 px wide respectively.
-- At 320 px, the wider context-window table has a 316 px scrollable area inside a 280 px container. Keyboard focus and ArrowRight successfully moved scrollLeft to 36 px; horizontal scrolling is confined to the table. Both tables fit without horizontal scrolling at 390 and 768 px.
-- Narrow-layout homepage menu opens, the Deep Dives link navigates to its anchor, and the menu closes (aria-expanded returns to false). Homepage-to-context-window article navigation also passed.
-- Native video controls are visible at 320 px. Keyboard playback starts and currentTime advances past 3.69 seconds with no media error.
-- Inspected narrow-layout screenshots of collection links, the table and the video player.
-- No defect found in this focused check; no application or media changes were needed. This commit updates only PROGRESS.md.
-- Limitations: no real-device touch test, Safari/iOS test or exhaustive cross-browser review. Temporary preview harness/configuration/build output are excluded from the commit.
-- No merge or publication performed.
+## Step 3 — Viewer lifecycle and narrow-layout correction
+- Desktop browser checks passed: Methods opens; returning to Published regulations makes the viewer visible again; closing the dialog removes its iframe after the close event; reopening creates a visible viewer. Pause sets aria-pressed=true.
+- At a 320 px content viewport, the initial fixed-height iframe clipped its wrapped controls/source footer: content height 631 px versus a 558 px viewport.
+- Fixed by reporting the viewer body height through a same-origin postMessage. Parent accepts messages only from the current protein iframe and clamps finite heights to 400–1200 px.
+- Recheck at 320 px passed: inner content/viewport heights both 631 px, scroll width equals client width (252 px); no internal vertical scrolling or horizontal overflow. Project dialog also had equal client/scroll widths before correction.
+- app.js and protein-viewer.js syntax checks passed. Preview files only were used for the temporary responsive harness.
+- Browser automation timed out during the additional 390 px check; that width and reduced-motion browser checks remain unverified. WebGL ribbon rendering still needs a compatible browser; the Canvas fallback was exercised here.
+- No merge or publication. No changes to protein coordinates, residue numbering or annotations.
 
-## Step 7 — Draft review prepared (2026-11-12)
-- Opened [draft pull request #1](https://github.com/Robin-Mom/portfolio/pull/1) from `portfolio/human-machine-interface` into `main`.
-- Compared the branch with main: 13 changed paths limited to the new collection, its media, homepage integration, generation script and this progress note. Existing scientific article files remain unchanged.
-- Checked main's complete tree: no GitHub Actions workflow files. No workflow or publication was manually triggered.
-- PR description summarizes final behavior, completed validation and real-device/cross-browser limitations.
-- Verified PR is open, in draft status, and not merged. Main remains at `cf0908f49c0134a6fae9f06d3092a5830b5bde77`.
-- This step modifies only PROGRESS.md in the repository; prior application checks remain applicable.
+## Current next task
+Await user-provided residue names/numbers, explanations and article links for clickable annotations. Complete WebGL, 390 px and reduced-motion browser checks when an appropriate environment is available. No approval to merge/publish this redesign has been given.
 
-## Current state
-The two collections, six Human–Machine Interface articles and both media are connected on the working branch. Desktop media/navigation checks and focused responsive checks are complete. The scientific articles and original media remain unchanged.
+## Step 4 — User annotation specification saved
+- Captured all five user-supplied annotation groups, inclusive residue ranges and nine article URLs in assets/structures/1z98-annotations.json. Text preserved as supplied; not yet wired to the viewer.
+- Checked every specified endpoint and individual residue against chain A: names and numbers match (K64, V72, F81, N101, S115, G143, N160, V174, A182, A198, H210, T219, R225, V263, S274).
+- Shared selections overlap: ar/R residues belong to fungal/steroid groups, R225 also voltage; A182 belongs to loop-D and zinc selections. Next implementation must allow multiple topics per residue, e.g. topic selector plus highlighted region.
+- Bibliographic identity/topic checked via publisher pages and PubMed indexed abstracts. Several MDPI full-text fetches were rate limited and Wiley full text unavailable; no claim of exhaustive mechanistic/full-text validation.
+- SoPIP2;1 serves as structural reference. Human and fungal article results must be labeled as comparisons, not direct experimental claims for 1Z98.
+- Suggest separating fungal selectivity/diversity from regulation and identifying the cation review as a broader review; these are presentation suggestions, not changes to user text.
+- Next: implement topic selection/highlights and user-provided text/article cards, with multiple-topic handling. WebGL-specific picking and reduced-motion checks remain pending.
 
-## Step 8 — Merge and publication authorized (2026-11-12)
-- User explicitly approved merging PR #1 and publishing the portfolio.
-- Pre-merge check: PR #1 is open and mergeable; reviewed head was `a9c4b986324682c0d55158b31daf7e2e4a889e8a`.
-- Next: merge this branch into main, then verify the GitHub Pages deployment and live article/media endpoints.
-- Deployment outcome will be recorded in a follow-up checkpoint on the working branch.
+### Legend decision confirmed by user
+Use SoPIP2;1 for illustration and broad localization of regulatory regions. Proposed viewer legend: "SoPIP2;1 (PDB 1Z98, chain A) is used as an illustrative structural reference to indicate the general location of regulatory regions across aquaporins. Linked studies may concern other aquaporin isoforms or organisms."
+This legend decision is approved; residue-level cross-isoform equivalence is not implied.
 
-## Previous review checkpoint
-Review [draft pull request #1](https://github.com/Robin-Mom/portfolio/pull/1). The implementation and verification steps are complete. Any requested refinements should be handled in another small checked commit on `portfolio/human-machine-interface`. Authorization has now been granted for this integration; see step 8.
+## Step 5 — Interactive annotation themes
+- Added five accessible theme buttons, region highlighting and short article cards with all nine user-supplied URLs. User wording and inclusive PDB residue selections preserved.
+- Selecting a theme pauses rotation. Clicking a residue selects an associated theme; an existing matching selection is preserved for overlapping regions, and shared-topic text directs readers to the theme buttons.
+- Added highlighting/picking to the coordinate-based Canvas fallback and 3Dmol selection/click handlers for the ribbon renderer.
+- Added the approved illustrative SoPIP2;1 legend beneath the cards.
+- Browser checks passed in Canvas fallback: all five theme cards, all nine exact link destinations, selected-state/rotation pause, highlighted regions visible. Clicking the displayed structure at residue 188 opened the loop-D phosphorylation card.
+- JS syntax checks passed for annotation, viewer and fallback scripts.
+- Limitations: WebGL ribbon picking/rendering remains unverified in the cloud browser. Recheck embedded mobile height with annotation cards, reduced-motion behavior and overlapping-residue picking before publication.
+- No merge or publication. Next task: focused embedded/mobile regression, then user review.
 
-## Resume
-Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. Media live in `deep-dives/human-machine-interface/assets/`. No further upload is needed.
+## Step 6 — Project overview, talk and award
+- Updated the project intro exactly as requested, removing "human".
+- Added the user's two-sentence aquaporin overview above the protein figure in Published regulations.
+- Added project-specific Talks and Prizes and awards sections, visible under either project tab. Corrected "2nd price" to "2nd prize"; used "A 40-minute talk".
+- Talk link expects assets/talks/RM_LBMC_web.pdf. User must upload this file manually; the link will be unresolved until then. Do not publish this step before upload verification.
+- Original supplied PDF: 280,846,323 bytes, 59 pages. Produced a separate web-optimized copy of approximately 6 MB, preserving all 59 pages and extractable text on every page. Rendered/contact-sheet inspection completed across all pages. Original untouched.
+- PDF checksum for the user upload: `76a44bea9d0ecae350ac769a9c9fd802591ec7f3615aae2f6ac34203f02e0bf1`.
+- Syntax and project-configuration checks passed for the new intro, overview, talk/PDF reference, award link and isolation from other project extras.
+- Prize description is user-provided. The supplied GDR Vertige destination could not be retrieved by the web lookup; independent award verification remains incomplete.
+- No merge or publication.
+
+## Manual PDF upload — next task
+1. Download RM_LBMC_web.pdf from the conversation.
+2. On GitHub, select branch portfolio/aquaporins-project and open assets/talks/.
+3. Choose Add file > Upload files, select RM_LBMC_web.pdf, and commit directly to this work branch. Keep the exact filename.
+4. Report completion; verify the uploaded checksum, Talks link and rendering before merging or publishing.
+
+## Step 7 — Manual presentation upload verified
+- User uploaded assets/talks/RM_LBMC_web.pdf in commit `79feeb78158dfcfcca011f7b72d75646846191ba`.
+- Remote PDF is present at the exact Talks href: 6,034,012 bytes, 59 readable pages, extractable text on all pages.
+- Remote SHA-256: `09fd58d5df69bd8535ed2ab1aa41ab71f25d288fb1619123b2530ddf392da2a8`.
+- This differs from the pre-upload local checksum noted in step 6. Verified equivalence directly: extracted text identical on all 59 pages; page dimensions identical; every page rasterized identically at 0.5x resolution to the visually checked local web copy. The bytes are therefore not claimed identical.
+- app.js Talks href resolves to the uploaded repository file. Upload blocker is resolved; no more manual PDF upload is needed.
+- No merge or publication. This step updates the progress checkpoint only.
+- Next task: final embedded/mobile regression of the updated overview, five annotation cards and Talks/Awards sections, including WebGL verification if available; then draft PR and user review.
+
+## Step 8 — Final integrated layout check and annotation-height fix
+- Tested the full preview synchronized from remote commit 2fd8570, including the uploaded PDF.
+- Desktop: updated intro, Talks and Prizes and awards visible; steroid annotation card opens; Methods opens and keeps Talks visible.
+- Opened the exact Talks PDF destination in Chrome: native PDF viewer renders the title slide and reports 59 pages.
+- Narrow viewport tests found the annotation viewer height cap of 1200 px caused an internal vertical scrollbar when longer cards were open.
+- Raised the guarded finite-height cap to 2400 px. The existing same-origin/source checks are retained.
+- Rechecked at 320 px with zinc card: viewer content and viewport heights both 1333 px; client/scroll widths both 252 px. At 390 px with steroid card and all three article links: heights both 1215 px, widths both 322 px. Outer project dialog has no horizontal overflow (296 px at 320, 366 px at 390).
+- app.js syntax check passed. No protein coordinates, annotation text, sources, PDF, homepage animation or scientific article files changed in this step.
+- Limits: cloud Chrome exercises the Canvas fallback, not WebGL. Real-device touch, reduced-motion browser emulation and WebGL ribbon/picking remain unverified.
+- No merge or publication. Ready for a draft review PR, with these validation limits stated explicitly; user authorization is required before merging/publishing this redesign.
+
+## Step 9 — Draft review prepared
+- Opened [draft PR #2](https://github.com/Robin-Mom/portfolio/pull/2), from portfolio/aquaporins-project into main.
+- Compared branch with main: 12 changed paths, limited to project rendering, viewer assets, the presentation and progress documentation. Existing Deep Dives files and homepage HTML are unchanged.
+- PR summarizes the resulting experience, checks completed and remaining WebGL/touch/reduced-motion verification limits.
+- Verified creation response: PR is open, draft=true and merged=false. No merge or publication performed.
+- Next: owner review and completion of outstanding renderer/device checks. Explicit authorization is required before merging and publishing this redesign.
+
+## Step 10 — Final checks and publication approval
+- User explicitly authorized the final checks, merge and publication of PR #2.
+- Before release PR #2 was open, mergeable and based on reviewed head 693f9c0bb0f72e5dabf3588b2d59e5fc434a98c2.
+- Final JS syntax checks passed for app.js and all three viewer/annotation scripts.
+- Runtime controller checks using a simulated DOM/viewer passed with reduced-motion both false and true: correct initial rotation state, explicit play when reduced motion is enabled, stop for inactive panel, resume when active, stop when document is hidden.
+- These controller tests do not constitute a rendered WebGL or physical touch test. WebGL ribbon rendering/picking and real-device touch remain unverified in this environment. Canvas/browser/layout and PDF checks are recorded above.
+- Next: merge PR #2 and confirm GitHub Pages deployment plus live resources. Final publication outcome will be recorded on the retained work branch.
