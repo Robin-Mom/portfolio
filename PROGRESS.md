@@ -146,3 +146,13 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Replaced this project's Sources & Documentation footer with Research profile and the user-supplied ORCID link: https://orcid.org/0000-0002-0141-2651.
 - Static/runtime configuration checks passed: JS syntax, removed text absent, iframe retained, Talks/Awards unchanged, other project configurations unchanged, correct ORCID and legend wording. No browser rendering checks needed for this text-only refinement.
 - No merge/publication authorized for this new refinement. Next task: review and merge/publish upon explicit approval.
+
+## Methods rewrite — 2026-11-12
+- Replaced the old Aquaporins Methods panel with a fluent English version of the user draft, retaining its explanation of MD, Born–Oppenheimer separation, force fields, Newtonian integration, GROMACS and MDAnalysis.
+- Corrected the Nobel claim: 2013 recognized development of multiscale models for complex chemical systems, not the invention of MD. Added the official Nobel reference.
+- Qualified reliability through force-field choice, simulation setup and sampling; avoided claiming arbitrary collective variables are automatically available.
+- Included the three requested resource links, with in silico in italics.
+- Sources checked: GROMACS reference manual introduction and MD algorithms; official 2013 Nobel scientific background/summary search record; MDAnalysis official site; LiveCoMS About page.
+- Checks passed: app.js syntax and runtime project configuration; old Methods text absent, new panel present, resource destinations and emphasis correct.
+- This changes only Aquaporins Methods and this progress note. The earlier copy refinement remains on the same work branch. No merge or publication.
+- Next task: review the two pending copy edits together before merging/publishing with explicit approval.
