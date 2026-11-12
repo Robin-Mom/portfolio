@@ -76,7 +76,7 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - This step modifies only PROGRESS.md in the repository; prior application checks remain applicable.
 
 ## Current state
-The two collections, six Human–Machine Interface articles and both media are connected on the working branch. Desktop media/navigation checks and focused responsive checks are complete. The scientific articles and original media remain unchanged.
+The integration is merged into main and published on GitHub Pages. Desktop media/navigation checks, responsive checks and live HTTP/media-integrity checks passed. The scientific articles and original media remain unchanged.
 
 ## Step 8 — Merge and publication authorized (2026-11-12)
 - User explicitly approved merging PR #1 and publishing the portfolio.
@@ -89,3 +89,12 @@ Review [draft pull request #1](https://github.com/Robin-Mom/portfolio/pull/1). T
 
 ## Resume
 Read this file and the current branch head before editing. Preserve the twelve scientific articles and the original media bytes. Media live in `deep-dives/human-machine-interface/assets/`. No further upload is needed.
+
+## Step 9 — Merge and publication complete (2026-11-12)
+- PR #1 merged with explicit user approval. Merge commit: `98d5d2cae72c6bbfc6f6c98b8bc0086adc04a03b`.
+- [GitHub Pages deployment](https://github.com/Robin-Mom/portfolio/actions/runs/43193148332) completed successfully for that merge commit.
+- Live site: https://robin-mom.github.io/portfolio/
+- Live HTTP checks passed (200): homepage, context-window article, DeepDream parts 2 and 3, PNG and MP4. Homepage contains the new collection link.
+- Live PNG served as image/png (4,141,505 bytes) and MP4 as video/mp4 (9,960,314 bytes). Their Git blob hashes match the original uploaded files exactly.
+- This completion checkpoint is committed on the retained working branch after the merge, so it does not trigger an additional production deployment. Main contains the approval checkpoint and the complete site.
+- No outstanding implementation task. Future edits should start from current main, with this branch's final progress checkpoint available for context.
