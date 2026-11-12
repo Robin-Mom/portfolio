@@ -102,3 +102,12 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 2. On GitHub, select branch portfolio/aquaporins-project and open assets/talks/.
 3. Choose Add file > Upload files, select RM_LBMC_web.pdf, and commit directly to this work branch. Keep the exact filename.
 4. Report completion; verify the uploaded checksum, Talks link and rendering before merging or publishing.
+
+## Step 7 — Manual presentation upload verified
+- User uploaded assets/talks/RM_LBMC_web.pdf in commit `79feeb78158dfcfcca011f7b72d75646846191ba`.
+- Remote PDF is present at the exact Talks href: 6,034,012 bytes, 59 readable pages, extractable text on all pages.
+- Remote SHA-256: `09fd58d5df69bd8535ed2ab1aa41ab71f25d288fb1619123b2530ddf392da2a8`.
+- This differs from the pre-upload local checksum noted in step 6. Verified equivalence directly: extracted text identical on all 59 pages; page dimensions identical; every page rasterized identically at 0.5x resolution to the visually checked local web copy. The bytes are therefore not claimed identical.
+- app.js Talks href resolves to the uploaded repository file. Upload blocker is resolved; no more manual PDF upload is needed.
+- No merge or publication. This step updates the progress checkpoint only.
+- Next task: final embedded/mobile regression of the updated overview, five annotation cards and Talks/Awards sections, including WebGL verification if available; then draft PR and user review.
