@@ -52,7 +52,7 @@ window.setupProteinAnnotations = async function(viewer, backbone, pause) {
     viewer.setClickable({chain:'A',resi:all},true,atom=>pick(atom.resi));
   }
   const legend=document.createElement('p');legend.className='structural-legend';
-  legend.textContent='SoPIP2;1 (PDB 1Z98, chain A) is used as an illustrative structural reference to indicate the general location of regulatory regions across aquaporins. Linked studies may concern other aquaporin isoforms or organisms.';
+  legend.textContent='Spinach SoPIP2;1 (PDB 1Z98, chain A) is used as an illustrative structural reference to indicate the general location of regulatory regions across aquaporins. Linked studies may concern other aquaporin isoforms or organisms.';
   region.replaceChildren(heading,help,buttons,card,legend);
   // Leave rotation active at first load; a user's choice pauses it.
   card.textContent='Select a theme to highlight its residues and read the associated articles.';

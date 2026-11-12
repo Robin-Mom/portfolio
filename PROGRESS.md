@@ -137,3 +137,28 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Runtime controller checks using a simulated DOM/viewer passed with reduced-motion both false and true: correct initial rotation state, explicit play when reduced motion is enabled, stop for inactive panel, resume when active, stop when document is hidden.
 - These controller tests do not constitute a rendered WebGL or physical touch test. WebGL ribbon rendering/picking and real-device touch remain unverified in this environment. Canvas/browser/layout and PDF checks are recorded above.
 - Next: merge PR #2 and confirm GitHub Pages deployment plus live resources. Final publication outcome will be recorded on the retained work branch.
+
+## Copy refinement — 2026-11-12
+- Working branch: portfolio/aquaporins-copy, based on published main commit 57989b3bcacd7d5d59c652aebec76e4518e8d8df.
+- Removed the full "A question of regulation" and "Two types of modulation" sections from Published regulations, including their accompanying old zinc-study note.
+- Removed the small Structural reference figcaption below the iframe.
+- Updated the viewer legend to begin "Spinach SoPIP2;1 (PDB 1Z98, ...)".
+- Replaced this project's Sources & Documentation footer with Research profile and the user-supplied ORCID link: https://orcid.org/0000-0002-0141-2651.
+- Static/runtime configuration checks passed: JS syntax, removed text absent, iframe retained, Talks/Awards unchanged, other project configurations unchanged, correct ORCID and legend wording. No browser rendering checks needed for this text-only refinement.
+- No merge/publication authorized for this new refinement. Next task: review and merge/publish upon explicit approval.
+
+## Methods rewrite — 2026-11-12
+- Replaced the old Aquaporins Methods panel with a fluent English version of the user draft, retaining its explanation of MD, Born–Oppenheimer separation, force fields, Newtonian integration, GROMACS and MDAnalysis.
+- Corrected the Nobel claim: 2013 recognized development of multiscale models for complex chemical systems, not the invention of MD. Added the official Nobel reference.
+- Qualified reliability through force-field choice, simulation setup and sampling; avoided claiming arbitrary collective variables are automatically available.
+- Included the three requested resource links, with in silico in italics.
+- Sources checked: GROMACS reference manual introduction and MD algorithms; official 2013 Nobel scientific background/summary search record; MDAnalysis official site; LiveCoMS About page.
+- Checks passed: app.js syntax and runtime project configuration; old Methods text absent, new panel present, resource destinations and emphasis correct.
+- This changes only Aquaporins Methods and this progress note. The earlier copy refinement remains on the same work branch. No merge or publication.
+- Next task: review the two pending copy edits together before merging/publishing with explicit approval.
+
+## Copy release authorized — 2026-11-12
+- User explicitly requested publication of the pending overview/footer/legend and Methods refinements.
+- Pre-release comparison: branch ahead of main by two commits, no divergence. Changes limited to app.js, protein-annotations.js and PROGRESS.md.
+- Prior syntax and configuration checks passed for both edits.
+- Next: merge the copy refinement PR and verify successful GitHub Pages deployment and live text.
