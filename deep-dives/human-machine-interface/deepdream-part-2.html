@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1117">
+<meta name="author" content="Robin Mom">
+<meta name="description" content="Diving into the Depths of Dreams — Part 2/3 — a reflection by Robin Mom in The Human - Machine Interface.">
+<title>Diving into the Depths of Dreams — Part 2/3 | Robin Mom — Deep Dives</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="articles.css">
+</head>
+<body class="reading-page human-machine-page">
+<a class="skip" href="#article">Skip to article</a>
+<header class="site-header reading-header"><a href="../../index.html#home" class="brand" aria-label="Robin Mom, home"><span class="monogram">rm<span>·</span></span><span>Robin Mom<small>SCIENCE &amp; AI ENGINEERING</small></span></a><a class="reading-back" href="../../index.html#deep-dives">← Deep Dives</a></header>
+<main id="article" class="reading-wrap">
+<article aria-labelledby="article-title">
+<header class="article-heading"><p class="eyebrow">THE HUMAN - MACHINE INTERFACE / 04</p><h1 id="article-title">Diving into the Depths of Dreams — Part 2/3</h1><p class="article-byline">By Robin Mom · 5 min read</p></header>
+<div class="article-body">
+<h3 id="the-symbols-of-connectionism">The Symbols of Connectionism</h3>
+<p><strong>What if two seemingly opposing approaches to artificial intelligence were actually exploring different aspects of the same fundamental question?</strong></p>
+<p>The history of artificial intelligence is often presented as a long-standing tension between two major approaches: connectionism and symbolic AI.</p>
+<p>On one side, we find the connectionist tradition, whose origins can be traced back to early attempts to mathematically describe the activity of biological neural networks.</p>
+<p>One particularly influential milestone was the 1943 paper by Warren McCulloch and Walter Pitts, in which they introduced a mathematical model of artificial neurons and demonstrated how networks of these simplified units could implement logical operations.</p>
+<p>This work helped establish a conceptual foundation for what would eventually become artificial neural networks.</p>
+<p>From a connectionist perspective, information processing emerges from the collective activity of interconnected computational units.</p>
+<p>Rather than explicitly defining concepts and the logical rules governing their relationships, the system learns patterns through adjustments to the connections between these units.</p>
+<p>Information, in this framework, is represented through distributed patterns of activity rather than necessarily through predefined symbols.</p>
+<p>This perspective resonates with information theory, where information can be studied mathematically in terms of uncertainty and statistical structure without requiring an explicit interpretation of its semantic meaning.</p>
+<p>On the other side of the mirror lies the symbolic tradition.</p>
+<p>The 1956 Dartmouth workshop, widely regarded as a founding event of artificial intelligence as a scientific discipline, brought together researchers interested in understanding how machines might reproduce aspects of human reasoning and intelligence.</p>
+<p>Symbolic AI subsequently became one of the dominant approaches to this problem.</p>
+<p>Its central idea was that intelligence could be modeled through the manipulation of explicit representations: concepts, symbols, and rules describing their relationships.</p>
+<p>Rather than learning these representations directly from raw data, symbolic systems often relied on human experts to define the knowledge required for a particular task.</p>
+<p>This approach eventually produced expert systems capable of solving specialized problems through sophisticated rule-based reasoning.</p>
+<p>However, these systems also faced significant limitations.</p>
+<p>As the complexity of real-world situations increased, defining and maintaining all the necessary rules became increasingly difficult. Their ability to generalize beyond explicitly represented knowledge was often limited.</p>
+<p>Meanwhile, connectionist approaches continued to evolve.</p>
+<p>After decades of theoretical advances and technological challenges, artificial neural networks progressively developed into the deep learning methods we know today.</p>
+<p>A particularly important turning point occurred in 2012, when AlexNet demonstrated the remarkable effectiveness of a deep convolutional neural network trained using GPUs on the ImageNet image classification benchmark.</p>
+<p>This achievement helped accelerate the adoption of deep learning across computer vision and, eventually, many other fields.</p>
+<p>The introduction of the Transformer architecture in 2017 later provided another major breakthrough, particularly in natural language processing, contributing to the development of the powerful generative models that have become so familiar today.</p>
+<p>But this brings me back to the question that interests me most.</p>
+<p><strong>Are symbolic AI and connectionism really as fundamentally opposed as they first appear?</strong></p>
+<p>I am inclined to think that the distinction becomes less obvious when we examine how modern deep neural networks represent information.</p>
+<p>In traditional symbolic systems, the input data and the representations used for reasoning are often explicitly separated. Symbols are defined within a structured computational framework, and their relationships are manipulated through formal rules.</p>
+<p>In deep learning, representations are generally learned directly from data.</p>
+<p>During training, the network adjusts its parameters to capture statistical regularities, correlations, and increasingly abstract features.</p>
+<p>A convolutional neural network trained on images, for example, may progressively learn to respond to simple edges and textures, then to combinations of shapes, and eventually to more complex visual patterns associated with objects.</p>
+<p>These learned features are not necessarily symbols in the strict sense used by classical symbolic AI.</p>
+<p>They are distributed representations, encoded through the network's parameters and patterns of activation.</p>
+<p>Nevertheless, <strong>they can play a role that resembles the emergence of an internal vocabulary of visual forms.</strong></p>
+<p>Perhaps this is where the two approaches begin to converge: not because neural networks manipulate symbols in exactly the same way as classical symbolic systems, but because they can learn structured representations that support increasingly abstract forms of information processing.</p>
+<p>And recently, while experimenting with DeepDream, I found a particularly fascinating way to explore this idea.</p>
+<p>The principle behind DeepDream is surprisingly simple.</p>
+<p>We begin with a neural network that has already been trained to recognize visual patterns.</p>
+<p>Instead of modifying the network's weights to improve its predictions, we keep those weights fixed and iteratively modify the input image.</p>
+<p>At each iteration, we calculate the gradient of an objective based on the activations of a selected network layer with respect to the input pixels.</p>
+<p>By following this gradient, we modify the image in a way that increases the activity of the targeted neurons.</p>
+<p>The process is repeated, progressively amplifying the visual patterns to which the network is sensitive.</p>
+<p><strong>In a sense, DeepDream allows us to make the learned visual representations of a connectionist system visible.</strong></p>
+<p>The accompanying video illustrates this process using GoogLeNet, a convolutional neural network trained for image classification.</p>
+<p>Animal-like features progressively emerge and become increasingly prominent as the algorithm reinforces patterns recognized by the network.</p>
+<p>The recurring appearance of dogs and other creatures is not entirely surprising: the network's training data contained many animal categories, including numerous dog breeds.</p>
+<p>What fascinates me is that these images are not generated from explicitly programmed representations of dogs, birds, or other objects.</p>
+<p>They emerge through the amplification of activation patterns within a trained network.</p>
+<p>They are visual manifestations of the statistical regularities that the model has learned.</p>
+<p>And this leads me to a question that reaches beyond the distinction between symbolic and connectionist AI.</p>
+<p><strong>At what point does a learned pattern become something we recognize as a form? And at what point does that form acquire meaning?</strong></p>
+<p>Perhaps the most interesting part of DeepDream is not what it reveals about artificial neural networks alone, but what happens when these images are presented to another neural network: our own brain.</p>
+<figure><video controls preload="metadata" playsinline aria-label="DeepDream experiment: animal-like patterns emerging in GoogLeNet"><source src="assets/deepdream_4a-4b-stacked.mp4" type="video/mp4"><p>Your browser does not support embedded video. Use the video link below.</p></video><figcaption>DeepDream experiment — original video by Robin Mom.</figcaption></figure>
+<p><strong>Associated video:</strong> <a href="assets/deepdream_4a-4b-stacked.mp4">DeepDream experiment</a>.</p>
+<p><strong>References:</strong> <a href="https://doi.org/10.1007/BF02478259">McCulloch &amp; Pitts (1943)</a>; <a href="https://doi.org/10.1609/aimag.v27i4.1904">Dartmouth AI proposal</a>; <a href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">AlexNet (2012)</a>; <a href="https://research.google/pubs/attention-is-all-you-need/">Attention Is All You Need (2017)</a>.</p>
+</div>
+</article>
+<nav class="article-pagination" aria-label="Adjacent articles"><a href="deepdream-part-1.html"><small>Previous article</small>Diving into the Depths of Dreams — Part 1/3</a><a href="deepdream-part-3.html"><small>Next article</small>Diving into the Depths of Dreams — Part 3/3</a></nav>
+<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">SIX REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol><li><a href="artificial-intelligence-and-frogs.html">Artificial Intelligence and Frogs</a></li><li><a href="art-or-science.html">Art or Science? An Age-Old Question Revisited by AI</a></li><li><a href="deepdream-part-1.html">Diving into the Depths of Dreams — Part 1/3</a></li><li><span aria-current="page">Diving into the Depths of Dreams — Part 2/3</span></li><li><a href="deepdream-part-3.html">Diving into the Depths of Dreams — Part 3/3</a></li><li><a href="context-window.html">The Context Window: The Hidden Parameter You Shouldn&#x27;t Overlook</a></li></ol></nav>
+<div class="article-end"><a class="text-link" href="../../index.html#deep-dives">← All Deep Dives</a><a class="text-link" href="#article">Back to top ↑</a></div>
+</main>
+<footer class="reading-wrap reading-footer"><p>© 2026 · Robin Mom</p><a href="../../index.html#projects">Explore my projects ↗</a></footer>
+</body>
+</html>

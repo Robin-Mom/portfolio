@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1117">
+<meta name="author" content="Robin Mom">
+<meta name="description" content="Diving into the Depths of Dreams — Part 1/3 — a reflection by Robin Mom in The Human - Machine Interface.">
+<title>Diving into the Depths of Dreams — Part 1/3 | Robin Mom — Deep Dives</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="articles.css">
+</head>
+<body class="reading-page human-machine-page">
+<a class="skip" href="#article">Skip to article</a>
+<header class="site-header reading-header"><a href="../../index.html#home" class="brand" aria-label="Robin Mom, home"><span class="monogram">rm<span>·</span></span><span>Robin Mom<small>SCIENCE &amp; AI ENGINEERING</small></span></a><a class="reading-back" href="../../index.html#deep-dives">← Deep Dives</a></header>
+<main id="article" class="reading-wrap">
+<article aria-labelledby="article-title">
+<header class="article-heading"><p class="eyebrow">THE HUMAN - MACHINE INTERFACE / 03</p><h1 id="article-title">Diving into the Depths of Dreams — Part 1/3</h1><p class="article-byline">By Robin Mom · 3 min read</p></header>
+<div class="article-body">
+<h3 id="before-diving-in-you-need-a-vessel">Before Diving In, You Need a Vessel</h3>
+<p><strong>What if we could explore the inner representations of a neural network and turn what it has learned into a visual experience?</strong></p>
+<p>Recently, I decided to experiment with DeepDream, a fascinating image-generation technique developed by Alexander Mordvintsev, Christopher Olah, and Mike Tyka at Google in 2015.</p>
+<p>I don't know about you, but I find both the resulting images and the underlying concepts absolutely fascinating.</p>
+<p>DeepDream allows us to explore the visual patterns learned by a deep neural network, transforming ordinary photographs into surreal, often psychedelic compositions filled with strange creatures, intricate textures, and unexpected shapes.</p>
+<p>But before I could dive into these artificial dreams, I encountered a rather practical problem.</p>
+<p>The original DeepDream notebook relies on Caffe, an early deep learning framework that is no longer widely used. Getting this code to run on a modern computer therefore requires reconstructing a compatible software environment, including several outdated dependencies.</p>
+<p>Fortunately, Docker exists.</p>
+<p>Rather than trying to install these old libraries directly on my operating system, I decided to rebuild the environment inside a container.</p>
+<p>The process was gradual.</p>
+<p>I first focused on compiling Caffe and its dependencies into a working CPU-based environment. Once this initial implementation was functional, I moved on to GPU support, which introduced additional compatibility challenges involving CUDA and the framework's older compilation requirements.</p>
+<p>I also integrated PyCaffe, the Python interface to Caffe, along with JupyterLab, allowing me to experiment interactively with the original notebook.</p>
+<p>The result is a containerized environment in which I can launch the historical DeepDream implementation and explore its behavior on my own images.</p>
+<p>Beyond the technical challenges, this project also gave me an opportunity to practice software version control with Git and progressively organize a reproducible development environment.</p>
+<p>You can explore the project on my GitHub:</p>
+<p><a href="https://github.com/Robin-Mom/projet_Sphinx_deepdream/tree/main"><strong>DeepDream — Docker and Caffe Implementation</strong></a></p>
+<p>But what did I learn from this experience?</p>
+<p>First, containerization offers a powerful way to preserve and reuse older software environments.</p>
+<p>By isolating the application and its dependencies from the host operating system, Docker makes it possible to run software that would otherwise be difficult to maintain on modern systems.</p>
+<p>Of course, reproducibility is not automatic. It still depends on precisely specifying compatible dependency versions, preserving access to software packages, and accounting for hardware-related constraints, particularly when GPUs are involved.</p>
+<p>Second, and perhaps more importantly, <strong>complex technical projects are often best approached by starting with the simplest working implementation.</strong></p>
+<p>This is the principle behind a <em>Minimum Viable Product</em> (MVP): establish a functional foundation before progressively introducing additional complexity.</p>
+<p>In my case, that meant getting Caffe to run on the CPU before attempting GPU acceleration.</p>
+<p>It might seem like a small methodological detail, but it made a substantial difference.</p>
+<p>When working with legacy software, debugging several layers of incompatibility simultaneously can quickly become overwhelming. Building the environment incrementally makes it easier to identify problems and understand the role of each dependency.</p>
+<p>The most demanding part was not writing new code, but finding the right combination of old libraries, compilers, and system components that could still work together.</p>
+<p>And this brought me to a broader realization.</p>
+<p><strong>Before exploring something complex, we first need to build the tools that make the exploration possible.</strong></p>
+<p>Sometimes, the journey begins not with a scientific discovery, but with a working container.</p>
+<p>Now that the vessel is ready, we can finally begin our descent into the depths of the network.</p>
+<p><strong>References:</strong> <a href="https://github.com/google/deepdream">Google DeepDream original notebook</a>; <a href="https://research.google/blog/deepdream-a-code-example-for-visualizing-neural-networks/">Google Research, DeepDream: A Code Example for Visualizing Neural Networks (2015)</a>.</p>
+</div>
+</article>
+<nav class="article-pagination" aria-label="Adjacent articles"><a href="art-or-science.html"><small>Previous article</small>Art or Science? An Age-Old Question Revisited by AI</a><a href="deepdream-part-2.html"><small>Next article</small>Diving into the Depths of Dreams — Part 2/3</a></nav>
+<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">SIX REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol><li><a href="artificial-intelligence-and-frogs.html">Artificial Intelligence and Frogs</a></li><li><a href="art-or-science.html">Art or Science? An Age-Old Question Revisited by AI</a></li><li><span aria-current="page">Diving into the Depths of Dreams — Part 1/3</span></li><li><a href="deepdream-part-2.html">Diving into the Depths of Dreams — Part 2/3</a></li><li><a href="deepdream-part-3.html">Diving into the Depths of Dreams — Part 3/3</a></li><li><a href="context-window.html">The Context Window: The Hidden Parameter You Shouldn&#x27;t Overlook</a></li></ol></nav>
+<div class="article-end"><a class="text-link" href="../../index.html#deep-dives">← All Deep Dives</a><a class="text-link" href="#article">Back to top ↑</a></div>
+</main>
+<footer class="reading-wrap reading-footer"><p>© 2026 · Robin Mom</p><a href="../../index.html#projects">Explore my projects ↗</a></footer>
+</body>
+</html>
