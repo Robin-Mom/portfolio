@@ -32,21 +32,74 @@ Base: `cf0908f49c0134a6fae9f06d3092a5830b5bde77`
 - Checks passed: all homepage local paths and anchors resolve, six new article links, unique IDs, balanced HTML, git diff --check. All pre-existing article files are byte-identical to main.
 - Verification limit: no browser layout or playback check in this step. The missing PNG/MP4 remain the only known media blocker from step 2.
 
-## Next task
-Upload these two original binary files from the saved checkpoint to the same branch using authenticated Git:
-- deep-dives/human-machine-interface/assets/deepdream_attention_post3.png
-- deep-dives/human-machine-interface/assets/deepdream_4a-4b-stacked.mp4
-Then check desktop/mobile navigation, image rendering and native video playback in a browser; update this progress note and commit/push. Keep main unchanged and do not publish without approval.
+## Step 4 — Manual media handoff prepared (2026-11-12)
+- Remote branch inspected at `c6a0ea4883bc83baa38cdbf45c7da77ff32d8885`.
+- Verified: six collection HTML pages are present; neither required media file is present in the complete remote tree.
+- Verified exact references: DeepDream part 2 uses `assets/deepdream_4a-4b-stacked.mp4`; part 3 uses `assets/deepdream_attention_post3.png`.
+- No repository Actions workflows were present in the inspected tree.
+- This step changes only PROGRESS.md. No media upload, merge or publication was performed.
+- Earlier step-1 media verification concerned the local checkpoint, not the remote branch. Prior browser checks remain outstanding.
+- User will upload the media manually. Do not attempt binary transfer through the connector or use Base64.
 
-## Blocker and recovery
-- Local source-import commit: `21bdecc` (not pushed).
-- `git push` failed: could not read Username for https://github.com.
-- GitHub connector supports text commits, but no direct binary file upload; do not work around this with Base64.
-- A remote branch has been created from the base commit. A separate checkpoint commit will record this blocker there.
-- Source import is saved in `portfolio_step1_checkpoint.zip`; it contains this progress note and `deep-dives/human-machine-interface/` with all original files.
-- To resume: check out the remote branch, extract the checkpoint ZIP into the repository, compare the source files with the supplied archive, commit the imported files and push from an authenticated Git environment. Preserve the current remote PROGRESS.md rather than replacing it with the older checkpoint copy. Article pages and homepage integration are already complete; upload only the missing media, verify and update progress.
-- No site content has been changed on main; nothing was published.
+## Next task — User uploads the two original files
+Follow these steps on your own computer. Use a fresh clone so existing local work is not affected.
 
-Checkpoint archive: https://chatgpt.com/library?file_id=libfile_469bf0f959d4819192f2bb09d7ae572c&account_id=personal
+1. Download and extract `portfolio_step1_checkpoint.zip` from your private ChatGPT files (download link supplied only in the conversation). Keep the extracted folder separate from the repository.
+2. Open a terminal in a directory where `portfolio-media-upload` does not already exist, then run:
 
-Remote branch now contains the Markdown source, six HTML pages, collection CSS, generation script and this progress note. The PNG and MP4 still need uploading. The home page now links to both collections (12 scientific articles and 6 human-machine reflections).
+   ```bash
+   git clone --branch portfolio/human-machine-interface --single-branch https://github.com/Robin-Mom/portfolio.git portfolio-media-upload
+   cd portfolio-media-upload
+   mkdir -p deep-dives/human-machine-interface/assets
+   ```
+
+3. Using your file manager, copy only these two files from the extracted checkpoint into the clone's `deep-dives/human-machine-interface/assets/` folder, preserving their exact names:
+   - `deepdream_attention_post3.png`
+   - `deepdream_4a-4b-stacked.mp4`
+
+   Do not copy the checkpoint's old PROGRESS.md, HTML pages or Git metadata over this clone.
+
+4. Open the PNG and MP4 locally to check that both are readable. In the terminal, verify the target branch and file presence:
+
+   ```bash
+   git branch --show-current
+   ls -lh deep-dives/human-machine-interface/assets/
+   git status --short
+   ```
+
+   The branch must be `portfolio/human-machine-interface`. Stop if it differs, either file is missing, or unexpected changes appear.
+
+5. After those checks pass, record the upload preparation and commit only the two media files plus this progress note:
+
+   ```bash
+   cat >> PROGRESS.md <<'EOF'
+
+## Manual media upload checkpoint
+- Copied the original PNG and MP4 into the paths expected by the article pages.
+- Checked the branch, file presence and local image/video readability.
+- Website desktop/mobile rendering and embedded playback still need verification.
+- Next task: confirm both files on the remote branch, then run browser checks; no merge or publication authorized.
+EOF
+   git add -- deep-dives/human-machine-interface/assets/deepdream_attention_post3.png deep-dives/human-machine-interface/assets/deepdream_4a-4b-stacked.mp4 PROGRESS.md
+   git diff --cached --stat
+   git diff --cached --check
+   git commit -m "feat(portfolio): add original DeepDream image and video"
+   git push origin HEAD:refs/heads/portfolio/human-machine-interface
+   ```
+
+   Run the commit only after the checks pass. If authentication or push fails, retain the local clone and report the error without sharing credentials. Do not force-push.
+
+6. After a successful push, run `git log -1 --oneline` and send that commit reference in the conversation.
+
+## Resume after upload
+- Read the current remote PROGRESS.md and inspect the current branch head.
+- Confirm that both media files are present at the exact paths above.
+- Verify desktop/mobile navigation, PNG rendering and native video playback with a local preview.
+- Record actual results and any limitations, then commit and push on the same branch.
+- Preserve the twelve scientific articles. Do not merge into main or publish without explicit approval.
+
+## Recovery
+- Historical unpushed source-import commit: `21bdecc`; its Git push lacked authentication.
+- The checkpoint archive preserves the original media. Do not restore its older progress note over this one.
+- Remote source, six article pages, collection CSS, generation script and homepage integration are already present.
+- Main was observed at `cf0908f49c0134a6fae9f06d3092a5830b5bde77` before this documentation-only step.
