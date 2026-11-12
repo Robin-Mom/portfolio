@@ -156,3 +156,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Checks passed: app.js syntax and runtime project configuration; old Methods text absent, new panel present, resource destinations and emphasis correct.
 - This changes only Aquaporins Methods and this progress note. The earlier copy refinement remains on the same work branch. No merge or publication.
 - Next task: review the two pending copy edits together before merging/publishing with explicit approval.
+
+## Copy release authorized — 2026-11-12
+- User explicitly requested publication of the pending overview/footer/legend and Methods refinements.
+- Pre-release comparison: branch ahead of main by two commits, no divergence. Changes limited to app.js, protein-annotations.js and PROGRESS.md.
+- Prior syntax and configuration checks passed for both edits.
+- Next: merge the copy refinement PR and verify successful GitHub Pages deployment and live text.
