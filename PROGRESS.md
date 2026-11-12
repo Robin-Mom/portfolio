@@ -177,3 +177,15 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Browser check passed: third tab displays the validated text; following its link closes the dialog (open=false), updates the hash to #collection-title and targets the scientific collection heading.
 - Pre-merge comparison: one implementation commit ahead of main, no divergence; changes limited to app.js and progress documentation.
 - Next: merge and verify GitHub Pages publication.
+
+## DeepDream project — step 1
+- Branch portfolio/deepdream-project starts from main 577d22b3a640ede69b92c095daf734ad64882095.
+- Replaced DeepDream Objective / Methods / Results with Building dreams (default) and Reflections.
+- Set intro to "A mini project to run the DeepDream code locally."
+- Rewrote the user's description fluently and corrected gradient wording: maximize an activation-based objective through gradient ascent on input pixels while weights remain fixed.
+- Original Google sources identify three authors: Alexander Mordvintsev, Christopher Olah and Mike Tyka. Sources: https://research.google/blog/inceptionism-going-deeper-into-neural-networks/ and https://github.com/google/deepdream.
+- Verified user project repository: https://github.com/Robin-Mom/projet_Sphinx_deepdream. Its README documents Docker CPU/GPU environments, Caffe and the adapted original notebook.
+- Reflections links to the three existing DeepDream articles in The Human – Machine Interface.
+- User additionally requested a generated image. Await the selected image attachment, then guide manual upload as a separate file and add it with a caption. No placeholder/broken image path added.
+- Checks passed: app.js syntax, two labels/panels, intro and repository URL, unchanged Aquaporins and Supply-Chain data.
+- No merge or publication. Next task: receive selected DeepDream image and arrange manual upload; then verify image rendering and the new tabs.
