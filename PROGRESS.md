@@ -137,3 +137,14 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Runtime controller checks using a simulated DOM/viewer passed with reduced-motion both false and true: correct initial rotation state, explicit play when reduced motion is enabled, stop for inactive panel, resume when active, stop when document is hidden.
 - These controller tests do not constitute a rendered WebGL or physical touch test. WebGL ribbon rendering/picking and real-device touch remain unverified in this environment. Canvas/browser/layout and PDF checks are recorded above.
 - Next: merge PR #2 and confirm GitHub Pages deployment plus live resources. Final publication outcome will be recorded on the retained work branch.
+
+## Step 11 — Merged, published and verified
+- PR #2 merged following explicit approval. Merge commit: 57989b3bcacd7d5d59c652aebec76e4518e8d8df.
+- GitHub Pages run 43250340088 completed successfully: https://github.com/Robin-Mom/portfolio/actions/runs/43250340088.
+- Published site: https://robin-mom.github.io/portfolio/
+- Live HTTP checks passed (200) for app.js, protein-viewer.html, all three viewer/annotation scripts, chain-A PDB, annotation JSON and presentation PDF.
+- Live app includes Published regulations and the Talks PDF reference. Live PDF is 6,034,012 bytes; SHA-256 matches the verified uploaded PDF (09fd58d5df69bd8535ed2ab1aa41ab71f25d288fb1619123b2530ddf392da2a8).
+- Live browser check passed: revised project intro, Talks/Awards displayed; loop-D annotation opens with correct range, text and article link.
+- Verification limits remain as documented: rendered WebGL and physical-device touch not tested.
+- This final documentation checkpoint is on the retained work branch, after merge, to avoid another production deployment. Main contains the complete published implementation and approval checkpoint.
+- Work completed. Future edits should start from current main; preserve this work branch as the full progress record.
