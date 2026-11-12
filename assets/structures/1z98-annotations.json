@@ -2,7 +2,7 @@
   "structure": "1Z98",
   "chain": "A",
   "numbering": "Original PDB residue numbers; ranges inclusive",
-  "status": "User specification, not yet interactive",
+  "status": "Interactive themes and residue picking implemented; WebGL verification pending",
   "annotations": [
     {
       "id": "loop-d",

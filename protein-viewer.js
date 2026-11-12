@@ -69,6 +69,9 @@ async function init() {
     document.querySelectorAll('button').forEach(button => { button.disabled = false; });
     new ResizeObserver(() => { if (active) { viewer.resize(); viewer.render(); } }).observe(container);
     syncMotion();
+    setupProteinAnnotations(viewer, backbone, pauseForInteraction).catch(() => {
+      document.getElementById('annotations').textContent = 'Annotations could not load. Please reload the project.';
+    });
   } catch (error) {
     if (viewer) viewer.spin(false);
     status.textContent = 'The 3D view is unavailable. You can still open the PDB entry or download chain A below.';

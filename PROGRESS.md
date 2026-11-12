@@ -75,3 +75,13 @@ Await user-provided residue names/numbers, explanations and article links for cl
 ### Legend decision confirmed by user
 Use SoPIP2;1 for illustration and broad localization of regulatory regions. Proposed viewer legend: "SoPIP2;1 (PDB 1Z98, chain A) is used as an illustrative structural reference to indicate the general location of regulatory regions across aquaporins. Linked studies may concern other aquaporin isoforms or organisms."
 This legend decision is approved; residue-level cross-isoform equivalence is not implied.
+
+## Step 5 — Interactive annotation themes
+- Added five accessible theme buttons, region highlighting and short article cards with all nine user-supplied URLs. User wording and inclusive PDB residue selections preserved.
+- Selecting a theme pauses rotation. Clicking a residue selects an associated theme; an existing matching selection is preserved for overlapping regions, and shared-topic text directs readers to the theme buttons.
+- Added highlighting/picking to the coordinate-based Canvas fallback and 3Dmol selection/click handlers for the ribbon renderer.
+- Added the approved illustrative SoPIP2;1 legend beneath the cards.
+- Browser checks passed in Canvas fallback: all five theme cards, all nine exact link destinations, selected-state/rotation pause, highlighted regions visible. Clicking the displayed structure at residue 188 opened the loop-D phosphorylation card.
+- JS syntax checks passed for annotation, viewer and fallback scripts.
+- Limitations: WebGL ribbon picking/rendering remains unverified in the cloud browser. Recheck embedded mobile height with annotation cards, reduced-motion behavior and overlapping-residue picking before publication.
+- No merge or publication. Next task: focused embedded/mobile regression, then user review.

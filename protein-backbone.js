@@ -13,6 +13,7 @@ window.createBackboneViewer = function(container, pdb) {
   container.appendChild(canvas);
   const ctx=canvas.getContext('2d');
   if(!ctx) throw new Error('Canvas unavailable');
+  let highlighted=new Set(),highlightColor='#f2c879',projectedPoints=[],onPick=()=>{};
   let yaw=0,pitch=0,scale=1,frame=null,speed=0,lastTime=0,drag=null;
   function render(){
     const width=container.clientWidth,height=container.clientHeight;
@@ -28,6 +29,7 @@ window.createBackboneViewer = function(container, pdb) {
       const y=p.y*Math.cos(pitch)-z*Math.sin(pitch),depth=p.y*Math.sin(pitch)+z*Math.cos(pitch);
       return {x:width/2+x*fit,y:height/2-y*fit,z:depth,resi:p.resi};
     });
+    projectedPoints=projected;
     const segments=[];
     for(let i=1;i<projected.length;i++){
       const a=projected[i-1],b=projected[i];
@@ -39,7 +41,7 @@ window.createBackboneViewer = function(container, pdb) {
     for(const {a,b,z} of segments){
       const light=Math.max(0,Math.min(1,(z/radius+1)/2));
       ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
-      ctx.lineWidth=3+light*2;ctx.strokeStyle=`rgb(${75+light*104},${126+light*112},${112+light*91})`;ctx.stroke();
+      ctx.lineWidth=3+light*2;ctx.strokeStyle=`rgb(${75+light*104},${126+light*112},${112+light*91})`;if(highlighted.has(a.resi)||highlighted.has(b.resi)){ctx.strokeStyle=highlightColor;ctx.lineWidth=6;}ctx.stroke();
     }
   }
   function loop(time){
@@ -48,12 +50,22 @@ window.createBackboneViewer = function(container, pdb) {
     if(lastTime)yaw+=Math.min(time-lastTime,80)*speed*.00042;
     lastTime=time;render();frame=requestAnimationFrame(loop);
   }
-  canvas.addEventListener('pointerdown',event=>{drag={x:event.clientX,y:event.clientY};canvas.setPointerCapture(event.pointerId);});
+  let start=null;
+  canvas.addEventListener('pointerdown',event=>{start={x:event.clientX,y:event.clientY};drag={x:event.clientX,y:event.clientY};canvas.setPointerCapture(event.pointerId);});
   canvas.addEventListener('pointermove',event=>{if(!drag)return;yaw+=(event.clientX-drag.x)*.012;pitch+=(event.clientY-drag.y)*.012;drag={x:event.clientX,y:event.clientY};render();});
-  canvas.addEventListener('pointerup',()=>{drag=null;});
+  canvas.addEventListener('pointerup',event=>{
+    drag=null;
+    if(!start||Math.hypot(event.clientX-start.x,event.clientY-start.y)>5)return;
+    const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top;
+    const hits=projectedPoints.filter(p=>Math.hypot(p.x-x,p.y-y)<10).sort((a,b)=>b.z-a.z);
+    if(hits.length)onPick(hits[0].resi);
+    start=null;
+  });
   canvas.addEventListener('pointercancel',()=>{drag=null;});
   return {
     render,resize:render,
+    setHighlight:(numbers,color)=>{highlighted=new Set(numbers);highlightColor=color;render();},
+    onResidueClick:callback=>{onPick=callback;},
     getView:()=>[yaw,pitch,scale],
     setView:view=>{[yaw,pitch,scale]=view;},
     rotate:(angle,axis)=>{if(axis==='x')pitch+=angle*Math.PI/180;else yaw+=angle*Math.PI/180;},
