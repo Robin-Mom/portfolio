@@ -29,10 +29,10 @@ const projects = {
     kicker: '02 / RESEARCH · BIOPHYSICS', title: 'Aquaporins & regulation',
     intro: 'Research into the molecular mechanisms that influence water permeability in human aquaporins.',
     tags: ['Molecular dynamics', 'Structural analysis', 'Bioinformatics'],
+    tabLabels: ['Published regulations', 'Methods'],
     panels: [
-      `<h3>A question of regulation</h3><p>How do zinc ions modulate water channels? Mom and colleagues (2024) examine four human aquaporins.</p>`,
-      `<h3>Explore at the atomic scale</h3><p>Molecular dynamics simulations and analysis of ion–protein interactions.</p><p>Declared contributions by Robin Mom: conceptualization, methodology, formal analysis and preparation of the original draft.</p>`,
-      `<h3>Two types of modulation</h3><p>Under the simulated conditions, zinc increases the permeability of AQP0 and AQP5 and decreases it for AQP2 and AQP4. The study proposes mechanisms involving structural stability and electrostatic interactions.</p><div class="info-box"><p><em>In silico</em> results, without clinical validation. Abstract illustration.</p></div><p>Published in 2024 in the International Journal of Molecular Sciences, 25(4), 2267.</p>`
+      `<h3>A question of regulation</h3><p>How do zinc ions modulate water channels? Mom and colleagues (2024) examine four human aquaporins.</p><h3>Two types of modulation</h3><p>Under the simulated conditions, zinc increases the permeability of AQP0 and AQP5 and decreases it for AQP2 and AQP4. The study proposes mechanisms involving structural stability and electrostatic interactions.</p><div class="info-box"><p><em>In silico</em> results, without clinical validation. Abstract illustration.</p></div><p>Published in 2024 in the International Journal of Molecular Sciences, 25(4), 2267.</p>`,
+      `<h3>Explore at the atomic scale</h3><p>Molecular dynamics simulations and analysis of ion–protein interactions.</p><p>Declared contributions by Robin Mom: conceptualization, methodology, formal analysis and preparation of the original draft.</p>`
     ],
     sources: `${external(sourceLinks.paper, 'Mom et al., 2024 · full text')} · ${external('https://www.mdpi.com/1422-0067/25/4/2267', 'Publisher')}<p>DOI: 10.3390/ijms25042267. Scientific information and author contributions are drawn from this article.</p>`
   },
@@ -87,7 +87,7 @@ function activateTab(index) {
 }
 $$('[data-project]').forEach(button => button.addEventListener('click', () => {
   const p = projects[button.dataset.project];
-  openDialog(p.kicker, `<h2 id="dialog-title">${p.title}</h2><p class="lead">${p.intro}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="dialog-tabs" role="tablist" aria-label="Explore the project">${['Objective','Methods','Results'].map((label,i)=>`<button role="tab" id="tab-${i}" aria-controls="panel-${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${label}</button>`).join('')}</div>${p.panels.map((html,i)=>`<section class="tab-panel" id="panel-${i}" role="tabpanel" tabindex="0" aria-labelledby="tab-${i}" ${i?'hidden':''}>${html}</section>`).join('')}<div class="detail-source"><p>SOURCES & DOCUMENTATION</p>${p.sources}</div>`);
+  openDialog(p.kicker, `<h2 id="dialog-title">${p.title}</h2><p class="lead">${p.intro}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="dialog-tabs" role="tablist" aria-label="Explore the project">${(p.tabLabels || ['Objective','Methods','Results']).map((label,i)=>`<button role="tab" id="tab-${i}" aria-controls="panel-${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${label}</button>`).join('')}</div>${p.panels.map((html,i)=>`<section class="tab-panel" id="panel-${i}" role="tabpanel" tabindex="0" aria-labelledby="tab-${i}" ${i?'hidden':''}>${html}</section>`).join('')}<div class="detail-source"><p>SOURCES & DOCUMENTATION</p>${p.sources}</div>`);
   const tabs = $$('.dialog-tabs button', dialog);
   tabs.forEach((tab,i) => {
     tab.addEventListener('click', () => activateTab(i));
