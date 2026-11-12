@@ -177,3 +177,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Browser check passed: third tab displays the validated text; following its link closes the dialog (open=false), updates the hash to #collection-title and targets the scientific collection heading.
 - Pre-merge comparison: one implementation commit ahead of main, no divergence; changes limited to app.js and progress documentation.
 - Next: merge and verify GitHub Pages publication.
+
+## Reflections published — 2026-11-12
+- PR #4 merged: 577d22b3a640ede69b92c095daf734ad64882095.
+- GitHub Pages deployment succeeded: https://github.com/Robin-Mom/portfolio/actions/runs/43276047666.
+- Live site https://robin-mom.github.io/portfolio/ serves the third tab, validated text and close-and-navigate link; homepage contains the target collection anchor. Pre-merge browser navigation check passed.
+- Final documentation saved on this retained work branch after merge. No further task outstanding for this change.
