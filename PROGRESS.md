@@ -171,3 +171,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Checks passed: JS syntax; runtime project configuration confirms three labels/panels, exact preservation of the original two panels, Talks/Awards and other project data. Link target exists in the homepage markup inspected when proposing this change.
 - No renderer, media or article content changes. No merge/publication authorized for this new tab.
 - Next task: browser check of tab navigation and modal-to-collection link, then review and publish upon explicit approval.
+
+## Reflections release approved — 2026-11-12
+- User explicitly requested publication of the Reflections tab.
+- Browser check passed: third tab displays the validated text; following its link closes the dialog (open=false), updates the hash to #collection-title and targets the scientific collection heading.
+- Pre-merge comparison: one implementation commit ahead of main, no divergence; changes limited to app.js and progress documentation.
+- Next: merge and verify GitHub Pages publication.
