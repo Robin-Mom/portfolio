@@ -284,3 +284,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: one implementation commit ahead of main with no divergence; only app.js, index.html, style.css and progress documentation changed.
 - Final app.js syntax check passed; desktop/mobile browser checks are recorded above.
 - Next: merge the release PR and confirm GitHub Pages deployment and exact live source files.
+
+## Topic descriptions publication completed — 2026-11-13
+- PR #7 merged into main as b8a6376b951509a6094c5f915556a030350b2203: https://github.com/Robin-Mom/portfolio/pull/7.
+- GitHub Pages run 43451578531 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43451578531.
+- Live index.html, app.js and style.css return HTTP 200 and match the release commit byte for byte, confirming publication of the nine descriptions and wrapping rules.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/home-topic-descriptions without another main deployment. Next: await the owner’s next change; start from published main b8a6376b951509a6094c5f915556a030350b2203 and consult this checkpoint.
