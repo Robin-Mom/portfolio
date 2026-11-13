@@ -240,8 +240,9 @@ topicLinks.addEventListener('click', event => {
 });
 window.addEventListener('resize', positionTopicLinks);
 window.addEventListener('scroll', () => topicLinks.hidePopover(), {passive:true});
+const modeDescriptions={bio:['studying evolution of biological sequences','Linking structures to functions of biological molecules','contextualizing to the organs or the organisms'],data:['finding structure inside complex data','exploring spaces experimentation cannot reach','building tools'],ai:['how the algorithm can see','how the algorithm can talk','how the algorithm can hear']};
 const modeLabels={bio:['GENOMIC','BIOCHEMISTRY','PHYSIOLOGY'],data:['CLUSTERING','SIMULATION','DEVELOPMENT'],ai:['VISION','LANGUAGE','PHYSIOLOGICAL SIGNALS']};
-$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{topicLinks.hidePopover();mode=b.dataset.mode;$$('.orbit-label').forEach((label,i)=>{label.firstChild.nodeValue=modeLabels[mode][i];});$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{topicLinks.hidePopover();mode=b.dataset.mode;$$('.orbit-label').forEach((label,i)=>{label.firstChild.nodeValue=modeLabels[mode][i];$('span',label).textContent=modeDescriptions[mode][i];});$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
 new ResizeObserver(draw).observe(canvas);
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;resume();}).observe(canvas);
 document.addEventListener('visibilitychange',resume);
