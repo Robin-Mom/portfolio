@@ -261,3 +261,11 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: two implementation commits ahead of main, no divergence; four changed text files (index.html, app.js, style.css, PROGRESS.md). No media or reading-page changes.
 - Final app.js syntax check passed; desktop, keyboard and 320 px checks are recorded above.
 - Next: merge the release PR and verify GitHub Pages for the exact merge commit plus live content and destination paths.
+
+## Homepage publication completed — 2026-11-13
+- PR #6 merged into main as fad1fc2dbabe4529fed701074ab7f65b11707ecd: https://github.com/Robin-Mom/portfolio/pull/6.
+- GitHub Pages run 43448240233 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43448240233.
+- Live HTTP verification passed: index.html, app.js, style.css, Artificial Intelligence and Frogs and all three DeepDream article pages return 200 and match the corresponding committed files byte for byte.
+- Published site: https://robin-mom.github.io/portfolio/. Browser interaction checks completed before release are recorded above; no new live browser check was required after exact source verification.
+- No outstanding publication blocker. Oxford Academic publisher retrieval limitation remains as documented; the owner-supplied URL is unchanged.
+- This final checkpoint is retained on the work branch without triggering another main deployment. Next task: await the owner’s next change; start new implementation from published main fad1fc2dbabe4529fed701074ab7f65b11707ecd and consult this file.
