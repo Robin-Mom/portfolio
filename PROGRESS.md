@@ -224,3 +224,40 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: five commits ahead of main, no divergence; changes limited to app.js, the selected JPG, its upload documentation and this progress file.
 - Final app.js syntax check passed; image, caption and both tabs were checked in the browser in step 4.
 - Next: merge the release PR and verify GitHub Pages deployment plus live image and content. Record final outcome on the retained work branch.
+
+## DeepDream publication completed — 2026-11-12
+- PR #5 merged into main as 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb: https://github.com/Robin-Mom/portfolio/pull/5.
+- GitHub Pages run 43279821384 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43279821384.
+- Live HTTP checks passed: updated app.js serves Building dreams; selected JPG responds 200 with the exact original SHA-256; all three linked DeepDream reflection pages respond 200.
+- Published site: https://robin-mom.github.io/portfolio/.
+- No outstanding publication blocker. Prior browser checks are recorded in step 4. This final checkpoint is retained on the work branch without triggering another main deployment.
+- Next task: await the owner’s next portfolio change. Start subsequent implementation from published main 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb and consult this checkpoint.
+
+## Homepage animation words — 2026-11-13
+- Working branch: portfolio/home-animation-words, based on published main 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb.
+- Biology labels: GENOMIC, BIOCHEMISTRY, PHYSIOLOGY (spelling supplied by the owner).
+- Bioinformatics labels: CLUSTERING, SIMULATION, DEVELOPMENT.
+- AI labels: VISION, LANGUAGE, PHYSIOLOGICAL SIGNALS.
+- Initial HTML uses Biology labels; selecting a mode updates the three text nodes while preserving secondary captions and animation controls.
+- Checks passed: node --check app.js; git diff --check; desktop browser confirmed all three sets; narrow iframe (320 px content viewport, 280 px art) confirmed AI labels fit inside the artwork and switching back restores Biology labels.
+- User requested clickable words with a hover effect. Destinations have not yet been specified, so links are pending; do not invent targets.
+- No merge or publication. Next: obtain the destination for each word, implement accessible links and hover/focus styling, then verify before publication approval.
+
+## Homepage topic navigation — 2026-11-13
+- Added a shared dismissible popover for each of the nine animation words, opened by hover, keyboard focus or click; ArrowDown enters the panel, Escape/outside click/close dismiss it. Mode changes dismiss stale content. Native buttons retain the existing animation labels and captions.
+- GENOMIC and CLUSTERING link to Artificial Intelligence and Frogs and the owner's exact Oxford Academic URL; CLUSTERING also opens Supply-Chain-MLOps.
+- BIOCHEMISTRY opens Aquaporins & regulation and links to the Aquaporins and Ions series. PHYSIOLOGY links to the Aquaporins and Steroids and Plants and Uncertainty series. SIMULATION opens Aquaporins & regulation.
+- VISION opens DeepDream and links to the newly grouped three-part Diving into the Depths of Dreams series within The Human - Machine Interface. LANGUAGE opens Supply-Chain-MLOps.
+- DEVELOPMENT and PHYSIOLOGICAL SIGNALS display More to come soon. The latter retains the previous correctly spelled label.
+- Grouped the three existing DeepDream reading links beneath a named section; all six Human-Machine article destinations/order and article files remain unchanged.
+- Checks passed: JS syntax; whitespace; unique HTML IDs; project/series anchors; six unchanged reading destinations; three grouped existing article paths. Browser checked all nine content/link sets, all three project modal openings, keyboard activation/Tab/Escape, and navigation to the three-article series.
+- Mobile iframe check found a scrollbar-related panel overflow; corrected positioning to use document clientWidth. Recheck at 320 px: panel bounds 8–312 px, client/scroll width both 302 px. Browser confirms rendered panel display:block with the intended links.
+- Oxford Academic URL is preserved exactly as supplied. Web retrieval redirected to an inaccessible publisher CDN; article content/availability was not independently verified here. No new scientific claim added.
+- Preview needed restarting after inactivity; browser checks then completed. No binary assets changed or encoded.
+- No merge/publication. Next: owner review, then merge and publish the homepage changes only when explicitly approved. Resume from portfolio/home-animation-words and this file.
+
+## Homepage release approved — 2026-11-13
+- Owner explicitly requested publication of the homepage words, topic navigation and grouped DeepDream series.
+- Final comparison: two implementation commits ahead of main, no divergence; four changed text files (index.html, app.js, style.css, PROGRESS.md). No media or reading-page changes.
+- Final app.js syntax check passed; desktop, keyboard and 320 px checks are recorded above.
+- Next: merge the release PR and verify GitHub Pages for the exact merge commit plus live content and destination paths.
