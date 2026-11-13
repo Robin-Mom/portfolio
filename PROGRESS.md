@@ -224,3 +224,21 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: five commits ahead of main, no divergence; changes limited to app.js, the selected JPG, its upload documentation and this progress file.
 - Final app.js syntax check passed; image, caption and both tabs were checked in the browser in step 4.
 - Next: merge the release PR and verify GitHub Pages deployment plus live image and content. Record final outcome on the retained work branch.
+
+## DeepDream publication completed — 2026-11-12
+- PR #5 merged into main as 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb: https://github.com/Robin-Mom/portfolio/pull/5.
+- GitHub Pages run 43279821384 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43279821384.
+- Live HTTP checks passed: updated app.js serves Building dreams; selected JPG responds 200 with the exact original SHA-256; all three linked DeepDream reflection pages respond 200.
+- Published site: https://robin-mom.github.io/portfolio/.
+- No outstanding publication blocker. Prior browser checks are recorded in step 4. This final checkpoint is retained on the work branch without triggering another main deployment.
+- Next task: await the owner’s next portfolio change. Start subsequent implementation from published main 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb and consult this checkpoint.
+
+## Homepage animation words — 2026-11-13
+- Working branch: portfolio/home-animation-words, based on published main 5e1625cfde8f10c5d1d434aa8b2622dc299a93cb.
+- Biology labels: GENOMIC, BIOCHEMISTRY, PHYSIOLOGY (spelling supplied by the owner).
+- Bioinformatics labels: CLUSTERING, SIMULATION, DEVELOPMENT.
+- AI labels: VISION, LANGUAGE, PHYSIOLOGICAL SIGNALS.
+- Initial HTML uses Biology labels; selecting a mode updates the three text nodes while preserving secondary captions and animation controls.
+- Checks passed: node --check app.js; git diff --check; desktop browser confirmed all three sets; narrow iframe (320 px content viewport, 280 px art) confirmed AI labels fit inside the artwork and switching back restores Biology labels.
+- User requested clickable words with a hover effect. Destinations have not yet been specified, so links are pending; do not invent targets.
+- No merge or publication. Next: obtain the destination for each word, implement accessible links and hover/focus styling, then verify before publication approval.

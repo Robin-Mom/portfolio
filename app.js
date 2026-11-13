@@ -181,7 +181,8 @@ function draw(){
 function loop(){frame=null;if(paused||!visible||document.hidden)return;angle+=.003;draw();frame=requestAnimationFrame(loop);}
 function resume(){if(frame===null&&!paused&&visible&&!document.hidden)frame=requestAnimationFrame(loop);}
 pauseButton.addEventListener('click',()=>{paused=!paused;syncPause();if(paused&&frame!==null){cancelAnimationFrame(frame);frame=null;}else resume();draw();});
-$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
+const modeLabels={bio:['GENOMIC','BIOCHEMISTRY','PHYSIOLOGY'],data:['CLUSTERING','SIMULATION','DEVELOPMENT'],ai:['VISION','LANGUAGE','PHYSIOLOGICAL SIGNALS']};
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;$$('.orbit-label').forEach((label,i)=>{label.firstChild.nodeValue=modeLabels[mode][i];});$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
 new ResizeObserver(draw).observe(canvas);
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;resume();}).observe(canvas);
 document.addEventListener('visibilitychange',resume);
