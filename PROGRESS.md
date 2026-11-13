@@ -261,3 +261,26 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: two implementation commits ahead of main, no divergence; four changed text files (index.html, app.js, style.css, PROGRESS.md). No media or reading-page changes.
 - Final app.js syntax check passed; desktop, keyboard and 320 px checks are recorded above.
 - Next: merge the release PR and verify GitHub Pages for the exact merge commit plus live content and destination paths.
+
+## Homepage publication completed — 2026-11-13
+- PR #6 merged into main as fad1fc2dbabe4529fed701074ab7f65b11707ecd: https://github.com/Robin-Mom/portfolio/pull/6.
+- GitHub Pages run 43448240233 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43448240233.
+- Live HTTP verification passed: index.html, app.js, style.css, Artificial Intelligence and Frogs and all three DeepDream article pages return 200 and match the corresponding committed files byte for byte.
+- Published site: https://robin-mom.github.io/portfolio/. Browser interaction checks completed before release are recorded above; no new live browser check was required after exact source verification.
+- No outstanding publication blocker. Oxford Academic publisher retrieval limitation remains as documented; the owner-supplied URL is unchanged.
+- This final checkpoint is retained on the work branch without triggering another main deployment. Next task: await the owner’s next change; start new implementation from published main fad1fc2dbabe4529fed701074ab7f65b11707ecd and consult this file.
+
+## Homepage topic descriptions — 2026-11-13
+- Working branch: portfolio/home-topic-descriptions, based on published main fad1fc2dbabe4529fed701074ab7f65b11707ecd.
+- Replaced the three generic orbit subtitles with the nine descriptions supplied by the owner, selected together with their corresponding words for Biology, Bioinformatics and AI. Initial HTML contains the Biology descriptions.
+- Preserved wording and capitalization as supplied; corrected only algorith to algorithm in the PHYSIOLOGICAL SIGNALS description.
+- Added width limits so long descriptions wrap within the animation. No link destinations, project data, article content or binary assets changed.
+- Checks passed: app.js syntax; whitespace; browser verified all nine descriptions across the three modes. At a 320 px content viewport (280 px artwork), all nine label boxes stay within the artwork without horizontal text overflow; Biology boxes do not overlap. BIOCHEMISTRY still opens the correct project/series link panel.
+- No blocking issue observed. No merge or publication performed.
+- Next: owner review, then merge/publish this description refinement when explicitly approved. Resume from portfolio/home-topic-descriptions and this file.
+
+## Topic descriptions release approved — 2026-11-13
+- Owner explicitly requested publication of the nine homepage topic descriptions.
+- Final comparison: one implementation commit ahead of main with no divergence; only app.js, index.html, style.css and progress documentation changed.
+- Final app.js syntax check passed; desktop/mobile browser checks are recorded above.
+- Next: merge the release PR and confirm GitHub Pages deployment and exact live source files.
