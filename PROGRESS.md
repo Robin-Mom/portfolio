@@ -278,3 +278,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Checks passed: app.js syntax; whitespace; browser verified all nine descriptions across the three modes. At a 320 px content viewport (280 px artwork), all nine label boxes stay within the artwork without horizontal text overflow; Biology boxes do not overlap. BIOCHEMISTRY still opens the correct project/series link panel.
 - No blocking issue observed. No merge or publication performed.
 - Next: owner review, then merge/publish this description refinement when explicitly approved. Resume from portfolio/home-topic-descriptions and this file.
+
+## Topic descriptions release approved — 2026-11-13
+- Owner explicitly requested publication of the nine homepage topic descriptions.
+- Final comparison: one implementation commit ahead of main with no divergence; only app.js, index.html, style.css and progress documentation changed.
+- Final app.js syntax check passed; desktop/mobile browser checks are recorded above.
+- Next: merge the release PR and confirm GitHub Pages deployment and exact live source files.
