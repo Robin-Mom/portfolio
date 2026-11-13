@@ -181,8 +181,67 @@ function draw(){
 function loop(){frame=null;if(paused||!visible||document.hidden)return;angle+=.003;draw();frame=requestAnimationFrame(loop);}
 function resume(){if(frame===null&&!paused&&visible&&!document.hidden)frame=requestAnimationFrame(loop);}
 pauseButton.addEventListener('click',()=>{paused=!paused;syncPause();if(paused&&frame!==null){cancelAnimationFrame(frame);frame=null;}else resume();draw();});
+// A shared native popover keeps multiple destinations reachable by pointer, touch and keyboard.
+const topicLinks = $('#topic-links');
+let activeTopicLabel;
+const frogLink = ['Artificial Intelligence and Frogs', 'deep-dives/human-machine-interface/artificial-intelligence-and-frogs.html'];
+const paperLink = ['Research article · Oxford Academic', 'https://academic.oup.com/nargab/article/3/3/lqab067/6342220'];
+const aquaporinLink = ['Aquaporins & regulation', '#project-aquaporins', 'aquaporins'];
+const supplyLink = ['Supply-Chain-MLOps', '#project-supply', 'supply'];
+const topicDestinations = {
+  GENOMIC: [frogLink, paperLink],
+  BIOCHEMISTRY: [aquaporinLink, ['Aquaporins and Ions: A Matter of Thresholds', '#aquaporins-and-ions']],
+  PHYSIOLOGY: [['Aquaporins and Steroids: A Matter of Perspective', '#aquaporins-and-steroids'], ['Plants and Uncertainty: A Matter of Timescales', '#plants-and-uncertainty']],
+  CLUSTERING: [frogLink, paperLink, supplyLink],
+  SIMULATION: [aquaporinLink],
+  DEVELOPMENT: [],
+  VISION: [['DeepDream', '#project-deepdream', 'deepdream'], ['Diving into the Depths of Dreams · 3 articles', '#deepdream-series']],
+  LANGUAGE: [supplyLink],
+  'PHYSIOLOGICAL SIGNALS': []
+};
+function positionTopicLinks() {
+  if (!topicLinks.matches(':popover-open') || !activeTopicLabel) return;
+  const viewportWidth = document.documentElement.clientWidth;
+  topicLinks.style.width = `${Math.min(340, viewportWidth - 16)}px`;
+  const rect = activeTopicLabel.getBoundingClientRect();
+  const width = topicLinks.getBoundingClientRect().width;
+  topicLinks.style.left = `${Math.max(8, Math.min(rect.left, viewportWidth - width - 8))}px`;
+  topicLinks.style.top = `${Math.max(8, Math.min(rect.bottom + 8, innerHeight - topicLinks.offsetHeight - 8))}px`;
+}
+function showTopicLinks(label) {
+  const word = label.firstChild.nodeValue.trim();
+  activeTopicLabel = label;
+  $('#topic-links-title').textContent = word;
+  const links = topicDestinations[word];
+  $('#topic-links-content').innerHTML = links.length ? `<ul>${links.map(([title,href,project]) => `<li><a href="${href}"${project ? ` data-open-project="${project}"` : ''}${href.startsWith('https:') ? ' target="_blank" rel="noopener noreferrer"' : ''}>${title}</a></li>`).join('')}</ul>` : '<p>More to come soon.</p>';
+  topicLinks.showPopover();
+  $$('.orbit-label').forEach(b => b.setAttribute('aria-expanded', String(b === label)));
+  positionTopicLinks();
+}
+$$('.orbit-label').forEach(label => {
+  label.addEventListener('mouseenter', () => showTopicLinks(label));
+  label.addEventListener('focus', () => showTopicLinks(label));
+  label.addEventListener('click', () => showTopicLinks(label));
+  label.addEventListener('keydown', event => {if(event.key === 'ArrowDown'){event.preventDefault();showTopicLinks(label);$('a, .topic-close', topicLinks).focus();}});
+});
+$('.topic-close').addEventListener('click', () => topicLinks.hidePopover());
+topicLinks.addEventListener('toggle', () => {
+  if (!topicLinks.matches(':popover-open')) $$('.orbit-label').forEach(b => b.setAttribute('aria-expanded', 'false'));
+});
+topicLinks.addEventListener('click', event => {
+  const link = event.target.closest('a');
+  if (!link) return;
+  topicLinks.hidePopover();
+  if (link.dataset.openProject) {
+    event.preventDefault();
+    $(`.project-card [data-project="${link.dataset.openProject}"]`).click();
+    previousFocus = activeTopicLabel;
+  }
+});
+window.addEventListener('resize', positionTopicLinks);
+window.addEventListener('scroll', () => topicLinks.hidePopover(), {passive:true});
 const modeLabels={bio:['GENOMIC','BIOCHEMISTRY','PHYSIOLOGY'],data:['CLUSTERING','SIMULATION','DEVELOPMENT'],ai:['VISION','LANGUAGE','PHYSIOLOGICAL SIGNALS']};
-$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;$$('.orbit-label').forEach((label,i)=>{label.firstChild.nodeValue=modeLabels[mode][i];});$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{topicLinks.hidePopover();mode=b.dataset.mode;$$('.orbit-label').forEach((label,i)=>{label.firstChild.nodeValue=modeLabels[mode][i];});$$('[data-mode]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));$('#art-caption').textContent={bio:'From structure to function.',data:'From living systems to representations.',ai:'From data to models.'}[mode];draw();}));
 new ResizeObserver(draw).observe(canvas);
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;resume();}).observe(canvas);
 document.addEventListener('visibilitychange',resume);

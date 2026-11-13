@@ -93,3 +93,15 @@
 .article-pagination a:hover{color:var(--mint)}
 .article-pagination small{display:block;font-size:9px;color:var(--mint);margin-bottom:8px}
 @media(max-width:600px){.article-pagination{grid-template-columns:1fr}.theme-links{gap:8px}.theme-links a{font-size:10px}.collection-header{margin-top:28px}}
+
+/* Topic navigation in the homepage animation. */
+button.orbit-label{border:0;background:transparent;padding:5px 0;text-align:left;font-family:inherit;cursor:pointer}
+button.orbit-label:hover,button.orbit-label[aria-expanded=true]{color:var(--text);text-decoration:underline;text-underline-offset:5px}
+#topic-links{position:fixed;inset:auto;margin:0;width:min(340px,calc(100vw - 16px));max-height:calc(100dvh - 16px);overflow:auto;padding:20px;border:1px solid #587568;border-radius:12px;background:var(--surface);color:var(--text);box-shadow:0 12px 40px #0008}
+#topic-links h2{font-size:13px;letter-spacing:1px;margin:0 28px 14px 0;line-height:1.5;overflow-wrap:anywhere}
+#topic-links ul{list-style:none;padding:0;margin:0}#topic-links li+li{border-top:1px solid var(--line)}
+#topic-links a{display:block;padding:11px 0;font-size:13px;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+#topic-links a:hover{color:var(--mint)}#topic-links p{font-size:13px;color:var(--muted);margin:0}
+.topic-close{position:absolute;top:8px;right:8px;border:0;font-size:23px;line-height:1;width:32px;height:32px;border-radius:6px}
+.topic-close:hover{background:var(--surface2)}
+#deepdream-series{margin-block:28px;scroll-margin-top:110px}#deepdream-series h4{font-size:22px;font-weight:400;margin:0 0 16px}#deepdream-series .eyebrow{margin-bottom:8px}

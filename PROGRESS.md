@@ -242,3 +242,16 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Checks passed: node --check app.js; git diff --check; desktop browser confirmed all three sets; narrow iframe (320 px content viewport, 280 px art) confirmed AI labels fit inside the artwork and switching back restores Biology labels.
 - User requested clickable words with a hover effect. Destinations have not yet been specified, so links are pending; do not invent targets.
 - No merge or publication. Next: obtain the destination for each word, implement accessible links and hover/focus styling, then verify before publication approval.
+
+## Homepage topic navigation — 2026-11-13
+- Added a shared dismissible popover for each of the nine animation words, opened by hover, keyboard focus or click; ArrowDown enters the panel, Escape/outside click/close dismiss it. Mode changes dismiss stale content. Native buttons retain the existing animation labels and captions.
+- GENOMIC and CLUSTERING link to Artificial Intelligence and Frogs and the owner's exact Oxford Academic URL; CLUSTERING also opens Supply-Chain-MLOps.
+- BIOCHEMISTRY opens Aquaporins & regulation and links to the Aquaporins and Ions series. PHYSIOLOGY links to the Aquaporins and Steroids and Plants and Uncertainty series. SIMULATION opens Aquaporins & regulation.
+- VISION opens DeepDream and links to the newly grouped three-part Diving into the Depths of Dreams series within The Human - Machine Interface. LANGUAGE opens Supply-Chain-MLOps.
+- DEVELOPMENT and PHYSIOLOGICAL SIGNALS display More to come soon. The latter retains the previous correctly spelled label.
+- Grouped the three existing DeepDream reading links beneath a named section; all six Human-Machine article destinations/order and article files remain unchanged.
+- Checks passed: JS syntax; whitespace; unique HTML IDs; project/series anchors; six unchanged reading destinations; three grouped existing article paths. Browser checked all nine content/link sets, all three project modal openings, keyboard activation/Tab/Escape, and navigation to the three-article series.
+- Mobile iframe check found a scrollbar-related panel overflow; corrected positioning to use document clientWidth. Recheck at 320 px: panel bounds 8–312 px, client/scroll width both 302 px. Browser confirms rendered panel display:block with the intended links.
+- Oxford Academic URL is preserved exactly as supplied. Web retrieval redirected to an inaccessible publisher CDN; article content/availability was not independently verified here. No new scientific claim added.
+- Preview needed restarting after inactivity; browser checks then completed. No binary assets changed or encoded.
+- No merge/publication. Next: owner review, then merge and publish the homepage changes only when explicitly approved. Resume from portfolio/home-animation-words and this file.
