@@ -255,3 +255,9 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Oxford Academic URL is preserved exactly as supplied. Web retrieval redirected to an inaccessible publisher CDN; article content/availability was not independently verified here. No new scientific claim added.
 - Preview needed restarting after inactivity; browser checks then completed. No binary assets changed or encoded.
 - No merge/publication. Next: owner review, then merge and publish the homepage changes only when explicitly approved. Resume from portfolio/home-animation-words and this file.
+
+## Homepage release approved — 2026-11-13
+- Owner explicitly requested publication of the homepage words, topic navigation and grouped DeepDream series.
+- Final comparison: two implementation commits ahead of main, no divergence; four changed text files (index.html, app.js, style.css, PROGRESS.md). No media or reading-page changes.
+- Final app.js syntax check passed; desktop, keyboard and 320 px checks are recorded above.
+- Next: merge the release PR and verify GitHub Pages for the exact merge commit plus live content and destination paths.
