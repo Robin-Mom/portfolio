@@ -324,3 +324,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Desktop visual check: canvas bottom 592 px, labels top 610 px. VISION links and DeepDream modal work; its source footer contains only three links. Pause toggles to Play animation.
 - At 320 px, all three modes have bounded label boxes below the canvas without mutual overlap. With stylesheet fully loaded, artwork clientWidth/scrollWidth both 280 px, page clientWidth/scrollWidth both 320 px; first label sits 16 px below the canvas.
 - No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch including the two pending Supply-Chain steps. Resume from portfolio/hero-layout-cleanup and this file.
+
+## Journey research background and profile links — 2026-11-17
+- Branch portfolio/journey-research-links starts from pending cleanup commit 45d7b182c642a9d1a620f4fd20413e6c20f62a1f and retains the preceding unpublished changes.
+- Added the owner’s requested idea before ORCID, fluently rephrased: Several years of research shaped my critical thinking before I expanded my skills to include AI tools and engineering.
+- Added My Google Scholar publications beside the existing ORCID profile. Reused https://scholar.google.com/citations?user=QTEqD08AAAAJ from the portfolio’s existing contact link; no profile identifier was guessed. Both links open externally with noopener/noreferrer.
+- Added a wrapping flex group for the two profile links. Browser checked paragraph placement, exact profile hrefs and mobile layout: links wrap onto separate rows within a 280 px group, clientWidth equals scrollWidth. Whitespace check passed.
+- No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch, including all preceding pending changes. Resume from portfolio/journey-research-links and this file.
