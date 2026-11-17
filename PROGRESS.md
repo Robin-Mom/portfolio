@@ -331,3 +331,8 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Added My Google Scholar publications beside the existing ORCID profile. Reused https://scholar.google.com/citations?user=QTEqD08AAAAJ from the portfolio’s existing contact link; no profile identifier was guessed. Both links open externally with noopener/noreferrer.
 - Added a wrapping flex group for the two profile links. Browser checked paragraph placement, exact profile hrefs and mobile layout: links wrap onto separate rows within a 280 px group, clientWidth equals scrollWidth. Whitespace check passed.
 - No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch, including all preceding pending changes. Resume from portfolio/journey-research-links and this file.
+
+## November portfolio release approved — 2026-11-17
+- Owner explicitly requested publication of all pending changes on portfolio/journey-research-links: Supply-Chain reflections subgroup, MLOps project overview, source cleanup, separated animation legend, journey paragraph and Scholar link.
+- Final comparison: four implementation commits ahead of main with no divergence; fourteen text paths changed, no binary assets changed. Final app.js syntax check passed; focused browser/content/layout checks are recorded above.
+- Next: merge the release PR and verify GitHub Pages deployment for its exact merge SHA, plus live homepage, scripts/styles and both new reading pages.
