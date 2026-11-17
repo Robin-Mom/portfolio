@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Render the six supplied reflections. Requires Python 3 and Pandoc."""
+"""Render the eight supplied Human–Machine Interface reflections. Requires Python 3 and Pandoc."""
 import html
 import math
+import posixpath
 from pathlib import Path
 import re
 import subprocess
@@ -20,6 +21,19 @@ for i, slug in enumerate(SLUGS):
     rendered = subprocess.check_output(['pandoc', '--from=gfm', '--to=html5', '--wrap=none'], input=body, text=True)
     articles.append((slug, title, body, rendered))
 
+# Supply-Chain-MLOps is a subgroup of the same collection, sourced separately.
+supply_source = (ROOT / 'deep-dives/supply-chain-mlops/README.md').read_text()
+supply_parts = re.split(r'^# [12]\. (.+)\n', supply_source, flags=re.M)
+assert len(supply_parts) == 5, 'Expected exactly two Supply-Chain-MLOps articles'
+for i, slug in enumerate(['trustpilot-without-trust-skills-are-not-enough', 'ai-coding-assistants-finding-the-right-balance']):
+    title, body = supply_parts[1 + i*2:3 + i*2]
+    body = re.sub(r'\n---\s*$', '', body).strip()
+    rendered = subprocess.check_output(['pandoc', '--from=gfm', '--to=html5', '--wrap=none'], input=body, text=True)
+    articles.append(('../supply-chain-mlops/' + slug, title, body, rendered))
+
+def article_href(target, current):
+    return posixpath.relpath('/human-machine-interface/' + target + '.html', '/human-machine-interface/' + posixpath.dirname(current))
+
 escape = html.escape
 for i, (slug, title, body, rendered) in enumerate(articles):
     # Keep every original reference; add an accessible native player beside its link.
@@ -28,13 +42,14 @@ for i, (slug, title, body, rendered) in enumerate(articles):
             '<figure><video controls preload="metadata" playsinline aria-label="DeepDream experiment: animal-like patterns emerging in GoogLeNet"><source src="assets/deepdream_4a-4b-stacked.mp4" type="video/mp4"><p>Your browser does not support embedded video. Use the video link below.</p></video><figcaption>DeepDream experiment — original video by Robin Mom.</figcaption></figure>\n<p><strong>Associated video:</strong>')
     rendered = rendered.replace('<img ', '<img loading="lazy" decoding="async" ')
     rendered = rendered.replace('<table>', '<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table>').replace('</table>', '</table></div>')
-    items = ''.join(f'<li><span aria-current="page">{escape(t)}</span></li>' if j == i else f'<li><a href="{s}.html">{escape(t)}</a></li>' for j, (s,t,_,__) in enumerate(articles))
+    items = ''.join(f'<li><span aria-current="page">{escape(t)}</span></li>' if j == i else f'<li><a href="{article_href(s, slug)}">{escape(t)}</a></li>' for j, (s,t,_,__) in enumerate(articles))
     pagination = ''
     for j, label in [(i-1, 'Previous article'), (i+1, 'Next article')]:
         if 0 <= j < len(articles):
             s,t,_,__ = articles[j]
-            pagination += f'<a href="{s}.html"><small>{label}</small>{escape(t)}</a>'
+            pagination += f'<a href="{article_href(s, slug)}"><small>{label}</small>{escape(t)}</a>'
     minutes = max(1, math.ceil(len(body.split())/220))
+    stylesheet = 'articles.css' if not slug.startswith('../') else '../human-machine-interface/articles.css'
     page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -46,7 +61,7 @@ for i, (slug, title, body, rendered) in enumerate(articles):
 <title>{escape(title)} | Robin Mom — Deep Dives</title>
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
 <link rel="stylesheet" href="../../style.css">
-<link rel="stylesheet" href="articles.css">
+<link rel="stylesheet" href="{stylesheet}">
 </head>
 <body class="reading-page human-machine-page">
 <a class="skip" href="#article">Skip to article</a>
@@ -58,7 +73,7 @@ for i, (slug, title, body, rendered) in enumerate(articles):
 {rendered}</div>
 </article>
 <nav class="article-pagination" aria-label="Adjacent articles">{pagination}</nav>
-<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">SIX REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol>{items}</ol></nav>
+<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">EIGHT REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol>{items}</ol></nav>
 <div class="article-end"><a class="text-link" href="../../index.html#deep-dives">← All Deep Dives</a><a class="text-link" href="#article">Back to top ↑</a></div>
 </main>
 <footer class="reading-wrap reading-footer"><p>© 2026 · Robin Mom</p><a href="../../index.html#projects">Explore my projects ↗</a></footer>
@@ -66,4 +81,4 @@ for i, (slug, title, body, rendered) in enumerate(articles):
 </html>
 '''
     (OUT / f'{slug}.html').write_text(page)
-print('Rendered six articles from the supplied Markdown.')
+print('Rendered eight articles from the two supplied Markdown sources.')

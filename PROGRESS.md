@@ -284,3 +284,22 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: one implementation commit ahead of main with no divergence; only app.js, index.html, style.css and progress documentation changed.
 - Final app.js syntax check passed; desktop/mobile browser checks are recorded above.
 - Next: merge the release PR and confirm GitHub Pages deployment and exact live source files.
+
+## Topic descriptions publication completed — 2026-11-13
+- PR #7 merged into main as b8a6376b951509a6094c5f915556a030350b2203: https://github.com/Robin-Mom/portfolio/pull/7.
+- GitHub Pages run 43451578531 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43451578531.
+- Live index.html, app.js and style.css return HTTP 200 and match the release commit byte for byte, confirming publication of the nine descriptions and wrapping rules.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/home-topic-descriptions without another main deployment. Next: await the owner’s next change; start from published main b8a6376b951509a6094c5f915556a030350b2203 and consult this checkpoint.
+
+## Supply-Chain-MLOps reflections subgroup — 2026-11-17
+- Working branch: portfolio/supply-chain-reflections, based on published main b8a6376b951509a6094c5f915556a030350b2203.
+- Owner supplied supply_chain_mlops_reflections(1).md, then clarified that its two articles belong within The Human - Machine Interface as a subgroup alongside DeepDream, rather than a third collection.
+- Added Supply-Chain-MLOps: Reflections on Collaboration and AI Coding with two reading pages: Trustpilot: Without Trust, Skills Are Not Enough; AI Coding Assistants: Finding the Right Balance.
+- Stored the supplied Markdown byte for byte at deep-dives/supply-chain-mlops/README.md. Article bodies are rendered directly with Pandoc; original wording, emphasis, lists, internal code terms and GitHub links are preserved. Personal/project claims are owner-supplied, not independently audited here.
+- Homepage retains two collections; Human-Machine count is now eight, with the new subgroup and articles 07–08. Updated all eight reading-page collection menus and previous/next pagination; all six existing article bodies remain byte-identical.
+- Extended scripts/build_human_machine.py to reproduce all eight pages from the existing six-article source and the new two-article source. Reuses existing article styles; no media files changed or encoded.
+- Static checks passed: supplied source byte equality; exact Pandoc-rendered body equality for the new articles; unchanged existing bodies; unique IDs and all internal link/file/fragment targets across homepage and all eight pages; whitespace.
+- Browser checks passed: subgroup is inside Human-Machine and total article count is eight; both reading pages open; adjacent-article navigation works; reading menu shows eight items and correct relative links. At a 320 px article viewport, document clientWidth and scrollWidth both equal 320 px.
+- No blocking issue observed. No merge or publication performed.
+- Next: owner review, then merge/publish the new subgroup when explicitly approved. Resume from portfolio/supply-chain-reflections and this file.
