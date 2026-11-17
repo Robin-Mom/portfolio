@@ -336,3 +336,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Owner explicitly requested publication of all pending changes on portfolio/journey-research-links: Supply-Chain reflections subgroup, MLOps project overview, source cleanup, separated animation legend, journey paragraph and Scholar link.
 - Final comparison: four implementation commits ahead of main with no divergence; fourteen text paths changed, no binary assets changed. Final app.js syntax check passed; focused browser/content/layout checks are recorded above.
 - Next: merge the release PR and verify GitHub Pages deployment for its exact merge SHA, plus live homepage, scripts/styles and both new reading pages.
+
+## November portfolio publication completed — 2026-11-17
+- PR #8 merged into main as 223ba0198a6355615a0acc5cf07526a6de4686a0: https://github.com/Robin-Mom/portfolio/pull/8.
+- GitHub Pages run 44155903660 completed successfully for that exact SHA: https://github.com/Robin-Mom/portfolio/actions/runs/44155903660.
+- Live index.html, app.js, style.css and both new Supply-Chain-MLOps reading pages return HTTP 200 and match the merged source byte for byte.
+- Published site: https://robin-mom.github.io/portfolio/. All four pending implementation steps are now published. No publication blocker observed.
+- Final checkpoint retained on portfolio/journey-research-links without another main deployment. Next: await the owner’s next change; start new implementation from published main 223ba0198a6355615a0acc5cf07526a6de4686a0 and consult this checkpoint.
