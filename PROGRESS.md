@@ -314,3 +314,13 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Replaced Results with Reflections and a short link to #supply-chain-reflections, reusing the existing close-modal navigation. Removed the requested Sources & Documentation sentence; retained repository and added README/reproduction links as verifiable references.
 - Checks passed: JS syntax and whitespace; runtime project configuration confirms Objective/Methods/Reflections and exact preservation of Aquaporins/DeepDream data. Browser checked revised intro, all three tabs, source links and navigation from Reflections (modal closes, anchor correct, two article links). At 320 px viewport, Methods dialog client/scroll width both 296 px.
 - No blocking issue observed. No merge/publication. Next: owner review and, when explicitly approved, publish this branch together with the pending reflections subgroup; avoid publishing the project link without its target.
+
+## Source cleanup and homepage legend layout — 2026-11-17
+- Branch portfolio/hero-layout-cleanup starts from pending Supply-Chain project update 4894d42edaf30941ea0a3ee07968599ee9b33ae3. It retains both preceding unpublished steps (reflections subgroup and Supply-Chain overview).
+- Removed the requested DeepDream source-note sentence, retaining its three links. Removed the global Sources & information footer button and modal-content event handler.
+- Kept all nine descriptions in a legend below a dedicated animation stage: three columns on desktop, stacked title/description rows on mobile. Preserved buttons, links, hover/focus popovers, mode and pause controls.
+- Adjusted canvas scale for the shorter stage and kept the decorative ellipse within the narrow artwork. No protein viewer, media or article changes.
+- Checks passed: JS syntax and whitespace; runtime comparison confirms Supply-Chain/Aquaporins data and DeepDream panels unchanged; removed control/text/handler absent.
+- Desktop visual check: canvas bottom 592 px, labels top 610 px. VISION links and DeepDream modal work; its source footer contains only three links. Pause toggles to Play animation.
+- At 320 px, all three modes have bounded label boxes below the canvas without mutual overlap. With stylesheet fully loaded, artwork clientWidth/scrollWidth both 280 px, page clientWidth/scrollWidth both 320 px; first label sits 16 px below the canvas.
+- No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch including the two pending Supply-Chain steps. Resume from portfolio/hero-layout-cleanup and this file.
