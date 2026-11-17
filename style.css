@@ -108,3 +108,18 @@ button.orbit-label:hover,button.orbit-label[aria-expanded=true]{color:var(--text
 
 /* Bound longer topic descriptions while preserving the orbit layout. */
 button.orbit-label{max-width:56%}button.label-b{max-width:46%}.orbit-label span{max-width:220px}
+
+/* Give the animation its own stage; keep topic descriptions in a separate legend. */
+.hero-art{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px;row-gap:18px;height:auto;min-height:0;background:radial-gradient(ellipse at 52% 32%,#24423c55,transparent 55%)}
+.hero-art .art-top{position:relative;inset:auto;grid-column:1/-1}
+.hero-art #connection-canvas{position:relative;inset:auto;grid-column:1/-1;height:340px;width:100%}
+.hero-art:after{inset:65px 13% auto;height:270px}
+.hero-art button.orbit-label{position:relative;inset:auto;max-width:none;width:100%;align-self:start;padding:12px 0 0;border-top:1px solid var(--line);letter-spacing:1.1px}
+.hero-art .orbit-label:before{display:none}
+.hero-art .orbit-label span{max-width:none;margin-top:7px;font-size:11px;line-height:1.6}
+.hero-art .art-bottom{position:relative;inset:auto;grid-column:1/-1;justify-content:center;margin-top:4px;padding-top:8px}
+.hero-art .art-bottom p{width:100%;text-align:center}
+@media(max-width:1100px){.hero-art{column-gap:12px}.hero-art #connection-canvas{height:300px}.hero-art:after{height:230px}.hero-art .orbit-label span{font-size:10px}}
+@media(max-width:600px){.hero-art{grid-template-columns:1fr;row-gap:0}.hero-art #connection-canvas{height:280px;margin-bottom:16px}.hero-art button.orbit-label{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:14px;padding:13px 0;align-items:start}.hero-art .orbit-label span{margin:0}.hero-art .art-bottom{margin-top:12px;row-gap:8px}.hero-art:after{height:220px;left:20%;right:20%}}
+
+.research-profile-links{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:24px}

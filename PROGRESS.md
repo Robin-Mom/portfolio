@@ -284,3 +284,55 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Final comparison: one implementation commit ahead of main with no divergence; only app.js, index.html, style.css and progress documentation changed.
 - Final app.js syntax check passed; desktop/mobile browser checks are recorded above.
 - Next: merge the release PR and confirm GitHub Pages deployment and exact live source files.
+
+## Topic descriptions publication completed — 2026-11-13
+- PR #7 merged into main as b8a6376b951509a6094c5f915556a030350b2203: https://github.com/Robin-Mom/portfolio/pull/7.
+- GitHub Pages run 43451578531 completed successfully for that exact merge commit: https://github.com/Robin-Mom/portfolio/actions/runs/43451578531.
+- Live index.html, app.js and style.css return HTTP 200 and match the release commit byte for byte, confirming publication of the nine descriptions and wrapping rules.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/home-topic-descriptions without another main deployment. Next: await the owner’s next change; start from published main b8a6376b951509a6094c5f915556a030350b2203 and consult this checkpoint.
+
+## Supply-Chain-MLOps reflections subgroup — 2026-11-17
+- Working branch: portfolio/supply-chain-reflections, based on published main b8a6376b951509a6094c5f915556a030350b2203.
+- Owner supplied supply_chain_mlops_reflections(1).md, then clarified that its two articles belong within The Human - Machine Interface as a subgroup alongside DeepDream, rather than a third collection.
+- Added Supply-Chain-MLOps: Reflections on Collaboration and AI Coding with two reading pages: Trustpilot: Without Trust, Skills Are Not Enough; AI Coding Assistants: Finding the Right Balance.
+- Stored the supplied Markdown byte for byte at deep-dives/supply-chain-mlops/README.md. Article bodies are rendered directly with Pandoc; original wording, emphasis, lists, internal code terms and GitHub links are preserved. Personal/project claims are owner-supplied, not independently audited here.
+- Homepage retains two collections; Human-Machine count is now eight, with the new subgroup and articles 07–08. Updated all eight reading-page collection menus and previous/next pagination; all six existing article bodies remain byte-identical.
+- Extended scripts/build_human_machine.py to reproduce all eight pages from the existing six-article source and the new two-article source. Reuses existing article styles; no media files changed or encoded.
+- Static checks passed: supplied source byte equality; exact Pandoc-rendered body equality for the new articles; unchanged existing bodies; unique IDs and all internal link/file/fragment targets across homepage and all eight pages; whitespace.
+- Browser checks passed: subgroup is inside Human-Machine and total article count is eight; both reading pages open; adjacent-article navigation works; reading menu shows eight items and correct relative links. At a 320 px article viewport, document clientWidth and scrollWidth both equal 320 px.
+- No blocking issue observed. No merge or publication performed.
+- Next: owner review, then merge/publish the new subgroup when explicitly approved. Resume from portfolio/supply-chain-reflections and this file.
+
+## Supply-Chain-MLOps project presentation — 2026-11-17
+- Working branch: portfolio/supply-chain-project, based on 7256f1b2fe0ddbfe96f1e2bfda9b7f3d2f77b322 (pending Supply-Chain reflections subgroup). This branch includes the preceding unpublished article addition so the new link resolves.
+- Recentered modal intro and homepage card on the owner’s intended purpose: Exploring the end-to-end MLOps workflow through semantic clustering.
+- Rewrote Objective around hands-on MLOps experimentation, the notebook-to-scripts engineering challenge, reproducibility and the personal lessons discussed in Reflections.
+- Updated Methods from Robin-Mom/Supply-Chain-MLOps main at 1402b766313c2f65eb9a305fe9f766093f6602cc: README.md, compose.yaml, params.yaml, dvc.yaml and src/select_best.py. Sources: https://github.com/Robin-Mom/Supply-Chain-MLOps/tree/1402b766313c2f65eb9a305fe9f766093f6602cc.
+- Current summary covers normalized multilingual SentenceTransformer embeddings, KMeans/Spherical KMeans, five seeds, held-out cosine silhouette and ARI tie-breaking; selected MPNet/Spherical KMeans with ten clusters; frozen inference and independent final evaluation.
+- Engineering stack summarized as Python/uv, Git/DVC, MLflow/DagsHub, FastAPI, Docker Compose, NGINX, Prometheus/Grafana and offline Evidently/SciPy drift reports. Removed Airflow and obsolete clustering-method emphasis. No performance score or public-production claim added.
+- Replaced Results with Reflections and a short link to #supply-chain-reflections, reusing the existing close-modal navigation. Removed the requested Sources & Documentation sentence; retained repository and added README/reproduction links as verifiable references.
+- Checks passed: JS syntax and whitespace; runtime project configuration confirms Objective/Methods/Reflections and exact preservation of Aquaporins/DeepDream data. Browser checked revised intro, all three tabs, source links and navigation from Reflections (modal closes, anchor correct, two article links). At 320 px viewport, Methods dialog client/scroll width both 296 px.
+- No blocking issue observed. No merge/publication. Next: owner review and, when explicitly approved, publish this branch together with the pending reflections subgroup; avoid publishing the project link without its target.
+
+## Source cleanup and homepage legend layout — 2026-11-17
+- Branch portfolio/hero-layout-cleanup starts from pending Supply-Chain project update 4894d42edaf30941ea0a3ee07968599ee9b33ae3. It retains both preceding unpublished steps (reflections subgroup and Supply-Chain overview).
+- Removed the requested DeepDream source-note sentence, retaining its three links. Removed the global Sources & information footer button and modal-content event handler.
+- Kept all nine descriptions in a legend below a dedicated animation stage: three columns on desktop, stacked title/description rows on mobile. Preserved buttons, links, hover/focus popovers, mode and pause controls.
+- Adjusted canvas scale for the shorter stage and kept the decorative ellipse within the narrow artwork. No protein viewer, media or article changes.
+- Checks passed: JS syntax and whitespace; runtime comparison confirms Supply-Chain/Aquaporins data and DeepDream panels unchanged; removed control/text/handler absent.
+- Desktop visual check: canvas bottom 592 px, labels top 610 px. VISION links and DeepDream modal work; its source footer contains only three links. Pause toggles to Play animation.
+- At 320 px, all three modes have bounded label boxes below the canvas without mutual overlap. With stylesheet fully loaded, artwork clientWidth/scrollWidth both 280 px, page clientWidth/scrollWidth both 320 px; first label sits 16 px below the canvas.
+- No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch including the two pending Supply-Chain steps. Resume from portfolio/hero-layout-cleanup and this file.
+
+## Journey research background and profile links — 2026-11-17
+- Branch portfolio/journey-research-links starts from pending cleanup commit 45d7b182c642a9d1a620f4fd20413e6c20f62a1f and retains the preceding unpublished changes.
+- Added the owner’s requested idea before ORCID, fluently rephrased: Several years of research shaped my critical thinking before I expanded my skills to include AI tools and engineering.
+- Added My Google Scholar publications beside the existing ORCID profile. Reused https://scholar.google.com/citations?user=QTEqD08AAAAJ from the portfolio’s existing contact link; no profile identifier was guessed. Both links open externally with noopener/noreferrer.
+- Added a wrapping flex group for the two profile links. Browser checked paragraph placement, exact profile hrefs and mobile layout: links wrap onto separate rows within a 280 px group, clientWidth equals scrollWidth. Whitespace check passed.
+- No blocking issue observed. No merge/publication. Next: owner review and explicit publication approval for this branch, including all preceding pending changes. Resume from portfolio/journey-research-links and this file.
+
+## November portfolio release approved — 2026-11-17
+- Owner explicitly requested publication of all pending changes on portfolio/journey-research-links: Supply-Chain reflections subgroup, MLOps project overview, source cleanup, separated animation legend, journey paragraph and Scholar link.
+- Final comparison: four implementation commits ahead of main with no divergence; fourteen text paths changed, no binary assets changed. Final app.js syntax check passed; focused browser/content/layout checks are recorded above.
+- Next: merge the release PR and verify GitHub Pages deployment for its exact merge SHA, plus live homepage, scripts/styles and both new reading pages.

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1117">
+<meta name="author" content="Robin Mom">
+<meta name="description" content="AI Coding Assistants: Finding the Right Balance — a reflection by Robin Mom in The Human - Machine Interface.">
+<title>AI Coding Assistants: Finding the Right Balance | Robin Mom — Deep Dives</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../human-machine-interface/articles.css">
+</head>
+<body class="reading-page human-machine-page">
+<a class="skip" href="#article">Skip to article</a>
+<header class="site-header reading-header"><a href="../../index.html#home" class="brand" aria-label="Robin Mom, home"><span class="monogram">rm<span>·</span></span><span>Robin Mom<small>SCIENCE &amp; AI ENGINEERING</small></span></a><a class="reading-back" href="../../index.html#deep-dives">← Deep Dives</a></header>
+<main id="article" class="reading-wrap">
+<article aria-labelledby="article-title">
+<header class="article-heading"><p class="eyebrow">THE HUMAN - MACHINE INTERFACE / 08</p><h1 id="article-title">AI Coding Assistants: Finding the Right Balance</h1><p class="article-byline">By Robin Mom · 5 min read</p></header>
+<div class="article-body">
+<p><strong>When AI can write code faster than we can understand it, how much responsibility should we delegate?</strong></p>
+<p>A few months ago, during my Machine Learning Engineering training, I participated in a group project aimed at implementing a complete MLOps pipeline.</p>
+<p>Working in a team of three, we developed a machine learning application to automatically categorize customer reviews collected from Trustpilot.</p>
+<p>As I explained in a previous article, one of our greatest challenges was finding an effective balance in the distribution of responsibilities and the coordination of our work.</p>
+<p>Although we managed to complete the project, I wasn't entirely satisfied with the final implementation.</p>
+<p>So I decided to rebuild it from scratch.</p>
+<p><a href="https://github.com/Robin-Mom/Supply-Chain-MLOps"><strong>Supply-Chain-MLOps — GitHub Repository</strong></a></p>
+<p>This gave me the opportunity to revisit the entire MLOps workflow, from data exploration and model development to application deployment and the monitoring of model and system performance in a production-like environment.</p>
+<p>However, I didn't want to spend an excessive amount of time on this implementation.</p>
+<p>And that made it the perfect opportunity to continue experimenting with the increasingly powerful AI coding assistants available today.</p>
+<p>Looking back on this experience, I find myself facing several interesting questions.</p>
+<p>First, I have to acknowledge just how effective these tools have become. Their ability to generate code, navigate complex projects, identify bugs, and suggest implementations is genuinely impressive.</p>
+<p>At this point, completely ignoring their potential would seem like a missed opportunity.</p>
+<p>But while working with them, two particular challenges caught my attention.</p>
+<h2 id="1-when-code-generation-outpaces-understanding">1. When Code Generation Outpaces Understanding</h2>
+<p>One of the first things I noticed was how quickly AI coding assistants can generate substantial amounts of code.</p>
+<p>And before you know it, the complexity of your own project can begin to outpace your understanding of its implementation.</p>
+<p>For example, when I migrated MLflow tracking from a local SQLite-backed setup to a remote DagsHub server, Codex introduced an additional script to manage tracking configuration alongside the existing training script.</p>
+<p>Similarly, when implementing DVC pipelines, several functions distributed across different scripts were introduced to manage parameters defined in <code>params.yaml</code>.</p>
+<p>Now, I'm not saying these solutions were necessarily wrong.</p>
+<p>They may even provide useful abstractions in certain circumstances.</p>
+<p>But sometimes, a much simpler implementation might have been sufficient.</p>
+<p>And this is where the dilemma emerges.</p>
+<p><strong>Should I spend the time required to understand every piece of generated code, or should I delegate certain implementation details and focus on supervising the overall architecture and objectives?</strong></p>
+<p>The answer is not as obvious as it might seem.</p>
+<p>On one hand, understanding the implementation is essential for maintaining control over the project, identifying unnecessary complexity, and ensuring that the system remains maintainable.</p>
+<p>On the other hand, insisting on reviewing every single line in depth could eliminate much of the productivity gain that makes these tools so valuable.</p>
+<p>Perhaps the real challenge is learning to distinguish between what requires a deep understanding and what can be safely delegated.</p>
+<p>But that raises another question: <strong>how do we evaluate the quality of code that we have not entirely written or understood ourselves?</strong></p>
+<p>A functional implementation is not necessarily a good implementation. Code quality also involves clarity, simplicity, testability, maintainability, and the ability to evolve without introducing unexpected failures.</p>
+<p>And these qualities are not always immediately visible when the application appears to be working correctly.</p>
+<h2 id="2-when-assistance-becomes-passivity">2. When Assistance Becomes Passivity</h2>
+<p>The second challenge is perhaps more personal.</p>
+<p><strong>How do we prevent ourselves from becoming passive developers when AI makes coding so easy?</strong></p>
+<p>I have noticed how tempting it can be to let an assistant handle an entire implementation, particularly when it produces convincing results within seconds.</p>
+<p>At first, this feels like a remarkable improvement in productivity.</p>
+<p>But there is a subtle risk.</p>
+<p>The less I engage with the actual implementation, the fewer opportunities I have to practice problem-solving, explore alternative approaches, and develop the technical intuition that comes from working through difficulties myself.</p>
+<p>And this raises a fundamental question about learning.</p>
+<p>If I consistently delegate the most demanding parts of a task, am I really becoming a better engineer, or simply becoming more proficient at supervising an AI system?</p>
+<p>Of course, these two possibilities are not mutually exclusive.</p>
+<p>Knowing how to formulate a problem, design an architecture, review an implementation, and evaluate results are valuable engineering skills in their own right.</p>
+<p>But I also believe that maintaining a certain level of hands-on practice remains essential.</p>
+<p>Not necessarily because every line of code must be written manually, but because <strong>critical thinking is difficult to maintain without regularly confronting the problems it is supposed to solve</strong>.</p>
+<p>In other words, the challenge is not simply to use AI effectively.</p>
+<p>It is to ensure that using AI continues to strengthen our abilities rather than gradually replacing the effort through which those abilities develop.</p>
+<h2 id="finding-a-dynamic-balance">Finding a Dynamic Balance</h2>
+<p>I don't have definitive answers to these questions.</p>
+<p>And perhaps there is no single answer.</p>
+<p>The appropriate balance between delegation and direct involvement will probably continue to evolve with the capabilities of AI tools, my own technical expertise, and the nature of the projects I undertake.</p>
+<p>Some tasks may benefit from extensive automation. Others may require a much closer involvement, whether because of their complexity, their importance, or simply because I want to understand the underlying mechanisms.</p>
+<p>What matters to me is maintaining the ability to make that distinction consciously.</p>
+<p>I want to benefit from the extraordinary possibilities offered by AI without becoming dependent on its ability to solve problems on my behalf.</p>
+<p><strong>What I am looking for is interconnection rather than interdependence: a relationship in which AI extends my capabilities without gradually undermining my autonomy.</strong></p>
+<p>Perhaps the right balance is not a fixed position we can reach once and for all.</p>
+<p>It is something we have to continuously adjust.</p>
+<p>And in that sense, learning to work with AI feels a little like walking a tightrope.</p>
+<p>Leaning too far toward manual implementation may mean missing out on the remarkable efficiency these tools offer.</p>
+<p>Leaning too far toward automation may mean losing the technical understanding and independence needed to guide them effectively.</p>
+<p>So, like a tightrope walker, I keep moving forward, constantly adjusting my balance.</p>
+<p><strong>One step at a time.</strong></p>
+</div>
+</article>
+<nav class="article-pagination" aria-label="Adjacent articles"><a href="trustpilot-without-trust-skills-are-not-enough.html"><small>Previous article</small>Trustpilot: Without Trust, Skills Are Not Enough</a></nav>
+<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">EIGHT REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol><li><a href="../human-machine-interface/artificial-intelligence-and-frogs.html">Artificial Intelligence and Frogs</a></li><li><a href="../human-machine-interface/art-or-science.html">Art or Science? An Age-Old Question Revisited by AI</a></li><li><a href="../human-machine-interface/deepdream-part-1.html">Diving into the Depths of Dreams — Part 1/3</a></li><li><a href="../human-machine-interface/deepdream-part-2.html">Diving into the Depths of Dreams — Part 2/3</a></li><li><a href="../human-machine-interface/deepdream-part-3.html">Diving into the Depths of Dreams — Part 3/3</a></li><li><a href="../human-machine-interface/context-window.html">The Context Window: The Hidden Parameter You Shouldn&#x27;t Overlook</a></li><li><a href="trustpilot-without-trust-skills-are-not-enough.html">Trustpilot: Without Trust, Skills Are Not Enough</a></li><li><span aria-current="page">AI Coding Assistants: Finding the Right Balance</span></li></ol></nav>
+<div class="article-end"><a class="text-link" href="../../index.html#deep-dives">← All Deep Dives</a><a class="text-link" href="#article">Back to top ↑</a></div>
+</main>
+<footer class="reading-wrap reading-footer"><p>© 2026 · Robin Mom</p><a href="../../index.html#projects">Explore my projects ↗</a></footer>
+</body>
+</html>
