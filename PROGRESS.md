@@ -303,3 +303,14 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Browser checks passed: subgroup is inside Human-Machine and total article count is eight; both reading pages open; adjacent-article navigation works; reading menu shows eight items and correct relative links. At a 320 px article viewport, document clientWidth and scrollWidth both equal 320 px.
 - No blocking issue observed. No merge or publication performed.
 - Next: owner review, then merge/publish the new subgroup when explicitly approved. Resume from portfolio/supply-chain-reflections and this file.
+
+## Supply-Chain-MLOps project presentation — 2026-11-17
+- Working branch: portfolio/supply-chain-project, based on 7256f1b2fe0ddbfe96f1e2bfda9b7f3d2f77b322 (pending Supply-Chain reflections subgroup). This branch includes the preceding unpublished article addition so the new link resolves.
+- Recentered modal intro and homepage card on the owner’s intended purpose: Exploring the end-to-end MLOps workflow through semantic clustering.
+- Rewrote Objective around hands-on MLOps experimentation, the notebook-to-scripts engineering challenge, reproducibility and the personal lessons discussed in Reflections.
+- Updated Methods from Robin-Mom/Supply-Chain-MLOps main at 1402b766313c2f65eb9a305fe9f766093f6602cc: README.md, compose.yaml, params.yaml, dvc.yaml and src/select_best.py. Sources: https://github.com/Robin-Mom/Supply-Chain-MLOps/tree/1402b766313c2f65eb9a305fe9f766093f6602cc.
+- Current summary covers normalized multilingual SentenceTransformer embeddings, KMeans/Spherical KMeans, five seeds, held-out cosine silhouette and ARI tie-breaking; selected MPNet/Spherical KMeans with ten clusters; frozen inference and independent final evaluation.
+- Engineering stack summarized as Python/uv, Git/DVC, MLflow/DagsHub, FastAPI, Docker Compose, NGINX, Prometheus/Grafana and offline Evidently/SciPy drift reports. Removed Airflow and obsolete clustering-method emphasis. No performance score or public-production claim added.
+- Replaced Results with Reflections and a short link to #supply-chain-reflections, reusing the existing close-modal navigation. Removed the requested Sources & Documentation sentence; retained repository and added README/reproduction links as verifiable references.
+- Checks passed: JS syntax and whitespace; runtime project configuration confirms Objective/Methods/Reflections and exact preservation of Aquaporins/DeepDream data. Browser checked revised intro, all three tabs, source links and navigation from Reflections (modal closes, anchor correct, two article links). At 320 px viewport, Methods dialog client/scroll width both 296 px.
+- No blocking issue observed. No merge/publication. Next: owner review and, when explicitly approved, publish this branch together with the pending reflections subgroup; avoid publishing the project link without its target.
