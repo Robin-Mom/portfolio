@@ -350,3 +350,8 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Added wrapping to the hero action row so buttons remain readable on narrow screens.
 - Checks passed: whitespace; desktop browser confirms the new button alongside projects and click updates hash to #deep-dives with the correct section heading. At 320 px, actions wrap to separate rows and group clientWidth/scrollWidth both equal 280 px.
 - No blocking issue observed. No merge/publication. Next: owner review then publish when explicitly approved. Resume from portfolio/hero-deep-dives-button and this file.
+
+## Deep Dives button release approved — 2026-11-18
+- Owner explicitly requested publication of the homepage Deep Dives button.
+- Final comparison: one implementation commit ahead of main, no divergence; changes limited to index.html, style.css and progress documentation.
+- Desktop navigation and 320 px layout checks passed as recorded above. Next: merge release PR and verify GitHub Pages plus exact live files.
