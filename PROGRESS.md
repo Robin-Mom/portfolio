@@ -336,3 +336,22 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Owner explicitly requested publication of all pending changes on portfolio/journey-research-links: Supply-Chain reflections subgroup, MLOps project overview, source cleanup, separated animation legend, journey paragraph and Scholar link.
 - Final comparison: four implementation commits ahead of main with no divergence; fourteen text paths changed, no binary assets changed. Final app.js syntax check passed; focused browser/content/layout checks are recorded above.
 - Next: merge the release PR and verify GitHub Pages deployment for its exact merge SHA, plus live homepage, scripts/styles and both new reading pages.
+
+## November portfolio publication completed — 2026-11-17
+- PR #8 merged into main as 223ba0198a6355615a0acc5cf07526a6de4686a0: https://github.com/Robin-Mom/portfolio/pull/8.
+- GitHub Pages run 44155903660 completed successfully for that exact SHA: https://github.com/Robin-Mom/portfolio/actions/runs/44155903660.
+- Live index.html, app.js, style.css and both new Supply-Chain-MLOps reading pages return HTTP 200 and match the merged source byte for byte.
+- Published site: https://robin-mom.github.io/portfolio/. All four pending implementation steps are now published. No publication blocker observed.
+- Final checkpoint retained on portfolio/journey-research-links without another main deployment. Next: await the owner’s next change; start new implementation from published main 223ba0198a6355615a0acc5cf07526a6de4686a0 and consult this checkpoint.
+
+## Homepage Deep Dives button — 2026-11-18
+- Branch portfolio/hero-deep-dives-button starts from published main 223ba0198a6355615a0acc5cf07526a6de4686a0.
+- Added Dive into my reflections beside Explore my projects, linking directly to #deep-dives. Used a secondary button in the existing palette; retained Discover my journey.
+- Added wrapping to the hero action row so buttons remain readable on narrow screens.
+- Checks passed: whitespace; desktop browser confirms the new button alongside projects and click updates hash to #deep-dives with the correct section heading. At 320 px, actions wrap to separate rows and group clientWidth/scrollWidth both equal 280 px.
+- No blocking issue observed. No merge/publication. Next: owner review then publish when explicitly approved. Resume from portfolio/hero-deep-dives-button and this file.
+
+## Deep Dives button release approved — 2026-11-18
+- Owner explicitly requested publication of the homepage Deep Dives button.
+- Final comparison: one implementation commit ahead of main, no divergence; changes limited to index.html, style.css and progress documentation.
+- Desktop navigation and 320 px layout checks passed as recorded above. Next: merge release PR and verify GitHub Pages plus exact live files.
