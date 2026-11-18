@@ -355,3 +355,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Owner explicitly requested publication of the homepage Deep Dives button.
 - Final comparison: one implementation commit ahead of main, no divergence; changes limited to index.html, style.css and progress documentation.
 - Desktop navigation and 320 px layout checks passed as recorded above. Next: merge release PR and verify GitHub Pages plus exact live files.
+
+## Deep Dives button publication completed — 2026-11-18
+- PR #9 merged into main as 78b1d56e1c99f81a03762332ce1aa6a352f2db2c: https://github.com/Robin-Mom/portfolio/pull/9.
+- GitHub Pages run 44273709358 completed successfully for that exact merge: https://github.com/Robin-Mom/portfolio/actions/runs/44273709358.
+- Live index.html and style.css return HTTP 200 and match the release commit byte for byte; homepage contains Dive into my reflections and the #deep-dives target link.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/hero-deep-dives-button without another main deployment. Next: await owner’s next change; start from published main 78b1d56e1c99f81a03762332ce1aa6a352f2db2c and consult this file.
