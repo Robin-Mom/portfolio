@@ -372,3 +372,8 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Checks passed: app.js syntax; whitespace; exact uploaded source equality and Pandoc-rendered body equality; unique IDs; all internal link files/anchors across homepage and nine reading pages. Browser confirmed the renamed subgroup, full new article including its five headings/final paragraph, nine-item reading menu and previous-article navigation.
 - Personal/scientific statements are preserved from the owner-supplied article; this integration adds no independent validation of its claims. No media changed or encoded.
 - No blocking issue observed. No merge/publication performed. Next: owner review, then merge and publish when explicitly approved. Resume from portfolio/supply-chain-four-pillars and this file.
+
+## Four Pillars release approved — 2026-11-25
+- Owner explicitly requested publication of the third Supply-Chain article and series rename.
+- Final comparison: one implementation commit ahead of main, no divergence; fifteen text paths changed, no binary changes. Final app.js syntax check passed; content, navigation and browser checks recorded above.
+- Next: merge release PR and verify GitHub Pages deployment for the exact merge SHA plus the renamed series and new article in live files.
