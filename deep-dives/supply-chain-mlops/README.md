@@ -1,6 +1,6 @@
-# Supply-Chain-MLOps: Reflections on Collaboration and AI Coding
+# Supply-Chain-MLOps: Beyond the Technical Pipeline.
 
-Two reflections on the human and technical lessons learned through the Supply-Chain-MLOps project.
+Reflections on the human and technical lessons learned through the Supply-Chain-MLOps project. The first two articles are preserved below; the third is stored in [semantic-clustering-four-pillars.md](semantic-clustering-four-pillars.md).
 
 ## Contents
 

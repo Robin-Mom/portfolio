@@ -355,3 +355,25 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Owner explicitly requested publication of the homepage Deep Dives button.
 - Final comparison: one implementation commit ahead of main, no divergence; changes limited to index.html, style.css and progress documentation.
 - Desktop navigation and 320 px layout checks passed as recorded above. Next: merge release PR and verify GitHub Pages plus exact live files.
+
+## Deep Dives button publication completed — 2026-11-18
+- PR #9 merged into main as 78b1d56e1c99f81a03762332ce1aa6a352f2db2c: https://github.com/Robin-Mom/portfolio/pull/9.
+- GitHub Pages run 44273709358 completed successfully for that exact merge: https://github.com/Robin-Mom/portfolio/actions/runs/44273709358.
+- Live index.html and style.css return HTTP 200 and match the release commit byte for byte; homepage contains Dive into my reflections and the #deep-dives target link.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/hero-deep-dives-button without another main deployment. Next: await owner’s next change; start from published main 78b1d56e1c99f81a03762332ce1aa6a352f2db2c and consult this file.
+
+## Supply-Chain third reflection and series rename — 2026-11-25
+- Working branch: portfolio/supply-chain-four-pillars, based on published main 78b1d56e1c99f81a03762332ce1aa6a352f2db2c.
+- Added the supplied Semantic Clustering of Customer Reviews: The Four Pillars of Evaluation as the third Supply-Chain reflection (Human-Machine article 09), with its complete original text and repository link.
+- Stored the attached Markdown byte for byte at deep-dives/supply-chain-mlops/semantic-clustering-four-pillars.md; reproducible generated reading page uses the matching .html path.
+- Renamed the subgroup exactly to Supply-Chain-MLOps: Beyond the Technical Pipeline. on the homepage, source introduction and project Reflections link. Updated the summary/count to three articles and Human-Machine count to nine.
+- Extended scripts/build_human_machine.py to render the ninth article from its separate source. Updated all nine article menus and adjacent-page links. All eight previous article bodies remain unchanged.
+- Checks passed: app.js syntax; whitespace; exact uploaded source equality and Pandoc-rendered body equality; unique IDs; all internal link files/anchors across homepage and nine reading pages. Browser confirmed the renamed subgroup, full new article including its five headings/final paragraph, nine-item reading menu and previous-article navigation.
+- Personal/scientific statements are preserved from the owner-supplied article; this integration adds no independent validation of its claims. No media changed or encoded.
+- No blocking issue observed. No merge/publication performed. Next: owner review, then merge and publish when explicitly approved. Resume from portfolio/supply-chain-four-pillars and this file.
+
+## Four Pillars release approved — 2026-11-25
+- Owner explicitly requested publication of the third Supply-Chain article and series rename.
+- Final comparison: one implementation commit ahead of main, no divergence; fifteen text paths changed, no binary changes. Final app.js syntax check passed; content, navigation and browser checks recorded above.
+- Next: merge release PR and verify GitHub Pages deployment for the exact merge SHA plus the renamed series and new article in live files.
