@@ -377,3 +377,10 @@ This legend decision is approved; residue-level cross-isoform equivalence is not
 - Owner explicitly requested publication of the third Supply-Chain article and series rename.
 - Final comparison: one implementation commit ahead of main, no divergence; fifteen text paths changed, no binary changes. Final app.js syntax check passed; content, navigation and browser checks recorded above.
 - Next: merge release PR and verify GitHub Pages deployment for the exact merge SHA plus the renamed series and new article in live files.
+
+## Four Pillars publication completed — 2026-11-25
+- PR #10 merged into main as 5a4417e2959994eda316b590042cc8da3fa93429: https://github.com/Robin-Mom/portfolio/pull/10.
+- GitHub Pages run 45585756669 completed successfully for that exact merge SHA: https://github.com/Robin-Mom/portfolio/actions/runs/45585756669.
+- Live index.html, app.js, new Four Pillars article and preceding AI Coding Assistants article return HTTP 200 and match the merge commit byte for byte. Homepage contains the exact new series title.
+- Published site: https://robin-mom.github.io/portfolio/. No publication blocker observed.
+- Final checkpoint retained on portfolio/supply-chain-four-pillars without another main deployment. Next: await owner’s next change; start from published main 5a4417e2959994eda316b590042cc8da3fa93429 and consult this file.
