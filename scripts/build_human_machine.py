@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the eight supplied Human–Machine Interface reflections. Requires Python 3 and Pandoc."""
+"""Render the nine supplied Human–Machine Interface reflections. Requires Python 3 and Pandoc."""
 import html
 import math
 import posixpath
@@ -30,6 +30,15 @@ for i, slug in enumerate(['trustpilot-without-trust-skills-are-not-enough', 'ai-
     body = re.sub(r'\n---\s*$', '', body).strip()
     rendered = subprocess.check_output(['pandoc', '--from=gfm', '--to=html5', '--wrap=none'], input=body, text=True)
     articles.append(('../supply-chain-mlops/' + slug, title, body, rendered))
+
+
+# The third Supply-Chain reflection is preserved as a separate uploaded source.
+pillars_source = (ROOT / 'deep-dives/supply-chain-mlops/semantic-clustering-four-pillars.md').read_text()
+title, body = pillars_source.split('\n', 1)
+assert title.startswith('# '), 'Expected the article title as an H1'
+title, body = title[2:].strip(), body.strip()
+rendered = subprocess.check_output(['pandoc', '--from=gfm', '--to=html5', '--wrap=none'], input=body, text=True)
+articles.append(('../supply-chain-mlops/semantic-clustering-four-pillars', title, body, rendered))
 
 def article_href(target, current):
     return posixpath.relpath('/human-machine-interface/' + target + '.html', '/human-machine-interface/' + posixpath.dirname(current))
@@ -73,7 +82,7 @@ for i, (slug, title, body, rendered) in enumerate(articles):
 {rendered}</div>
 </article>
 <nav class="article-pagination" aria-label="Adjacent articles">{pagination}</nav>
-<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">EIGHT REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol>{items}</ol></nav>
+<nav class="article-series" aria-labelledby="series-title"><p class="eyebrow">NINE REFLECTIONS</p><h2 id="series-title">The Human - Machine Interface</h2><p>From Tool Use to Philosophical Contemplation</p><ol>{items}</ol></nav>
 <div class="article-end"><a class="text-link" href="../../index.html#deep-dives">← All Deep Dives</a><a class="text-link" href="#article">Back to top ↑</a></div>
 </main>
 <footer class="reading-wrap reading-footer"><p>© 2026 · Robin Mom</p><a href="../../index.html#projects">Explore my projects ↗</a></footer>
@@ -81,4 +90,4 @@ for i, (slug, title, body, rendered) in enumerate(articles):
 </html>
 '''
     (OUT / f'{slug}.html').write_text(page)
-print('Rendered eight articles from the two supplied Markdown sources.')
+print('Rendered nine articles from the three supplied Markdown sources.')
